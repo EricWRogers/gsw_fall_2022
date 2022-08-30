@@ -10,7 +10,7 @@ public class EnemySpawner : MonoBehaviour
     public float interval = 100f;
     public bool toggle = false;
     public int limit = 0;
-
+    public int wave = 0;
     private int spawned;
     
 
@@ -18,21 +18,28 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         spawner = gameObject.GetComponent<Transform>();
+
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        for(int i = 0; limit >= spawned; spawned++)
-        {
-            InvokeRepeating("SpawnEnemy", 5f, interval);
-            
-            Debug.Log(spawned);
-        }
-    }
+    
 
-    void SpawnEnemy()
+   public void SpawnEnemy()
     {
-        Instantiate(enemyPrefab, spawner);
+        
+        if(toggle == true && limit != spawned)
+        {
+             Instantiate(enemyPrefab, spawner);
+             spawned++;
+             
+        }
+        if(limit == 0)
+        {
+            spawned = 0;
+            wave++;
+
+            limit = wave * 3;
+        }
+       
     }
 }
