@@ -13634,7 +13634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5067931295219758970, guid: af7225436066b7e4bbd60fc619af47b5, type: 3}
   interval: 5
-  toggle: 0
+  toggle: 1
   currentEnemies: 0
   wave: 0
 --- !u!4 &1056284616

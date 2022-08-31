@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 5067931295219758964}
   - component: {fileID: 5067931295219758967}
   - component: {fileID: 5067931295219758960}
-  - component: {fileID: 5067931295219758961}
+  - component: {fileID: 762628501761996573}
   m_Layer: 7
   m_Name: Enemy (Logan)
   m_TagString: Untagged
@@ -185,7 +185,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5067931295219758961
+--- !u!114 &762628501761996573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,13 +194,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5067931295219758970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 397f4e3589b838f47a6a954d803a8920, type: 3}
+  m_Script: {fileID: 11500000, guid: bb5c9bb626df47649bb5201b49720131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   speed: 800
-  nextWaypointDistance: 1.2
+  nextWaypointDistance: 3
   pathUpdateSpeed: 0.2
-  AOA: 6
+  AOA: 100
   AOAToggle: 0
   randomizerToggle: 1
