@@ -6,10 +6,13 @@ using Pathfinding;
 public class CustomAIMovementScript : MonoBehaviour
 {
     private Transform target;
+    private Transform playerTransform;
     public GameObject player;
     
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
+    public float AOA = 100; //Area of Awareness
+    public bool AOAToggle = false;
 
     Path path;
     int currentWaypoint = 0;
@@ -30,7 +33,7 @@ public class CustomAIMovementScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         InvokeRepeating("UpdatePath", 0f, .2f);
-    }
+    }//End of Start
 
     void FixedUpdate() //Ideal when working with physics
     {
@@ -59,8 +62,10 @@ public class CustomAIMovementScript : MonoBehaviour
         {
             currentWaypoint++;
         }
-    }
-
+    }//End of FixedUpdate
+    
+    
+    
      void OnPathComplete(Path p)
     {
         if (!p.error)
@@ -68,13 +73,31 @@ public class CustomAIMovementScript : MonoBehaviour
             path = p;
             currentWaypoint = 0;
         }
-    }
+    }//End of OnPathComplete
 
     void UpdatePath()
     {
+        float distance = Vector2.Distance(target.position, transform.position);
+
         if(seeker.IsDone())
         {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            if(distance <= AOA && AOAToggle == true)
+            {
+                seeker.StartPath(rb.position, target.position, OnPathComplete);
+            }
+            if(AOAToggle == false)
+            {
+                seeker.StartPath(rb.position, target.position, OnPathComplete);
+            }
+        }
+    }// End of UpdatePath
+
+    void OnDrawGizmosSelected() //Drawing AOA
+    {
+        if(AOAToggle == true)
+        {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, AOA);
         }
     }
-}
+}//End of class

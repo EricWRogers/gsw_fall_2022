@@ -12065,6 +12065,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7698426759353540092, guid: 31c65dba5cab00d43872cfb498180bc9, type: 3}
   m_PrefabInstance: {fileID: 897481880}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &900063917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5067931295219758970, guid: af7225436066b7e4bbd60fc619af47b5, type: 3}
+  m_PrefabInstance: {fileID: 5643419779417995452}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &900063918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900063917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604dfbbf654f92618bc36972daaa4968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  Healed:
+    m_PersistentCalls:
+      m_Calls: []
+  Hurt:
+    m_PersistentCalls:
+      m_Calls: []
+  OutOfHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  MaxHealth: 100
+  CurrentHealth: 0
 --- !u!1001 &904485717
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26401,6 +26432,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5067931295219758961, guid: af7225436066b7e4bbd60fc619af47b5, type: 3}
+      propertyPath: AOA
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5067931295219758965, guid: af7225436066b7e4bbd60fc619af47b5, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -26458,9 +26493,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6985077383548128688, guid: ad9fed4b118345146808af8d86773205, type: 3}
-      propertyPath: m_Layer
-      value: 7
+    - target: {fileID: 2297262451270628690, guid: ad9fed4b118345146808af8d86773205, type: 3}
+      propertyPath: radius
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6985077384193465012, guid: ad9fed4b118345146808af8d86773205, type: 3}
       propertyPath: m_RootOrder
@@ -26511,8 +26546,8 @@ PrefabInstance:
       value: Enemy(A*)
       objectReference: {fileID: 0}
     - target: {fileID: 6985077384193465019, guid: ad9fed4b118345146808af8d86773205, type: 3}
-      propertyPath: m_Layer
-      value: 7
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9fed4b118345146808af8d86773205, type: 3}
