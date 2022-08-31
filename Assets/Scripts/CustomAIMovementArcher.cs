@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class CustomAIMovementScript : MonoBehaviour
+public class CustomAIMovementArcher : MonoBehaviour
 {
     private Transform target;
     private Transform playerTransform;
+    private Transform bowTransform;
+     public Transform firingpoint;
     public GameObject player;
+    public GameObject bow;
+    public GameObject arrow;
+
+    private float dirX;
+   
     
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
@@ -18,6 +25,8 @@ public class CustomAIMovementScript : MonoBehaviour
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
+
+    
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -33,6 +42,7 @@ public class CustomAIMovementScript : MonoBehaviour
         }
         player = GameObject.Find("Player");
         target = player.GetComponent<Transform>();
+        bowTransform = bow.GetComponent<Transform>();
 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
@@ -42,6 +52,9 @@ public class CustomAIMovementScript : MonoBehaviour
 
     void FixedUpdate() //Ideal when working with physics
     {
+        Flip();
+        Ranged();
+
         if(path == null)
         {
             return;
@@ -111,4 +124,40 @@ public class CustomAIMovementScript : MonoBehaviour
         pathUpdateSpeed = Random.Range(.1f, 1f);
         Debug.Log(pathUpdateSpeed);
     }
+
+    void Ranged()
+    {
+        Vector2 targetPos = target.position;
+        Vector2 Direction;
+        Direction = targetPos - (Vector2)transform.position;
+        RaycastHit2D ray = Physics2D.Raycast(bow.transform.position, Direction);
+
+        if(ray.transform.name == "Player")
+        {
+            Debug.Log(ray.transform.name);
+            bow.transform.up = Direction;
+            path = null;
+
+            Instantiate(arrow, firingpoint.position, firingpoint.rotation);
+            
+        }
+        else
+        {
+            return;
+        }
+    }
+
+    void Flip()
+        {
+            float dirX = Input.GetAxisRaw("Horizontal");
+            if(dirX < -.01)
+            {
+                transform.Rotate(0f, 180f, 0f);
+            }
+            if(dirX > .01)
+            {
+                transform.Rotate(0f, 0f, 0f);
+            }
+        }
+
 }//End of class
