@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    Transform spawner;
     public GameObject enemyPrefab;
 
     public float interval = 100f;
     public bool toggle = false;
-    public int limit = 0;
+    public int currentEnemies = 0;
     public int wave = 0;
     private int spawned;
     
@@ -17,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawner = gameObject.GetComponent<Transform>();
+       
 
     }
 
@@ -27,18 +26,17 @@ public class EnemySpawner : MonoBehaviour
    public void SpawnEnemy()
     {
         
-        if(toggle == true && limit != spawned)
+        if(toggle == true && currentEnemies != spawned)
         {
-             Instantiate(enemyPrefab, spawner);
-             spawned++;
-             
+            Instantiate(enemyPrefab, transform.position, transform.rotation);
+            spawned++;
         }
-        if(limit == 0)
+        if(currentEnemies == 0)
         {
             spawned = 0;
             wave++;
 
-            limit = wave * 3;
+            currentEnemies = wave * 3;
         }
        
     }

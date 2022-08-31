@@ -97,7 +97,6 @@ GameObject:
   - component: {fileID: 5067931295219758967}
   - component: {fileID: 5067931295219758960}
   - component: {fileID: 5067931295219758961}
-  - component: {fileID: 900063918}
   m_Layer: 7
   m_Name: Enemy (Logan)
   m_TagString: Untagged
@@ -201,31 +200,7 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 800
   nextWaypointDistance: 1.2
+  pathUpdateSpeed: 0.2
   AOA: 6
   AOAToggle: 0
---- !u!114 &900063918
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5067931295219758970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604dfbbf654f92618bc36972daaa4968, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  Healed:
-    m_PersistentCalls:
-      m_Calls: []
-  Hurt:
-    m_PersistentCalls:
-      m_Calls: []
-  OutOfHealth:
-    m_PersistentCalls:
-      m_Calls: []
-  MaxHealth: 100
-  CurrentHealth: 0
+  randomizerToggle: 1

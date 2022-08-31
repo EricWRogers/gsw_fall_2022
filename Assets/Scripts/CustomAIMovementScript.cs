@@ -11,9 +11,10 @@ public class CustomAIMovementScript : MonoBehaviour
     
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
+    public float pathUpdateSpeed = .2f;
     public float AOA = 100; //Area of Awareness
     public bool AOAToggle = false;
-
+    public bool randomizerToggle = false;
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
@@ -26,13 +27,17 @@ public class CustomAIMovementScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(randomizerToggle == true)
+        {
+            Randomizer();
+        }
         player = GameObject.Find("Player");
         target = player.GetComponent<Transform>();
 
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, .2f);
+        InvokeRepeating("UpdatePath", 0f, pathUpdateSpeed);
     }//End of Start
 
     void FixedUpdate() //Ideal when working with physics
@@ -63,8 +68,6 @@ public class CustomAIMovementScript : MonoBehaviour
             currentWaypoint++;
         }
     }//End of FixedUpdate
-    
-    
     
      void OnPathComplete(Path p)
     {
@@ -99,5 +102,13 @@ public class CustomAIMovementScript : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, AOA);
         }
+    }
+
+    void Randomizer()
+    {
+        speed = Random.Range(700f, 800f);
+        Debug.Log(speed);
+        pathUpdateSpeed = Random.Range(.1f, 1f);
+        Debug.Log(pathUpdateSpeed);
     }
 }//End of class
