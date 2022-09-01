@@ -13,6 +13,6 @@ public class CodeMergeTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("Try Debug.Error Next"); //Logans Code
     }
 }
