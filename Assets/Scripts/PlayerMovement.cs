@@ -8,7 +8,9 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D body;
     public SpriteRenderer spriteRenderer;
 
+    public float movementSpeed;
     public float walkSpeed;
+    public float sprintSpeed;
 
     Vector2 direction;
 
@@ -24,7 +26,9 @@ public class PlayerMovement : MonoBehaviour
         //get direction of input
         direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
 
+        movementSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
+
         //set walk based on direction
-        body.velocity = direction * walkSpeed;
+        body.velocity = direction * movementSpeed;
     }
 }
