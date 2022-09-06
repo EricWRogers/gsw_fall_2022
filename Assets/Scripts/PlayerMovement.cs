@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 direction;
 
+    //bow and arrow controls
+    [SerializeField] Transform hand;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +34,15 @@ public class PlayerMovement : MonoBehaviour
 
         //set walk based on direction
         body.velocity = direction * movementSpeed;
+
+        //bow and arrow control
+        RotateHand();
+    }
+
+    //bow and arrow control
+    void RotateHand()
+    {
+        float angle = Utility.AngleTowardsMouse(hand.position);
+        hand.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
     }
 }
