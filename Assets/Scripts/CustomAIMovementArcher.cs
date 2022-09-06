@@ -8,13 +8,12 @@ public class CustomAIMovementArcher : MonoBehaviour
     private Transform target;
     private Transform playerTransform;
     private Transform bowTransform;
-     public Transform firingpoint;
+    private bool shoot;
+    public Transform firingpoint;
+    public Transform enemyGFX;
     public GameObject player;
     public GameObject bow;
     public GameObject arrow;
-
-    private float dirX;
-   
     
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
@@ -22,12 +21,12 @@ public class CustomAIMovementArcher : MonoBehaviour
     public float AOA = 100; //Area of Awareness
     public bool AOAToggle = false;
     public bool randomizerToggle = false;
+
+    private Vector2 force;
+    
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
-
-    
-
     Seeker seeker;
     Rigidbody2D rb;
 
@@ -52,7 +51,7 @@ public class CustomAIMovementArcher : MonoBehaviour
 
     void FixedUpdate() //Ideal when working with physics
     {
-        Flip();
+        
         Ranged();
 
         if(path == null)
@@ -71,8 +70,10 @@ public class CustomAIMovementArcher : MonoBehaviour
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-        Vector2 force = direction * speed * Time.deltaTime;
+        force = direction * speed * Time.deltaTime;
         rb.AddForce(force);
+        
+        Flip();
         
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
@@ -137,9 +138,8 @@ public class CustomAIMovementArcher : MonoBehaviour
             Debug.Log(ray.transform.name);
             bow.transform.up = Direction;
             path = null;
-
-            Instantiate(arrow, firingpoint.position, firingpoint.rotation);
-            
+        
+            shoot = true;
         }
         else
         {
@@ -147,17 +147,27 @@ public class CustomAIMovementArcher : MonoBehaviour
         }
     }
 
-    void Flip()
+        void Flip()
         {
-            float dirX = Input.GetAxisRaw("Horizontal");
-            if(dirX < -.01)
+            if(force.x <= 0.01f)
             {
-                transform.Rotate(0f, 180f, 0f);
+                enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+                firingpoint.localScale = new Vector3(-1f, 1f, 1f);
             }
-            if(dirX > .01)
+            else if(force.x >= -0.01f)
             {
-                transform.Rotate(0f, 0f, 0f);
+                enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+                firingpoint.localScale = new Vector3(1f, 1f, 1f);
             }
+        }
+        
+        public void Shoot()
+        {
+            if(shoot == true)
+            {
+                Instantiate(arrow, firingpoint.position, firingpoint.rotation);
+            }
+           
         }
 
 }//End of class

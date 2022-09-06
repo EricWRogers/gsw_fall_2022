@@ -5020,7 +5020,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345375163}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.5300002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13537,8 +13537,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 345375164}
-  m_Father: {fileID: 4971118431572433002}
-  m_RootOrder: 1
+  m_Father: {fileID: 4971118432745590637}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1052772751
 PrefabInstance:
@@ -13634,7 +13634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5067931295219758970, guid: af7225436066b7e4bbd60fc619af47b5, type: 3}
   interval: 5
-  toggle: 1
+  toggle: 0
   currentEnemies: 0
   wave: 0
 --- !u!4 &1056284616
@@ -26518,8 +26518,9 @@ GameObject:
   - component: {fileID: 4971118431572433000}
   - component: {fileID: 4971118431572433007}
   - component: {fileID: 4971118431572433006}
+  - component: {fileID: 4971118431572433008}
   m_Layer: 7
-  m_Name: Enemy (Logan)
+  m_Name: EnemyArcher (Logan)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26554,7 +26555,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4971118432745590637}
-  - {fileID: 1049931197}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26599,6 +26599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firingpoint: {fileID: 345375164}
+  enemyGFX: {fileID: 4971118432745590637}
   player: {fileID: 0}
   bow: {fileID: 1049931195}
   arrow: {fileID: 999425503580659139, guid: f1426292d76b60c468ebf39fd758dd33, type: 3}
@@ -26629,6 +26630,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4971118431572433008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4971118431572432997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad54517dc19258185960ef6d2f3a1b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeOut:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4971118431572433006}
+        m_TargetAssemblyTypeName: CustomAIMovementArcher, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  AutoStart: 1
+  AutoRestart: 1
+  CountDownTime: 5
 --- !u!212 &4971118432745590636
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26692,7 +26723,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1049931197}
   m_Father: {fileID: 4971118431572433002}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26786,3 +26818,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad9fed4b118345146808af8d86773205, type: 3}
+--- !u!114 &6985077382766074158 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2297262451270628690, guid: ad9fed4b118345146808af8d86773205, type: 3}
+  m_PrefabInstance: {fileID: 6985077382766074157}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &6985077382766074159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6985077383548128688, guid: ad9fed4b118345146808af8d86773205, type: 3}
+  m_PrefabInstance: {fileID: 6985077382766074157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6985077382766074160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985077382766074159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7589ffdf26584764d8eb4efb83f058a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiPath: {fileID: 6985077382766074158}
