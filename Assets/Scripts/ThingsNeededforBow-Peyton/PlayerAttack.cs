@@ -72,6 +72,7 @@ public class PlayerAttack : MonoBehaviour
 
         float ArrowSpeed = BowCharge + BowPower;
         float ArrowDamage = BowCharge * BowPower;
+        Debug.Log("Arrow Damage: " + ArrowDamage);
 
         float angle = Utility.AngleTowardsMouse(Bow.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));

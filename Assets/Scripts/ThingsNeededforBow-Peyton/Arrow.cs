@@ -20,12 +20,12 @@ public class Arrow : MonoBehaviour
         rb.velocity = transform.up * ArrowVelocity;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(other.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy Attacked");
-            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.TakeDamage(ArrowDamage);
         }
         Destroy(gameObject); //destroys arrows when they hit something

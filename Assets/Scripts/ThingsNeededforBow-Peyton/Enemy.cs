@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [Header("Health")]
-    private float health;
 
-    [SerializeField] private float maxHealth;
+    public float health = 0;
 
-    private void start()
+    public float maxHealth;
+
+    private void Start()
     {
         health = maxHealth;
     }
@@ -17,9 +17,9 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float dmg)
     {
         health -= dmg;
-        Debug.Log("Enemy Health" + health);
+        Debug.Log("Enemy Health: " + health);
 
-        if(health <= 0)
+        if (health <= 0)
         {
             Destroy(gameObject);
         }
