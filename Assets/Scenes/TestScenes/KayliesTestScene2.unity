@@ -613,6 +613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 730213268}
+  - component: {fileID: 730213269}
   m_Layer: 0
   m_Name: Hud
   m_TagString: Untagged
@@ -636,6 +637,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &730213269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730213267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918c3fd6ab238534ea439f6c39b1733f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isWeaponWheelOpen: 1
+  weaponWheel: {fileID: 1721728744}
 --- !u!1 &791837550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1721728745
 RectTransform:
   m_ObjectHideFlags: 0

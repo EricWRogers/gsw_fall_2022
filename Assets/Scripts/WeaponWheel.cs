@@ -113,7 +113,7 @@ public class WeaponWheel : MonoBehaviour
         if(inventory.items[index].quanity > 1)
         {
             middleBox.quanityText.gameObject.SetActive(true);
-            middleBox.quanityBox.gameObject.SetActive(false);
+            middleBox.quanityBox.gameObject.SetActive(true);
             middleBox.quanityText.text = inventory.items[index].quanity + "";
         }
         else
@@ -125,8 +125,8 @@ public class WeaponWheel : MonoBehaviour
 
         itemName.text = inventory.items[index].itemStats.itemName;
         itemDescription.text = inventory.items[index].itemStats.description;
-        damageText.text = inventory.items[index].itemStats.damage + "";
-        attackSpeedText.text = inventory.items[index].itemStats.attackSpeed + "";
+        damageText.text = "Damage: " +inventory.items[index].itemStats.damage ;
+        attackSpeedText.text = "Attack Speed: " + inventory.items[index].itemStats.attackSpeed;
     }
 
     public void DisplayLeftBox(int index)
