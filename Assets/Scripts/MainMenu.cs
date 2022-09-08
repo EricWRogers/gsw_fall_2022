@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
    public void PlayGame ()
    {
-		  SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+		  SceneManager.LoadScene("Logan'sTestScenePath"); //Name of the Scene
    }
    public void QuitGame ()
    {
