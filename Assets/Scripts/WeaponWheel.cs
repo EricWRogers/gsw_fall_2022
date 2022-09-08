@@ -11,6 +11,10 @@ public class WeaponWheel : MonoBehaviour
     public ItemHolder farLeftBox;
     public ItemHolder rightBox;
     public ItemHolder farRightBox;
+    public ItemHolder arrowBox;
+    
+    public Image leftArrow;
+    public Image rightArrow;
 
     public TMP_Text itemName;
     public TMP_Text itemDescription;
@@ -23,7 +27,7 @@ public class WeaponWheel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -58,7 +62,7 @@ public class WeaponWheel : MonoBehaviour
         int rightBoxIndex = index + 1;
         int farRightBoxIndex = index + 2;
 
-        //DisplayArrowBox();
+        DisplayArrowBox();
 
         if(farLeftBoxIndex > -1)
         {
@@ -197,4 +201,8 @@ public class WeaponWheel : MonoBehaviour
         }
     }
 
+    public void DisplayArrowBox()
+    {
+        arrowBox.quanityText.text = "X " + inventory.arrowAmount;
+    }
 }
