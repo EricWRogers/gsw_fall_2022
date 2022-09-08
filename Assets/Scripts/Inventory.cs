@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
 {
     public int currentItem = 0;
     public List<Item> items = new List<Item>();
+    public int arrowAmount = 0;
 }
 
 [System.Serializable]
