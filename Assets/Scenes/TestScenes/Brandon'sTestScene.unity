@@ -207,6 +207,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2123206327 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3451945506068226083, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+  m_PrefabInstance: {fileID: 321742244688744727}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &321742244688744727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,12 +264,56 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 321742242918250206, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 2123206327}
+    - target: {fileID: 321742242918250206, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: sprintSpeed
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 321742242918250206, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: staminaRegenTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 321742242918250206, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: staminaDepleteTime
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7270260116439834485, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+--- !u!1 &321742244688744728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+  m_PrefabInstance: {fileID: 321742244688744727}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &321742244688744729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321742244688744728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604dfbbf654f92618bc36972daaa4968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  Healed:
+    m_PersistentCalls:
+      m_Calls: []
+  Hurt:
+    m_PersistentCalls:
+      m_Calls: []
+  OutOfHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  MaxHealth: 100
+  CurrentHealth: 100

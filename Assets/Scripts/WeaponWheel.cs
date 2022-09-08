@@ -11,6 +11,10 @@ public class WeaponWheel : MonoBehaviour
     public ItemHolder farLeftBox;
     public ItemHolder rightBox;
     public ItemHolder farRightBox;
+    public ItemHolder arrowBox;
+    
+    public Image leftArrow;
+    public Image rightArrow;
 
     public TMP_Text itemName;
     public TMP_Text itemDescription;
@@ -23,7 +27,7 @@ public class WeaponWheel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -58,7 +62,7 @@ public class WeaponWheel : MonoBehaviour
         int rightBoxIndex = index + 1;
         int farRightBoxIndex = index + 2;
 
-        //DisplayArrowBox();
+        DisplayArrowBox();
 
         if(farLeftBoxIndex > -1)
         {
@@ -113,7 +117,7 @@ public class WeaponWheel : MonoBehaviour
         if(inventory.items[index].quanity > 1)
         {
             middleBox.quanityText.gameObject.SetActive(true);
-            middleBox.quanityBox.gameObject.SetActive(false);
+            middleBox.quanityBox.gameObject.SetActive(true);
             middleBox.quanityText.text = inventory.items[index].quanity + "";
         }
         else
@@ -125,8 +129,8 @@ public class WeaponWheel : MonoBehaviour
 
         itemName.text = inventory.items[index].itemStats.itemName;
         itemDescription.text = inventory.items[index].itemStats.description;
-        damageText.text = inventory.items[index].itemStats.damage + "";
-        attackSpeedText.text = inventory.items[index].itemStats.attackSpeed + "";
+        damageText.text = "Damage: " +inventory.items[index].itemStats.damage ;
+        attackSpeedText.text = "Attack Speed: " + inventory.items[index].itemStats.attackSpeed;
     }
 
     public void DisplayLeftBox(int index)
@@ -197,4 +201,8 @@ public class WeaponWheel : MonoBehaviour
         }
     }
 
+    public void DisplayArrowBox()
+    {
+        arrowBox.quanityText.text = "X " + inventory.arrowAmount;
+    }
 }
