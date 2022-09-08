@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 321742242918250205}
   - component: {fileID: 321742242918250206}
   - component: {fileID: 321742242918250202}
+  - component: {fileID: -7270260116439834485}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -123,7 +124,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 321742242918250205}
   spriteRenderer: {fileID: 321742242918250204}
+  stamina: 5
+  staminaDepleteTime: 0
+  staminaRegenTime: 0
+  movementSpeed: 0
   walkSpeed: 10
+  sprintSpeed: 0
+  hand: {fileID: 0}
 --- !u!70 &321742242918250202
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -140,6 +147,32 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &-7270260116439834485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321742242918250207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604dfbbf654f92618bc36972daaa4968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  Healed:
+    m_PersistentCalls:
+      m_Calls: []
+  Hurt:
+    m_PersistentCalls:
+      m_Calls: []
+  OutOfHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  MaxHealth: 100
+  CurrentHealth: 100
 --- !u!1 &1339216724328220318
 GameObject:
   m_ObjectHideFlags: 0
