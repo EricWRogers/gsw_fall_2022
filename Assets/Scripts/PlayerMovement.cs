@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D body;
     public SpriteRenderer spriteRenderer;
 
-    public float stamina = 5f;
+    public float stamina = 100;
     public float staminaDepleteTime;
     public float staminaRegenTime;
     bool sprinting = false;
@@ -43,15 +43,20 @@ public class PlayerMovement : MonoBehaviour
             
             if (stamina > 0)
             {
-                stamina -= Time.deltaTime / staminaDepleteTime;
+                stamina -= Time.deltaTime * staminaDepleteTime;
                 sprinting = true;
+            }
+
+            if (stamina = 0)
+            {
+                sprinting = false;
             }
         }
         else
         {
-            if (stamina < 5f)
+            if (stamina < 100)
             {
-                stamina += Time.deltaTime / staminaRegenTime;
+                stamina += Time.deltaTime * staminaRegenTime;
             }
             stamina = stamina;
         }
