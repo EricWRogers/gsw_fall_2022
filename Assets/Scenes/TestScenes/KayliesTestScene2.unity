@@ -473,6 +473,8 @@ MonoBehaviour:
     quanity: 1
   - itemStats: {fileID: 11400000, guid: 798c496daf69a024a810b985ac6da0cf, type: 2}
     quanity: 1
+  - itemStats: {fileID: 11400000, guid: 798c496daf69a024a810b985ac6da0cf, type: 2}
+    quanity: 1
 --- !u!4 &451928483
 Transform:
   m_ObjectHideFlags: 0
@@ -1368,6 +1370,7 @@ MonoBehaviour:
   damageText: {fileID: 144348839}
   attackSpeedText: {fileID: 791837552}
   inventory: {fileID: 451928482}
+  index: 0
 --- !u!1001 &1930918394
 PrefabInstance:
   m_ObjectHideFlags: 0

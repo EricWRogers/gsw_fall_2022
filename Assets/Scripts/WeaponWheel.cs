@@ -32,11 +32,56 @@ public class WeaponWheel : MonoBehaviour
         damageText.text = inventory.items[inventory.currentItem].itemStats.damage + "";
         attackSpeedText.text = inventory.items[inventory.currentItem].itemStats.attackSpeed + "";
 
+        DisplayLeftBox(1);
+        DisplayFarLeftBox(2);
+        DisplayRightBox(3);
+        DisplayFarRightBox(4);
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void DisplayLeftBox(int index)
+    {
+        leftBox.itemIcon.sprite = inventory.items[index].itemStats.icon;
+        leftBox.quanityText.text = inventory.items[index].quanity + "";
+        //itemName.text = inventory.items[index].itemStats.itemName;
+       // itemDescription.text = inventory.items[index].itemStats.description;
+       // damageText.text = inventory.items[index].itemStats.damage + "";
+        //attackSpeedText.text = inventory.items[index].itemStats.attackSpeed + "";
+    }
+
+    public void DisplayRightBox(int index)
+    {
+        rightBox.itemIcon.sprite = inventory.items[index].itemStats.icon;
+        rightBox.quanityText.text = inventory.items[index].quanity + "";
+        //itemName.text = inventory.items[index].itemStats.itemName;
+       // itemDescription.text = inventory.items[index].itemStats.description;
+       // damageText.text = inventory.items[index].itemStats.damage + "";
+        //attackSpeedText.text = inventory.items[index].itemStats.attackSpeed + "";
+    }
+
+    public void DisplayFarLeftBox(int index)
+    {
+        farLeftBox.itemIcon.sprite = inventory.items[index].itemStats.icon;
+        farLeftBox.quanityText.text = inventory.items[index].quanity + "";
+        //itemName.text = inventory.items[index].itemStats.itemName;
+       // itemDescription.text = inventory.items[index].itemStats.description;
+       // damageText.text = inventory.items[index].itemStats.damage + "";
+        //attackSpeedText.text = inventory.items[index].itemStats.attackSpeed + "";
+    }
+
+        public void DisplayFarRightBox(int index)
+    {
+        farRightBox.itemIcon.sprite = inventory.items[index].itemStats.icon;
+        farRightBox.quanityText.text = inventory.items[index].quanity + "";
+        //itemName.text = inventory.items[index].itemStats.itemName;
+       // itemDescription.text = inventory.items[index].itemStats.description;
+       // damageText.text = inventory.items[index].itemStats.damage + "";
+        //attackSpeedText.text = inventory.items[index].itemStats.attackSpeed + "";
     }
 }
