@@ -10,6 +10,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] SpriteRenderer ArrowGFX;
     [SerializeField] Slider BowPowerSlider;
     [SerializeField] Transform Bow;
+    [SerializeField] float cooldownTime;
 
     [Range(0, 10)]
 
@@ -42,7 +43,8 @@ public class PlayerAttack : MonoBehaviour
         {
             if (BowCharge > 0f)
             {
-                BowCharge -= 1f * Time.deltaTime;  //0.1f; //how fast the charge goes down before we can fire again
+
+                BowCharge -= cooldownTime * Time.deltaTime;  //0.1f; //how fast the charge goes down before we can fire again
             }
             else
             {

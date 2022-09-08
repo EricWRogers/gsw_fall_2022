@@ -326,98 +326,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 321742242918250205, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 321742242918250206, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: hand
-      value: 
-      objectReference: {fileID: 1171622116}
     - target: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1339216724328220318, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2468542822868812746, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2645335913181791846, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+    - target: {fileID: 3226988462694815490, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: BowPowerSlider
       value: 
       objectReference: {fileID: 1760984689}
-    - target: {fileID: 3140599718400793527, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6761816993873982745, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7133892196106211169, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7133892196106211169, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7133892196106211169, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8838900286206021959, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
---- !u!1 &1171622112 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-  m_PrefabInstance: {fileID: 1171622111}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1171622113 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2408754829830799664, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-  m_PrefabInstance: {fileID: 1171622111}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1171622114 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8838900286206021959, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-  m_PrefabInstance: {fileID: 1171622111}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1171622115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171622112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56262a4aba1a9494bb410113cc8a0c9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ArrowPrefab: {fileID: 5616596167360615223, guid: 47bca6578f3d69f46b3d19bf48802617, type: 3}
-  ArrowGFX: {fileID: 1171622114}
-  BowPowerSlider: {fileID: 1760984689}
-  Bow: {fileID: 1171622113}
-  BowPower: 10
-  MaxBowCharge: 3
---- !u!4 &1171622116 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3451945506068226083, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-  m_PrefabInstance: {fileID: 1171622111}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1322976985
 GameObject:
   m_ObjectHideFlags: 0
