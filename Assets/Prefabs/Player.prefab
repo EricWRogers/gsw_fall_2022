@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 321742242918250206}
   - component: {fileID: 321742242918250202}
   - component: {fileID: -7270260116439834485}
-  m_Layer: 0
+  - component: {fileID: 3226988462694815490}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -130,7 +131,7 @@ MonoBehaviour:
   movementSpeed: 0
   walkSpeed: 10
   sprintSpeed: 0
-  hand: {fileID: 0}
+  hand: {fileID: 3451945506068226083}
 --- !u!70 &321742242918250202
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -173,6 +174,25 @@ MonoBehaviour:
       m_Calls: []
   MaxHealth: 100
   CurrentHealth: 100
+--- !u!114 &3226988462694815490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321742242918250207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56262a4aba1a9494bb410113cc8a0c9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ArrowPrefab: {fileID: 5616596167360615223, guid: 47bca6578f3d69f46b3d19bf48802617, type: 3}
+  ArrowGFX: {fileID: 8838900286206021959}
+  BowPowerSlider: {fileID: 0}
+  Bow: {fileID: 2408754829830799664}
+  cooldownTime: 1
+  BowPower: 10
+  MaxBowCharge: 3
 --- !u!1 &1339216724328220318
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7133892196106211169}
   - component: {fileID: 8838900286206021959}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +265,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1591360013, guid: 661d71ba73ee9ee4394fc64a6bf4d836, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -267,7 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2408754829830799664}
   - component: {fileID: 6761816993873982745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BowPos2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +350,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 472206566, guid: c0a41602b1d27f74a9f4e805ead8cdbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -351,7 +371,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3451945506068226083}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}

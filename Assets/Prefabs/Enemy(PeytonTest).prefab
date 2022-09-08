@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8856026218504769661}
   m_Layer: 0
   m_Name: Enemy(PeytonTest)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 573ef16fab62d7b4f930050175b30798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   maxHealth: 30
 --- !u!61 &-1318996344840285848
 BoxCollider2D:
