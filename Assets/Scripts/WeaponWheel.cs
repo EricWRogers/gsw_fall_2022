@@ -64,10 +64,27 @@ public class WeaponWheel : MonoBehaviour
 
         DisplayArrowBox();
 
+        if(index - 3 > -1)
+        {
+            leftArrow.enabled = true;
+        }
+        else
+        {
+            leftArrow.enabled = false;
+        }
+        if(index + 3 < inventory.items.Count)
+        {
+            rightArrow.enabled = true;
+        }
+        else
+        {
+            rightArrow.enabled = false;
+        }
         if(farLeftBoxIndex > -1)
         {
             farLeftBox.itemholder.SetActive(true);
             DisplayFarLeftBox(farLeftBoxIndex);
+            
         }
         else{
             farLeftBox.itemholder.SetActive(false);

@@ -19,12 +19,14 @@ public class HudScript : MonoBehaviour
         {
             isWeaponWheelOpen = true;
             weaponWheel.SetActive(true);
+            Time.timeScale = 0;
         }
 
         else if(Input.GetButtonDown("WindowsButtonY") && isWeaponWheelOpen == true || Input.GetKeyDown(KeyCode.Tab) && isWeaponWheelOpen == true)
         {
             isWeaponWheelOpen = false;
             weaponWheel.SetActive(false);
+            Time.timeScale = 1;
         }
     }
 }
