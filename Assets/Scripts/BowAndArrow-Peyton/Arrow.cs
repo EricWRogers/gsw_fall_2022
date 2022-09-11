@@ -6,9 +6,10 @@ public class Arrow : MonoBehaviour
 {
     [HideInInspector] public float ArrowVelocity;
 
-    [HideInInspector] public float ArrowDamage;
+    [HideInInspector] public int ArrowDamage;
 
     [SerializeField] Rigidbody2D rb;
+    
 
     private void Start()
     {
@@ -26,7 +27,9 @@ public class Arrow : MonoBehaviour
         {
             Debug.Log("Enemy Attacked");
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.TakeDamage(ArrowDamage);
+
+            //enemy.TakeDamage(ArrowDamage);
+            collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(ArrowDamage); //Logans Code. Works with Erics Health Script.
         }
         Destroy(gameObject); //destroys arrows when they hit something
     }

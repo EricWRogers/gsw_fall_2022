@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 453878176317104324}
   - component: {fileID: 1032420056230997715}
   - component: {fileID: -6666923185864850578}
+  - component: {fileID: -5015995490209480695}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -98,7 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 465f6df4170443543a8b73471a29928f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  AIArcher: {fileID: 277452314448317194, guid: aeb4410ec32d4104f976510248de9028, type: 3}
+  arrowDamage: 10
+  speed: 10
   rb: {fileID: -6666923185864850578}
 --- !u!50 &-6666923185864850578
 Rigidbody2D:
@@ -121,3 +124,29 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &-5015995490209480695
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999425503580659139}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
