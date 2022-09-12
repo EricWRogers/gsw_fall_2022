@@ -33,6 +33,7 @@ public class WeaponWheel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Checks for if the right or left bumper is pushed to cycle through the inventory menu.
         if(Input.GetButtonDown("WindowsLeftBumper") || Input.GetKeyDown(KeyCode.A))
         {
             inventory.currentItem --;
@@ -64,6 +65,7 @@ public class WeaponWheel : MonoBehaviour
 
         DisplayArrowBox();
 
+        //Checks to see if the the arrows showing more items are in the inventory need to be displayed or not.
         if(index - 3 > -1)
         {
             leftArrow.enabled = true;
@@ -146,8 +148,8 @@ public class WeaponWheel : MonoBehaviour
 
         itemName.text = inventory.items[index].itemStats.itemName;
         itemDescription.text = inventory.items[index].itemStats.description;
-        damageText.text = "Damage: " +inventory.items[index].itemStats.damage ;
-        attackSpeedText.text = "Attack Speed: " + inventory.items[index].itemStats.attackSpeed;
+        //damageText.text = "Damage: " +inventory.items[index].itemStats.damage ;
+        //attackSpeedText.text = "Attack Speed: " + inventory.items[index].itemStats.attackSpeed;
     }
 
     public void DisplayLeftBox(int index)
