@@ -8,12 +8,15 @@ public class CustomAIMovement : MonoBehaviour
     private Transform target;
     private Transform playerTransform;
     public GameObject player;
+    private float distance;
     
+    public int meleeDamage;
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     public float pathUpdateSpeed = .2f;
     public float AOA = 100; //Area of Awareness
     public bool AOAToggle = false;
+    public float attackRange = 10; 
     public bool randomizerToggle = false;
     Path path;
     int currentWaypoint = 0;
@@ -42,6 +45,7 @@ public class CustomAIMovement : MonoBehaviour
 
     void FixedUpdate() //Ideal when working with physics
     {
+        Attack();
         if(path == null)
         {
             return;
@@ -57,13 +61,14 @@ public class CustomAIMovement : MonoBehaviour
             reachedEndOfPath = false;
         }
 
+
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         Vector2 force = direction * speed * Time.deltaTime;
         rb.AddForce(force);
         
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
-        if(distance < nextWaypointDistance)
+        if(distance < nextWaypointDistance && currentWaypoint < path.vectorPath.Count -1)
         {
             currentWaypoint++;
         }
@@ -80,7 +85,7 @@ public class CustomAIMovement : MonoBehaviour
 
     void UpdatePath()
     {
-        float distance = Vector2.Distance(target.position, transform.position);
+         distance = Vector2.Distance(target.position, transform.position);
 
         if(seeker.IsDone())
         {
@@ -95,13 +100,19 @@ public class CustomAIMovement : MonoBehaviour
         }
     }// End of UpdatePath
 
-    void OnDrawGizmosSelected() //Drawing AOA
+    void OnDrawGizmosSelected() 
     {
+        //Drawing AOA
         if(AOAToggle == true)
         {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, AOA);
         }
+
+       //Drawing melee attackRange
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        
     }
 
     void Randomizer()
@@ -110,5 +121,13 @@ public class CustomAIMovement : MonoBehaviour
         Debug.Log(speed);
         pathUpdateSpeed = Random.Range(.1f, 1f);
         Debug.Log(pathUpdateSpeed);
+    }
+
+    void Attack()
+    {
+        if(distance <= attackRange)
+        {
+           target.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(meleeDamage); //Logans Code. Works with Erics Health Script.
+        }
     }
 }//End of class

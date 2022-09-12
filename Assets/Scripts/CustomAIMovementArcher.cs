@@ -9,6 +9,8 @@ public class CustomAIMovementArcher : MonoBehaviour
     private Transform playerTransform;
     private Transform bowTransform;
     private bool shoot;
+    
+
     public Transform firingpoint;
     public Transform enemyGFX;
     public GameObject player;
@@ -39,6 +41,7 @@ public class CustomAIMovementArcher : MonoBehaviour
         {
             Randomizer();
         }
+        
         player = GameObject.Find("Player");
         target = player.GetComponent<Transform>();
         bowTransform = bow.GetComponent<Transform>();
@@ -132,7 +135,10 @@ public class CustomAIMovementArcher : MonoBehaviour
         Vector2 Direction;
         Direction = targetPos - (Vector2)transform.position;
         RaycastHit2D ray = Physics2D.Raycast(bow.transform.position, Direction);
-
+        if(ray == null)
+        {
+            return;
+        }
         if(ray.transform.name == "Player")
         {
             Debug.Log(ray.transform.name);
@@ -151,11 +157,13 @@ public class CustomAIMovementArcher : MonoBehaviour
         {
             if(force.x <= 0.01f)
             {
+                
                 enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
                 firingpoint.localScale = new Vector3(-1f, 1f, 1f);
             }
             else if(force.x >= -0.01f)
             {
+                
                 enemyGFX.localScale = new Vector3(1f, 1f, 1f);
                 firingpoint.localScale = new Vector3(1f, 1f, 1f);
             }
@@ -169,5 +177,9 @@ public class CustomAIMovementArcher : MonoBehaviour
             }
            
         }
+
+        
+
+       
 
 }//End of class
