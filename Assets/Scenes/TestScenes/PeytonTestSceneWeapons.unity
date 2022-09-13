@@ -331,6 +331,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3226988462694815490, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 1360684413}
+    - target: {fileID: 3226988462694815490, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: BowPowerSlider
       value: 
       objectReference: {fileID: 1182223331}
@@ -349,6 +353,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1360684413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7102116081381422283, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
+  m_PrefabInstance: {fileID: 1761260741}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1429837914
@@ -474,7 +489,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2174412056490973497, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5006181270179995995, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
       propertyPath: m_Name

@@ -34,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-
+        text.text = "Ammo: " + bowAmmo.ToString();
         if (Input.GetMouseButton(0) && CanFire)
         {
             ChargeBow();
