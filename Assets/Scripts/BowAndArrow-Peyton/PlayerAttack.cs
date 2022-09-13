@@ -57,11 +57,11 @@ public class PlayerAttack : MonoBehaviour
 
             BowPowerSlider.value = BowCharge;
         }
-        /*else
-        {
-            if (Input.GetMouseButtonUp(0) && bowAmmo <= 0)
+        
+        
+            if (bowAmmo == 0)
                 CanFire = false;
-        }   */ 
+        
     }
 
     void ChargeBow()
