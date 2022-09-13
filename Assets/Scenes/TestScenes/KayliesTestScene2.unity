@@ -469,13 +469,33 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
+      propertyPath: items.Array.data[0].itemStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 36999c89a438e474c997891190eea5b1, type: 2}
+    - target: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
+      propertyPath: items.Array.data[1].itemStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 1c9575e23b529e7429168090195e45c0, type: 2}
+    - target: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
+      propertyPath: items.Array.data[2].itemStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 41d8b03c9878a5e4094a18492147ac9e, type: 2}
+    - target: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
+      propertyPath: items.Array.data[3].itemStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bf1bb09fd9302847ab3665ec1bc57e2, type: 2}
+    - target: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
+      propertyPath: items.Array.data[4].itemStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 611e5661c5a8b9048a89ad7ad86ec9e9, type: 2}
+    - target: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
       propertyPath: items.Array.data[5].itemStats
       value: 
-      objectReference: {fileID: 11400000, guid: b6f30416a452faa479952bf374b7fe91, type: 2}
+      objectReference: {fileID: 11400000, guid: 36999c89a438e474c997891190eea5b1, type: 2}
     - target: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
       propertyPath: items.Array.data[6].itemStats
       value: 
-      objectReference: {fileID: 11400000, guid: 392f5789be9a7a042abb29a4762fa17a, type: 2}
+      objectReference: {fileID: 11400000, guid: b196e735105268f47a59db243b4502db, type: 2}
     - target: {fileID: 4663305082028920830, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
       propertyPath: m_Name
       value: Inventory

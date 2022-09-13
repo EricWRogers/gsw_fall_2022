@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Slider BowPowerSlider;
     [SerializeField] Transform Bow;
     [SerializeField] float cooldownTime;
+    [SerializeField] int ammo;
 
     [Range(0, 10)]
 

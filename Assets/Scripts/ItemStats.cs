@@ -8,9 +8,8 @@ public class ItemStats : ScriptableObject
     public string itemName;
     public string description;
     public Sprite icon;
-    public int damage;
-    public float attackSpeed;
     public int rarity;
+    public int cost;
 
 }
 

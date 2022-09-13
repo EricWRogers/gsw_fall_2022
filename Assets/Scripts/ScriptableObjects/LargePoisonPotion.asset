@@ -9,12 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e0f2043540cc164dbf431317e4ddb44, type: 3}
-  m_Name: Bow
+  m_Script: {fileID: 11500000, guid: a62afa8f0b6e08c4bbea270af5340f72, type: 3}
+  m_Name: LargePoisonPotion
   m_EditorClassIdentifier: 
-  itemName: Bow
-  description: Fire Fast
+  itemName: Large Poison Potion
+  description: A large poison potion that does lots of poison damage over time.
   icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  damage: 5
-  attackSpeed: 0
-  rarity: 2
+  rarity: 5
+  cost: 2222
+  damage: 100
+  duration: 50
+  range: 2
+  areaOfEffect: 5

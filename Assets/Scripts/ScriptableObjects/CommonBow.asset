@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32bdb453e93cd854792c730bdd967043, type: 3}
+  m_Name: CommonBow
+  m_EditorClassIdentifier: 
+  itemName: Common Bow
+  description: This is a common bow.
+  icon: {fileID: -1702399741, guid: c0a41602b1d27f74a9f4e805ead8cdbd, type: 3}
+  rarity: 1
+  cost: 100
+  damage: 5
+  fireRate: 5
+  coolDown: 6
+  range: 0

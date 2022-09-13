@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e0f2043540cc164dbf431317e4ddb44, type: 3}
-  m_Name: RareBow
+  m_Script: {fileID: 11500000, guid: e6a35c21ff4c4b4409b3ef6989c5933f, type: 3}
+  m_Name: SmallHealthPotion
   m_EditorClassIdentifier: 
-  itemName: Rare Bow
-  description: Even Rarer
+  itemName: Small Health Potion
+  description: Gives a small amount of health over a small amount of time.
   icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  damage: 50
-  attackSpeed: 5
-  rarity: 3
+  rarity: 1
+  cost: 10
+  healthAdded: 5
+  duration: 100
