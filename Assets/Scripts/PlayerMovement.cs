@@ -12,7 +12,9 @@ public class PlayerMovement : MonoBehaviour
     public float stamina = 100f;
     public float staminaDepleteTime;
     public float staminaRegenTime;
-    bool sprinting = false;
+
+    public bool sprinting = false;
+    public bool resting = false;
 
     public float movementSpeed;
     public float walkSpeed;
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
     }
- 
+
     // Update is called once per frame
     void Update()
     {
@@ -40,23 +42,39 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            
-            if (stamina > 0)
+            Debug.Log("debug");
+            if (resting == false)
             {
                 stamina -= Time.deltaTime * staminaDepleteTime;
                 sprinting = true;
+                if (stamina <= 0)
+                {
+                    resting = true;
+                }
             }
 
-            
+            if (resting == true)
+            {
+                sprinting = false;
+                if (stamina >= 100)
+                {
+                    resting = false;
+                }
+            }
+
+
+
+
+
+
         }
-        else
-        {
-            if (stamina < 100)
+        
+        
+            if (stamina < 100 && !sprinting)
             {
                 stamina += Time.deltaTime * staminaRegenTime;
             }
-            stamina = stamina;
-        }
+        
 
         //stamina = Mathf.Clamp01(stamina);
 
@@ -69,7 +87,19 @@ public class PlayerMovement : MonoBehaviour
             movementSpeed = walkSpeed;
         }
 
-        
+        if (resting)
+        {
+            if (stamina < 100)
+            {
+                sprinting = false;
+            }
+            else
+            {
+                resting = false;
+            }
+        }
+
+
 
         //set walk based on direction
         body.velocity = direction * movementSpeed;
