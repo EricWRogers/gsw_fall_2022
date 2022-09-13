@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Slider BowPowerSlider;
     [SerializeField] Transform Bow;
     [SerializeField] float cooldownTime;
+    [SerializeField] int bowAmmo;
 
     [Range(0, 10)]
 
@@ -38,6 +39,8 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetMouseButtonUp(0) && CanFire)
         {
             FireBow();
+            bowAmmo--; //ammo stuff
+            Debug.Log("Ammo left: " + bowAmmo);//ammo stuff
         }
         else
         {
@@ -54,6 +57,11 @@ public class PlayerAttack : MonoBehaviour
 
             BowPowerSlider.value = BowCharge;
         }
+        /*else
+        {
+            if (Input.GetMouseButtonUp(0) && bowAmmo <= 0)
+                CanFire = false;
+        }   */ 
     }
 
     void ChargeBow()
