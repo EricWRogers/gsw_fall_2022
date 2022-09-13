@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public bool sprinting = false;
     public bool resting = false;
 
-    public float movementSpeed;
+    private float movementSpeed;
     public float walkSpeed;
     public float sprintSpeed;
 
