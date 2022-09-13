@@ -200,11 +200,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  meleeDamage: 1
   speed: 800
   nextWaypointDistance: 3
   pathUpdateSpeed: 0.2
   AOA: 100
   AOAToggle: 0
+  attackRange: 2
   randomizerToggle: 1
 --- !u!70 &6926311925707614206
 CapsuleCollider2D:
