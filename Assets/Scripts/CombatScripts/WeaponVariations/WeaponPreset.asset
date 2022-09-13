@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: WeaponPreset
   m_EditorClassIdentifier: 
   WeaponDamage: 5
-  WeaponDurability: -1
+  WeaponDurability: 5
   HitBox: {fileID: 3244467609028053376, guid: 6c4458ab912ac6646815f3486c590886, type: 3}

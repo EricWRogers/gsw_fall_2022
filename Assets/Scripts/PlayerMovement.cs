@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float staminaRegenTime;
     bool sprinting = false;
 
-    public float movementSpeed;
+    private float movementSpeed;
     public float walkSpeed;
     public float sprintSpeed;
 

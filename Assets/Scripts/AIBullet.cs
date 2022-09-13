@@ -23,10 +23,15 @@ public class AIBullet : MonoBehaviour
 
    void OnTriggerEnter2D(Collider2D hitInfo)
    {
-    if(hitInfo.CompareTag("Player"))
-    {
+        if(hitInfo.CompareTag("Player"))
+        {
         hitInfo.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(arrowDamage); //Logans Code. Works with Erics Health Script.
         Destroy(gameObject);
+        }
+        else if (hitInfo.CompareTag("Shield"))
+        {
+           Destroy(gameObject);
+        }
+        
     }
-   }
 }
