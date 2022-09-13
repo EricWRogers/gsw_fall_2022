@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Transform Bow;
     [SerializeField] float cooldownTime;
     [SerializeField] int bowAmmo;
+    public TMP_Text text;
 
     [Range(0, 10)]
 
@@ -32,6 +34,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetMouseButton(0) && CanFire)
         {
             ChargeBow();

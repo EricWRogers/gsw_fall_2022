@@ -472,9 +472,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2174412056490973497, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5006181270179995995, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
       propertyPath: m_Name
-      value: BowSlider
+      value: BowSliderAndAmmoCounter
+      objectReference: {fileID: 0}
+    - target: {fileID: 5006181270179995998, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5006181270179995999, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
       propertyPath: m_Pivot.x
@@ -563,6 +571,22 @@ PrefabInstance:
     - target: {fileID: 5006181270613762488, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102116081381422283, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102116081381422283, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102116081381422283, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.1348741
+      objectReference: {fileID: 0}
+    - target: {fileID: 7102116081381422283, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278255394
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
