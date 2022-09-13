@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] Slider StaminaSlider;
 
     public Rigidbody2D body;
     public SpriteRenderer spriteRenderer;
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("debug");
             if (resting == false)
             {
+                
                 stamina -= Time.deltaTime * staminaDepleteTime;
                 sprinting = true;
                 if (stamina <= 0)
@@ -72,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
         
             if (stamina < 100 && !sprinting)
             {
+
                 stamina += Time.deltaTime * staminaRegenTime;
             }
         
@@ -106,6 +110,8 @@ public class PlayerMovement : MonoBehaviour
 
         //bow and arrow control
         RotateHand();
+        StaminaSlider.value = stamina;
+
     }
 
     //bow and arrow control
