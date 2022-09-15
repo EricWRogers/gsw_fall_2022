@@ -15,6 +15,8 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] int bowAmmo;
     public TMP_Text text;
 
+    public Inventory Inv;
+
     [Range(0, 10)]
 
     [SerializeField] float BowPower;
@@ -28,12 +30,14 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
+        Inv.arrowAmount = bowAmmo;
         BowPowerSlider.value = 0f;
         BowPowerSlider.maxValue = MaxBowCharge;
     }
 
     private void Update()
     {
+
         text.text = "Ammo: " + bowAmmo.ToString();
         if (Input.GetMouseButton(0) && CanFire)
         {
@@ -42,7 +46,8 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetMouseButtonUp(0) && CanFire)
         {
             FireBow();
-            bowAmmo--; //ammo stuff
+            bowAmmo--;
+            Inv.arrowAmount = bowAmmo;//ammo stuff
             Debug.Log("Ammo left: " + bowAmmo);//ammo stuff
         }
         else
