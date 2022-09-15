@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+   public string sceneName; //We can now input the scene we want to go to
+
    public void PlayGame ()
    {
-		  SceneManager.LoadScene("Logan'sTestScenePath"); //Name of the Scene
+		  SceneManager.LoadScene(sceneName); //Name of the Scene
    }
    public void QuitGame ()
    {

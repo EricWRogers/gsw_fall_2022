@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] Slider StaminaSlider;
 
     public Rigidbody2D body;
     public SpriteRenderer spriteRenderer;
@@ -12,9 +14,11 @@ public class PlayerMovement : MonoBehaviour
     public float stamina = 100f;
     public float staminaDepleteTime;
     public float staminaRegenTime;
-    bool sprinting = false;
 
-    public float movementSpeed;
+    public bool sprinting = false;
+    public bool resting = false;
+
+    private float movementSpeed;
     public float walkSpeed;
     public float sprintSpeed;
 
@@ -27,9 +31,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
- 
+
     // Update is called once per frame
     void Update()
     {
@@ -40,23 +44,41 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            
-            if (stamina > 0)
+            Debug.Log("debug");
+            if (resting == false)
             {
+                
                 stamina -= Time.deltaTime * staminaDepleteTime;
                 sprinting = true;
+                if (stamina <= 0)
+                {
+                    resting = true;
+                }
             }
 
-            
-        }
-        else
-        {
-            if (stamina < 100)
+            if (resting == true)
             {
+                sprinting = false;
+                if (stamina >= 100)
+                {
+                    resting = false;
+                }
+            }
+
+
+
+
+
+
+        }
+        
+        
+            if (stamina < 100 && !sprinting)
+            {
+
                 stamina += Time.deltaTime * staminaRegenTime;
             }
-            stamina = stamina;
-        }
+        
 
         //stamina = Mathf.Clamp01(stamina);
 
@@ -69,13 +91,27 @@ public class PlayerMovement : MonoBehaviour
             movementSpeed = walkSpeed;
         }
 
-        
+        if (resting)
+        {
+            if (stamina < 100)
+            {
+                sprinting = false;
+            }
+            else
+            {
+                resting = false;
+            }
+        }
+
+
 
         //set walk based on direction
         body.velocity = direction * movementSpeed;
 
         //bow and arrow control
         RotateHand();
+        StaminaSlider.value = stamina;
+
     }
 
     //bow and arrow control
