@@ -1,3 +1,4 @@
+using System.Text;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,8 +19,9 @@ public class WeaponWheel : MonoBehaviour
 
     public TMP_Text itemName;
     public TMP_Text itemDescription;
-    public TMP_Text damageText;
-    public TMP_Text attackSpeedText;
+    public TMP_Text statsText;
+    //public TMP_Text damageText;
+    //public TMP_Text attackSpeedText;
 
     public Inventory inventory;
 
@@ -33,6 +35,7 @@ public class WeaponWheel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Checks for if the right or left bumper is pushed to cycle through the inventory menu.
         if(Input.GetButtonDown("WindowsLeftBumper") || Input.GetKeyDown(KeyCode.A))
         {
             inventory.currentItem --;
@@ -64,6 +67,7 @@ public class WeaponWheel : MonoBehaviour
 
         DisplayArrowBox();
 
+        //Checks to see if the the arrows showing more items are in the inventory need to be displayed or not.
         if(index - 3 > -1)
         {
             leftArrow.enabled = true;
@@ -146,8 +150,52 @@ public class WeaponWheel : MonoBehaviour
 
         itemName.text = inventory.items[index].itemStats.itemName;
         itemDescription.text = inventory.items[index].itemStats.description;
-        damageText.text = "Damage: " +inventory.items[index].itemStats.damage ;
-        attackSpeedText.text = "Attack Speed: " + inventory.items[index].itemStats.attackSpeed;
+
+        // clear stuff
+        statsText.text = "";
+
+        //Display Information if item is a Sword
+        if(inventory.items[index].itemStats is SwordStats)
+        {
+            SwordStats swordStats = (SwordStats)inventory.items[index].itemStats;
+            statsText.text = "Damage: " + swordStats.damage + " | Attack Speed: " + swordStats.attackSpeed;
+        }
+
+        //Display Information if item is a Bow
+        if(inventory.items[index].itemStats is BowStats)
+        {
+            BowStats bowStats = (BowStats)inventory.items[index].itemStats;
+            statsText.text = "Damage: " + bowStats.damage + " | Fire Rate: " + bowStats.fireRate + " | Cooldown: " + bowStats.coolDown + " | Range: " + bowStats.range;
+        }
+
+        //Display Information if item is a Poison Potion
+        if(inventory.items[index].itemStats is PoisonPotionStats)
+        {
+            PoisonPotionStats poisonPotionStats = (PoisonPotionStats)inventory.items[index].itemStats;
+            statsText.text = "Damage: " + poisonPotionStats.damage + " | Duration: " + poisonPotionStats.duration + " | AOE: " + poisonPotionStats.areaOfEffect + " | Range: " + poisonPotionStats.range;
+        }
+
+        //Display Information if item is a Health Potion
+        if(inventory.items[index].itemStats is HealthPotionStats)
+        {
+            HealthPotionStats healthPotionStats = (HealthPotionStats)inventory.items[index].itemStats;
+            statsText.text = "Health: " + healthPotionStats.healthAdded + " | Duration: " + healthPotionStats.duration;
+        }
+
+        //Display Information if item is a Combust Potion
+        if(inventory.items[index].itemStats is CombustPotionStats)
+        {
+            CombustPotionStats combustPotionStats = (CombustPotionStats)inventory.items[index].itemStats;
+            statsText.text = "Damage: " + combustPotionStats.damage + " | AOE: " + combustPotionStats.areaOfEffect + " | Range: " + combustPotionStats.range ;
+        }
+
+        //Display Information if item is a FirePotionStats
+        if(inventory.items[index].itemStats is FirePotionStats)
+        {
+            FirePotionStats firePotionStats = (FirePotionStats)inventory.items[index].itemStats;
+            statsText.text = "Damage: " + firePotionStats.damage + " | Durartion: " + firePotionStats.duration + " | Strength: " + firePotionStats.strength + " | Range: " + firePotionStats.range + " | Fire Spread: " + firePotionStats.fireSpread;
+        }
+
     }
 
     public void DisplayLeftBox(int index)

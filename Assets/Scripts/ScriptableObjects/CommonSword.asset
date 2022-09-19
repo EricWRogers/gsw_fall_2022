@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4177269d43f4824448278984526b4d5c, type: 3}
+  m_Name: CommonSword
+  m_EditorClassIdentifier: 
+  itemName: Common Sword
+  description: A Common Sword wih Damage {2}
+  icon: {fileID: 21300000, guid: 55ea8a07d24cec3b490df59b8ff3884b, type: 3}
+  rarity: 1
+  cost: 100
+  damage: 5
+  attackSpeed: 5

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] Slider BowPowerSlider;
     [SerializeField] Transform Bow;
     [SerializeField] float cooldownTime;
+    [SerializeField] int bowAmmo;
+    public TMP_Text text;
+
+    public Inventory Inv;
 
     [Range(0, 10)]
 
@@ -25,12 +30,15 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
+        Inv.arrowAmount = bowAmmo;
         BowPowerSlider.value = 0f;
         BowPowerSlider.maxValue = MaxBowCharge;
     }
 
     private void Update()
     {
+
+        text.text = "Ammo: " + bowAmmo.ToString();
         if (Input.GetMouseButton(0) && CanFire)
         {
             ChargeBow();
@@ -38,6 +46,9 @@ public class PlayerAttack : MonoBehaviour
         else if (Input.GetMouseButtonUp(0) && CanFire)
         {
             FireBow();
+            bowAmmo--;
+            Inv.arrowAmount = bowAmmo;//ammo stuff
+            Debug.Log("Ammo left: " + bowAmmo);//ammo stuff
         }
         else
         {
@@ -54,6 +65,11 @@ public class PlayerAttack : MonoBehaviour
 
             BowPowerSlider.value = BowCharge;
         }
+        
+        
+            if (bowAmmo == 0)
+                CanFire = false;
+        
     }
 
     void ChargeBow()

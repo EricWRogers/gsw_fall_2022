@@ -135,11 +135,7 @@ public class CustomAIMovementArcher : MonoBehaviour
         Vector2 Direction;
         Direction = targetPos - (Vector2)transform.position;
         RaycastHit2D ray = Physics2D.Raycast(bow.transform.position, Direction);
-        if(ray == null)
-        {
-            return;
-        }
-        if(ray.transform.name == "Player")
+        if(ray.transform.gameObject != null && ray.transform.gameObject.tag == "Player")
         {
             Debug.Log(ray.transform.name);
             bow.transform.up = Direction;

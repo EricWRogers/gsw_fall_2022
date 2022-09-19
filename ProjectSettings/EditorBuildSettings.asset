@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScenes/KatiesTestScene.unity
     guid: f9b9a631ca6e88e4a8afabb7d61f89c0
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/Logan'sTestScenePath.unity
     guid: 0ad5508c6424d534ab042f3f49d23ca6
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/LogansLevelOnePrototype.unity
+    guid: 3558e3046d5da1644afb57638187e879
   m_configObjects: {}
