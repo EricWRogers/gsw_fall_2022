@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
 {
-    public bool aoecheck = false;
+    /*public bool aoecheck = false;
     public WeaponScriptableObjects CurrentWeapon;
     public GameObject HitBoxOffset;
     
@@ -50,5 +50,20 @@ public class WeaponManager : MonoBehaviour
     {
         HitEnemies();
 
+    }
+}*/
+    private Transform target;
+    
+    private float distance;
+    private float attackRange;
+    public int meleeDamage;
+
+
+    void Attack()
+    {
+        if (distance <= attackRange)
+        {
+            target.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(meleeDamage); //Logans Code. Works with Erics Health Script.
+        }
     }
 }
