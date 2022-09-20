@@ -23,13 +23,13 @@ public class ThrowingKnife : MonoBehaviour
     /*private void Update()
     {
 
-        text.text = "Ammo: " + knifeAmmo.ToString();
-        if (Input.GetMouseButtonUp(1) && CanThrow)
+        text.text = "Ammo: " + knifeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
+        if (Input.GetMouseButtonDown(1) && CanThrow)
         {
             ThrowKnife();
             knifeAmmo--;
-            Inv.arrowAmount = knifeAmmo;//ammo stuff
-            Debug.Log("Ammo left: " + knifeAmmo);//ammo stuff
+            Inv.arrowAmount = knifeAmmo;//ammo in inventory is the ammo count that is used
+            Debug.Log("Ammo left: " + knifeAmmo);//how much ammo is left
         }
 
         if (knifeAmmo == 0)
@@ -60,8 +60,8 @@ public class ThrowingKnife : MonoBehaviour
             Debug.Log("Enemy Attacked");
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
-            //enemy.TakeDamage(ArrowDamage);
-            collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(ArrowDamage); //Logans Code. Works with Erics Health Script.
+            //enemy.TakeDamage(knifeDamage);
+            collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(knifeDamage); //Logans Code. Works with Erics Health Script.
         }
         Destroy(gameObject); //destroys knives when they hit something
     }*/

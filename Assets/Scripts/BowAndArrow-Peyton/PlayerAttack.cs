@@ -38,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
 
-        text.text = "Ammo: " + bowAmmo.ToString();
+        text.text = "Ammo: " + bowAmmo.ToString(); //for ammo counter, will count down as ammo decreases
         if (Input.GetMouseButton(0) && CanFire)
         {
             ChargeBow();
@@ -47,8 +47,8 @@ public class PlayerAttack : MonoBehaviour
         {
             FireBow();
             bowAmmo--;
-            Inv.arrowAmount = bowAmmo;//ammo stuff
-            Debug.Log("Ammo left: " + bowAmmo);//ammo stuff
+            Inv.arrowAmount = bowAmmo;//ammo in inventory is the ammo count that is used
+            Debug.Log("Ammo left: " + bowAmmo);//how much ammo is left
         }
         else
         {
