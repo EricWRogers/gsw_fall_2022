@@ -9,6 +9,7 @@ public class ThrowingKnife : MonoBehaviour
 
     [SerializeField] int knifeDamage;
     [SerializeField] int knifeAmmo;
+    [SerializeField] SpriteRenderer KnifeGFX;
 
     /*public TMP_Text text;
     public Inventory Inv;
@@ -50,7 +51,7 @@ public class ThrowingKnife : MonoBehaviour
         Arrow.ArrowDamage = (int)Mathf.Ceil(ArrowDamage);
 
         CanThrow = false;
-        ArrowGFX.enabled = false;
+        KnifeGFX.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
