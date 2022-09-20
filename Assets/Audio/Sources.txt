@@ -19,6 +19,8 @@
 
 (coinPickup) https://freesound.org/people/Cedimedi/sounds/550289/
 
+(tradecoins) https://freesound.org/people/StormwaveAudio/sounds/614069/
+
 (molotov) https://freesound.org/people/Benboncan/sounds/74899/
 
 (oBwFire) https://freesound.org/people/Hanbaal/sounds/178872/
