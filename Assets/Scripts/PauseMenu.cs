@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour{
    public GameObject pauseMenuUI;
 
    void Update(){
-		  if(Input.GetKey(KeyCode.Escape))
+		  if(Input.GetKeyDown(KeyCode.Escape))
 		  {
 				if (GameIsPaused)
 				{
@@ -24,14 +24,14 @@ public class PauseMenu : MonoBehaviour{
    void Resume ()
    {
 		  pauseMenuUI.SetActive(false);
-		  Time.timeScale = 1f;
+		  Time.timeScale = 1.0f;
 		  GameIsPaused = false;
    }
 
    void Pause()
    {
 		  pauseMenuUI.SetActive(true);
-		  Time.timeScale = 0f;
+		  Time.timeScale = 0.0f;
 		  GameIsPaused = true;
    }
 }
