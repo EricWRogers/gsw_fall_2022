@@ -46,14 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentItem: 0
   items:
-  - itemStats: {fileID: 11400000, guid: ae3804a906139994bb0f9289705aba89, type: 2}
+  - itemStats: {fileID: 11400000, guid: 36999c89a438e474c997891190eea5b1, type: 2}
     quanity: 20
-  - itemStats: {fileID: 11400000, guid: 0c6e638e0aedc2844966dc9fe7adfddc, type: 2}
+  - itemStats: {fileID: 11400000, guid: 1c9575e23b529e7429168090195e45c0, type: 2}
     quanity: 0
-  - itemStats: {fileID: 11400000, guid: 61d5a0302aeed5b498fde1b73312d69e, type: 2}
+  - itemStats: {fileID: 11400000, guid: 41d8b03c9878a5e4094a18492147ac9e, type: 2}
     quanity: 1
-  - itemStats: {fileID: 11400000, guid: 798c496daf69a024a810b985ac6da0cf, type: 2}
+  - itemStats: {fileID: 11400000, guid: 8bf1bb09fd9302847ab3665ec1bc57e2, type: 2}
     quanity: 1
-  - itemStats: {fileID: 11400000, guid: 798c496daf69a024a810b985ac6da0cf, type: 2}
+  - itemStats: {fileID: 11400000, guid: 611e5661c5a8b9048a89ad7ad86ec9e9, type: 2}
     quanity: 1
+  - itemStats: {fileID: 11400000, guid: 36999c89a438e474c997891190eea5b1, type: 2}
+    quanity: 5
+  - itemStats: {fileID: 11400000, guid: b196e735105268f47a59db243b4502db, type: 2}
+    quanity: 10
   arrowAmount: 0
