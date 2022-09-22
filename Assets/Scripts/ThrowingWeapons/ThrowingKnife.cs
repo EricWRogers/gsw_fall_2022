@@ -6,10 +6,12 @@ using TMPro;
 
 public class ThrowingKnife : MonoBehaviour
 {
-
+    [SerializeField] GameObject ThrowingKnifePrefab;
     [SerializeField] int knifeDamage;
     [SerializeField] int knifeAmmo;
     [SerializeField] SpriteRenderer KnifeGFX;
+    [SerializeField] Transform Knife;
+    [SerializeField] float KnifeSpeed;
 
     public TMP_Text text;
     public Inventory Inv;
@@ -27,7 +29,7 @@ public class ThrowingKnife : MonoBehaviour
         text.text = "Ammo: " + knifeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
         if (Input.GetMouseButtonDown(1) && CanThrow)
         {
-            //ThrowKnife();
+            ThrowKnife();
             knifeAmmo--;
             Inv.arrowAmount = knifeAmmo;//ammo in inventory is the ammo count that is used
             Debug.Log("Ammo left: " + knifeAmmo);//how much ammo is left
@@ -38,20 +40,22 @@ public class ThrowingKnife : MonoBehaviour
 
     }
     
-    /*void ThrowKnife()
+    void ThrowKnife()
     {
 
         Debug.Log("Knife Damage: " + knifeDamage);
 
-        float angle = Utility.AngleTowardsMouse(Bow.position);
+        float angle = Utility.AngleTowardsMouse(Knife.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
 
-        Arrow Arrow = Instantiate(ArrowPrefab, Bow.position, rot).GetComponent<Arrow>();
-        Arrow.knifeDamage = (int)Mathf.Ceil(knifeDamage);
+        Throw Throw = Instantiate(ThrowingKnifePrefab, Knife.position, rot).GetComponent<Throw>();
+        knifeDamage = (int)Mathf.Ceil(knifeDamage);
 
-        CanThrow = false;
+        Throw.KnifeVelocity = KnifeSpeed;
+
+        //CanThrow = false;
         KnifeGFX.enabled = false;
-    }*/
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
