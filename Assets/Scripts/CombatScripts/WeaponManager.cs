@@ -55,10 +55,27 @@ public class WeaponManager : MonoBehaviour
     private Transform target;
     
     private float distance;
-    private float attackRange;
+    private float attackRange = 10;
     public int meleeDamage;
 
+   void UpdatePath()
+    {
+        distance = Vector2.Distance(target.position, transform.position);
+    }
 
+
+    void OnDrawGizmosSelected()
+    {
+
+        //Drawing melee attackRange
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+
+    }
+void Update()
+{
+    Attack();
+}
     void Attack()
     {
         if (distance <= attackRange)
@@ -67,3 +84,4 @@ public class WeaponManager : MonoBehaviour
         }
     }
 }
+
