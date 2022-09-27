@@ -25,6 +25,8 @@ public class CustomAIMovement : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
+    public GameObject[] lootTable;
+
 
 
     // Start is called before the first frame update
@@ -129,5 +131,26 @@ public class CustomAIMovement : MonoBehaviour
         {
            target.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(meleeDamage); //Logans Code. Works with Erics Health Script.
         }
+    }
+
+    public void DropItem()
+    {
+        float weight = Random.Range(0f, 10f);
+
+        if(weight >= 1 && weight <= 4 )
+        {
+           GameObject temp = Instantiate(lootTable[0], gameObject.transform.position, gameObject.transform.rotation);
+        }
+
+        if (weight >= 4 && weight <= 6)
+        {
+            GameObject temp = Instantiate(lootTable[1], gameObject.transform.position, gameObject.transform.rotation);
+        }
+
+        if (weight >= 6 && weight <= 10)
+        {
+            GameObject temp = Instantiate(lootTable[2], gameObject.transform.position, gameObject.transform.rotation);
+        }
+
     }
 }//End of class

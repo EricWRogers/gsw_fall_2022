@@ -20,7 +20,6 @@ public class ThrowingKnife : MonoBehaviour
     private void Start()
     {
         Inv.arrowAmount = knifeAmmo;
-        Destroy(gameObject, 2.5f);
     }
 
     private void Update()
@@ -43,7 +42,7 @@ public class ThrowingKnife : MonoBehaviour
     void ThrowKnife()
     {
 
-        Debug.Log("Knife Damage: " + knifeDamage);
+        Debug.Log("Knife Damage: " + knifeDamage); //prints out how much damage each knife is doing/going to do
 
         float angle = Utility.AngleTowardsMouse(Knife.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
@@ -53,7 +52,7 @@ public class ThrowingKnife : MonoBehaviour
 
         Throw.KnifeVelocity = KnifeSpeed;
 
-        //CanThrow = false;
+        //CanThrow = false; //don't uncomment
         KnifeGFX.enabled = false;
     }
 
@@ -63,9 +62,10 @@ public class ThrowingKnife : MonoBehaviour
         {
             Debug.Log("Enemy Attacked");
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-
+            enemy.health -= 100;
             //enemy.TakeDamage(knifeDamage);
             collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(knifeDamage); //Logans Code. Works with Erics Health Script.
+            Debug.Log(collision);
         }
         Destroy(gameObject); //destroys knives when they hit something
     }
