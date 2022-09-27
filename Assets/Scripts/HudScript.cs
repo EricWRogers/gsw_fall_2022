@@ -15,14 +15,14 @@ public class HudScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("WindowsButtonY") && isWeaponWheelOpen == false || Input.GetKeyDown(KeyCode.Tab) && isWeaponWheelOpen == false)
+        if(Input.GetButtonDown("WeaponWheelOpen") && isWeaponWheelOpen == false || Input.GetKeyDown(KeyCode.Tab) && isWeaponWheelOpen == false)
         {
             isWeaponWheelOpen = true;
             weaponWheel.SetActive(true);
             Time.timeScale = 0;
         }
 
-        else if(Input.GetButtonDown("WindowsButtonY") && isWeaponWheelOpen == true || Input.GetKeyDown(KeyCode.Tab) && isWeaponWheelOpen == true)
+        else if(Input.GetButtonDown("WeaponWheelOpen") && isWeaponWheelOpen == true || Input.GetKeyDown(KeyCode.Tab) && isWeaponWheelOpen == true)
         {
             isWeaponWheelOpen = false;
             weaponWheel.SetActive(false);
