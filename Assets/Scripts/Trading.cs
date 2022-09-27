@@ -21,6 +21,10 @@ public class Trading : MonoBehaviour
     public TMP_Text costText;
 
     public Inventory inventory;
+    public Inventory tradingInventory;
+    public PickupSystem pickupSystem;
+
+    public int tradingCurrentItem;
 
 
 
@@ -37,26 +41,33 @@ public class Trading : MonoBehaviour
         //Checks for if the right or left bumper is pushed to cycle through the inventory menu.
         if(Input.GetButtonDown("WindowsLeftBumper") || Input.GetKeyDown(KeyCode.A))
         {
-            inventory.currentItem --;
+            tradingInventory.currentItem --;
         }
         if(Input.GetButtonDown("WindowsRightBumper") || Input.GetKeyDown(KeyCode.D))
         {
-            inventory.currentItem ++;
+            tradingInventory.currentItem ++;
         }
 
-        inventory.currentItem = Mathf.Clamp(inventory.currentItem, 0, inventory.items.Count - 1);
+        tradingInventory.currentItem = Mathf.Clamp(tradingInventory.currentItem, 0, tradingInventory.items.Count - 1);
 
-        UpdateWeaponWheel(inventory.currentItem);
+        UpdateWeaponWheel(tradingInventory.currentItem);
+
+        if(Input.GetButtonDown("TradingBuy") || Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("AAAAAAAAA");
+            Buy(inventory.currency);
+        }
+        
     }
 
     public void UpdateWeaponWheel(int index)
     {
-        if (inventory.items.Count == 0)
+        if (tradingInventory.items.Count == 0)
         {
-            Debug.LogError("inventory empty");
+            Debug.LogError("tradingInventory empty");
         }
 
-        index = Mathf.Clamp(index, 0, inventory.items.Count - 1);
+        index = Mathf.Clamp(index, 0, tradingInventory.items.Count - 1);
 
         int leftBoxIndex = index - 1;
         int middleBoxIndex = index;
@@ -72,7 +83,7 @@ public class Trading : MonoBehaviour
         {
             leftArrow.enabled = false;
         }
-        if(index + 2 < inventory.items.Count)
+        if(index + 2 < tradingInventory.items.Count)
         {
             rightArrow.enabled = true;
         }
@@ -91,7 +102,7 @@ public class Trading : MonoBehaviour
             leftBox.itemholder.SetActive(false);
         }
         
-        if(-1 < index && index < inventory.items.Count)
+        if(-1 < index && index < tradingInventory.items.Count)
         {
             middleBox.itemholder.SetActive(true);
             DisplayMiddleBox(middleBoxIndex);
@@ -101,7 +112,7 @@ public class Trading : MonoBehaviour
         }
 
 
-        if(rightBoxIndex < inventory.items.Count)
+        if(rightBoxIndex < tradingInventory.items.Count)
         {
             rightBox.itemholder.SetActive(true);
             DisplayRightBox(rightBoxIndex);
@@ -114,13 +125,13 @@ public class Trading : MonoBehaviour
 
     public void DisplayMiddleBox(int index)
     {
-        middleBox.itemIcon.sprite = inventory.items[index].itemStats.icon;
-        costText.text = "Cost: " + inventory.items[index].itemStats.cost;
-        if(inventory.items[index].quanity > 1)
+        middleBox.itemIcon.sprite = tradingInventory.items[index].itemStats.icon;
+        costText.text = "Cost: " + tradingInventory.items[index].itemStats.cost;
+        if(tradingInventory.items[index].quanity > 1)
         {
             middleBox.quanityText.gameObject.SetActive(true);
             middleBox.quanityBox.gameObject.SetActive(true);
-            middleBox.quanityText.text = inventory.items[index].quanity + "";
+            middleBox.quanityText.text = tradingInventory.items[index].quanity + "";
         }
         else
         {
@@ -129,51 +140,51 @@ public class Trading : MonoBehaviour
         }
 
 
-        itemName.text = inventory.items[index].itemStats.itemName;
-        itemDescription.text = inventory.items[index].itemStats.description;
+        itemName.text = tradingInventory.items[index].itemStats.itemName;
+        itemDescription.text = tradingInventory.items[index].itemStats.description;
 
         // clear stuff
         statsText.text = "";
 
         //Display Information if item is a Sword
-        if(inventory.items[index].itemStats is SwordStats)
+        if(tradingInventory.items[index].itemStats is SwordStats)
         {
-            SwordStats swordStats = (SwordStats)inventory.items[index].itemStats;
+            SwordStats swordStats = (SwordStats)tradingInventory.items[index].itemStats;
             statsText.text = "Damage: " + swordStats.damage + " | Attack Speed: " + swordStats.attackSpeed;
         }
 
         //Display Information if item is a Bow
-        if(inventory.items[index].itemStats is BowStats)
+        if(tradingInventory.items[index].itemStats is BowStats)
         {
-            BowStats bowStats = (BowStats)inventory.items[index].itemStats;
+            BowStats bowStats = (BowStats)tradingInventory.items[index].itemStats;
             statsText.text = "Damage: " + bowStats.damage + " | Fire Rate: " + bowStats.fireRate + " | Cooldown: " + bowStats.coolDown + " | Range: " + bowStats.range;
         }
 
         //Display Information if item is a Poison Potion
-        if(inventory.items[index].itemStats is PoisonPotionStats)
+        if(tradingInventory.items[index].itemStats is PoisonPotionStats)
         {
-            PoisonPotionStats poisonPotionStats = (PoisonPotionStats)inventory.items[index].itemStats;
+            PoisonPotionStats poisonPotionStats = (PoisonPotionStats)tradingInventory.items[index].itemStats;
             statsText.text = "Damage: " + poisonPotionStats.damage + " | Duration: " + poisonPotionStats.duration + " | AOE: " + poisonPotionStats.areaOfEffect + " | Range: " + poisonPotionStats.range;
         }
 
         //Display Information if item is a Health Potion
-        if(inventory.items[index].itemStats is HealthPotionStats)
+        if(tradingInventory.items[index].itemStats is HealthPotionStats)
         {
-            HealthPotionStats healthPotionStats = (HealthPotionStats)inventory.items[index].itemStats;
+            HealthPotionStats healthPotionStats = (HealthPotionStats)tradingInventory.items[index].itemStats;
             statsText.text = "Health: " + healthPotionStats.healthAdded + " | Duration: " + healthPotionStats.duration;
         }
 
         //Display Information if item is a Combust Potion
-        if(inventory.items[index].itemStats is CombustPotionStats)
+        if(tradingInventory.items[index].itemStats is CombustPotionStats)
         {
-            CombustPotionStats combustPotionStats = (CombustPotionStats)inventory.items[index].itemStats;
+            CombustPotionStats combustPotionStats = (CombustPotionStats)tradingInventory.items[index].itemStats;
             statsText.text = "Damage: " + combustPotionStats.damage + " | AOE: " + combustPotionStats.areaOfEffect + " | Range: " + combustPotionStats.range ;
         }
 
         //Display Information if item is a FirePotionStats
-        if(inventory.items[index].itemStats is FirePotionStats)
+        if(tradingInventory.items[index].itemStats is FirePotionStats)
         {
-            FirePotionStats firePotionStats = (FirePotionStats)inventory.items[index].itemStats;
+            FirePotionStats firePotionStats = (FirePotionStats)tradingInventory.items[index].itemStats;
             statsText.text = "Damage: " + firePotionStats.damage + " | Durartion: " + firePotionStats.duration + " | Strength: " + firePotionStats.strength + " | Range: " + firePotionStats.range + " | Fire Spread: " + firePotionStats.fireSpread;
         }
 
@@ -181,13 +192,13 @@ public class Trading : MonoBehaviour
 
     public void DisplayLeftBox(int index)
     {
-        leftBox.itemIcon.sprite = inventory.items[index].itemStats.icon;
-        leftBox.quanityText.text = inventory.items[index].quanity + "";
-        if(inventory.items[index].quanity > 1)
+        leftBox.itemIcon.sprite = tradingInventory.items[index].itemStats.icon;
+        leftBox.quanityText.text = tradingInventory.items[index].quanity + "";
+        if(tradingInventory.items[index].quanity > 1)
         {
             leftBox.quanityText.gameObject.SetActive(true);
             leftBox.quanityBox.gameObject.SetActive(true);
-            leftBox.quanityText.text = inventory.items[index].quanity + "";
+            leftBox.quanityText.text = tradingInventory.items[index].quanity + "";
         }
         else
         {
@@ -198,13 +209,13 @@ public class Trading : MonoBehaviour
 
     public void DisplayRightBox(int index)
     {
-        rightBox.itemIcon.sprite = inventory.items[index].itemStats.icon;
-        rightBox.quanityText.text = inventory.items[index].quanity + "";
-        if(inventory.items[index].quanity > 1)
+        rightBox.itemIcon.sprite = tradingInventory.items[index].itemStats.icon;
+        rightBox.quanityText.text = tradingInventory.items[index].quanity + "";
+        if(tradingInventory.items[index].quanity > 1)
         {
             rightBox.quanityText.gameObject.SetActive(true);
             rightBox.quanityBox.gameObject.SetActive(true);
-            rightBox.quanityText.text = inventory.items[index].quanity + "";
+            rightBox.quanityText.text = tradingInventory.items[index].quanity + "";
         }
         else
         {
@@ -214,4 +225,22 @@ public class Trading : MonoBehaviour
     }
 
     
+    public void Buy(int _currency)
+    {
+        Debug.Log("BUUUUYYY");
+        if(_currency <= 0)
+        {
+            Debug.Log("ZERO");
+            _currency = 0;
+        }
+            
+
+        else if(_currency >= tradingInventory.items[tradingCurrentItem].itemStats.cost)
+        {
+            Debug.Log("Rish:");
+            pickupSystem.PickupInv(tradingInventory.items[tradingCurrentItem]);
+            tradingInventory.items.RemoveAt(tradingCurrentItem);
+        }
+    }
+
 }
