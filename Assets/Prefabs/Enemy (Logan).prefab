@@ -208,6 +208,10 @@ MonoBehaviour:
   AOAToggle: 0
   attackRange: 2
   randomizerToggle: 1
+  lootTable:
+  - {fileID: 7703282016890624315, guid: 1c53aadb4036eca49b1022789e6229f0, type: 3}
+  - {fileID: 5616596167360615223, guid: 47bca6578f3d69f46b3d19bf48802617, type: 3}
+  - {fileID: 3383340620274389917, guid: 2b450b3efc8dfc7409920d5bea1f5f2f, type: 3}
 --- !u!70 &6926311925707614206
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -248,6 +252,18 @@ MonoBehaviour:
   OutOfHealth:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 762628501761996573}
+        m_TargetAssemblyTypeName: CustomAIMovement, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 5067931295219758970}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive

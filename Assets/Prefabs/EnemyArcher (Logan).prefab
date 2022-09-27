@@ -212,6 +212,10 @@ MonoBehaviour:
   AOA: 6
   AOAToggle: 0
   randomizerToggle: 1
+  lootTable:
+  - {fileID: 7703282016890624315, guid: 1c53aadb4036eca49b1022789e6229f0, type: 3}
+  - {fileID: 5616596167360615223, guid: 47bca6578f3d69f46b3d19bf48802617, type: 3}
+  - {fileID: 3383340620274389917, guid: 2b450b3efc8dfc7409920d5bea1f5f2f, type: 3}
 --- !u!114 &277452314448317215
 MonoBehaviour:
   m_ObjectHideFlags: 0
