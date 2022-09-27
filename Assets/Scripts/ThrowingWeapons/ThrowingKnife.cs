@@ -64,9 +64,10 @@ public class ThrowingKnife : MonoBehaviour
         {
             Debug.Log("Enemy Attacked");
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-
+            enemy.health -= 100;
             //enemy.TakeDamage(knifeDamage);
             collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(knifeDamage); //Logans Code. Works with Erics Health Script.
+            Debug.Log(collision);
         }
         Destroy(gameObject); //destroys knives when they hit something
     }
