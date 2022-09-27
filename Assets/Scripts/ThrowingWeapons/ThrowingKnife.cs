@@ -20,7 +20,8 @@ public class ThrowingKnife : MonoBehaviour
     private void Start()
     {
         Inv.arrowAmount = knifeAmmo;
-        Destroy(gameObject, 2.5f);
+        Destroy(gameObject, 2f); //how long the objects stay in the scene before getting deleted if they don't hit anything
+                                   //in this case 2 seconds before they disappear
     }
 
     private void Update()
@@ -43,7 +44,7 @@ public class ThrowingKnife : MonoBehaviour
     void ThrowKnife()
     {
 
-        Debug.Log("Knife Damage: " + knifeDamage);
+        Debug.Log("Knife Damage: " + knifeDamage); //prints out how much damage each knife is doing/going to do
 
         float angle = Utility.AngleTowardsMouse(Knife.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
@@ -53,7 +54,7 @@ public class ThrowingKnife : MonoBehaviour
 
         Throw.KnifeVelocity = KnifeSpeed;
 
-        //CanThrow = false;
+        //CanThrow = false; //don't uncomment
         KnifeGFX.enabled = false;
     }
 
