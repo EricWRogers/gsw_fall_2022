@@ -20,8 +20,6 @@ public class ThrowingKnife : MonoBehaviour
     private void Start()
     {
         Inv.arrowAmount = knifeAmmo;
-        Destroy(gameObject, 2f); //how long the objects stay in the scene before getting deleted if they don't hit anything
-                                   //in this case 2 seconds before they disappear
     }
 
     private void Update()
