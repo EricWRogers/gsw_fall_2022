@@ -16,7 +16,11 @@ public class PickupSystem : MonoBehaviour
                 {
                     SwordStats swordStats = (SwordStats)item.itemStats;
                     if(swordStats.rarity == _item.itemStats.rarity)
+                    {
                         item.quanity++;
+                        return;
+                    }
+                        
                 }
 
         //Display Information if item is a Bow
@@ -24,7 +28,10 @@ public class PickupSystem : MonoBehaviour
                 {
                     BowStats bowStats = (BowStats)item.itemStats;
                     if(bowStats.rarity == _item.itemStats.rarity)
+                    {
                         item.quanity++;
+                        return;
+                    }
                 }
 
         //Display Information if item is a Poison Potion
@@ -32,7 +39,10 @@ public class PickupSystem : MonoBehaviour
                 {
                     PoisonPotionStats poisonPotionStats = (PoisonPotionStats)item.itemStats;
                     if(poisonPotionStats.rarity == _item.itemStats.rarity)
+                    {
                         item.quanity++;
+                        return;
+                    }
                 }
 
         //Display Information if item is a Health Potion
@@ -40,7 +50,10 @@ public class PickupSystem : MonoBehaviour
                 {
                     HealthPotionStats healthPotionStats = (HealthPotionStats)item.itemStats;
                     if(healthPotionStats.rarity == _item.itemStats.rarity)
+                    {
                         item.quanity++;
+                        return;
+                    }
                 }
 
         //Display Information if item is a Combust Potion
@@ -48,7 +61,10 @@ public class PickupSystem : MonoBehaviour
                 {
                     CombustPotionStats combustPotionStats = (CombustPotionStats)item.itemStats;
                     if(combustPotionStats.rarity == _item.itemStats.rarity)
+                    {
                         item.quanity++;
+                        return;
+                    }
                 }
 
         //Display Information if item is a FirePotionStats
@@ -56,7 +72,10 @@ public class PickupSystem : MonoBehaviour
                 {
                     FirePotionStats firePotionStats = (FirePotionStats)item.itemStats;
                     if(firePotionStats.rarity  == _item.itemStats.rarity)
+                    {
                         item.quanity++;
+                        return;
+                    }
                 }
             }
 
