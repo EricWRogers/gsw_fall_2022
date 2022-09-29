@@ -239,7 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5daedaab4b6dac4a85f1d5d3ba4b368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: {fileID: 0}
   testItem:
     itemStats: {fileID: 0}
     quanity: 0
