@@ -37,69 +37,70 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
-
-        text.text = "Ammo: " + bowAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-        if (Input.GetMouseButton(0) && CanFire)
+        if (Time.timeScale != 0)
         {
-            ChargeBow();
-        }
-        else if (Input.GetMouseButtonUp(0) && CanFire)
-        {
-            FireBow();
-            bowAmmo--;
-            Inv.arrowAmount = bowAmmo;//ammo in inventory is the ammo count that is used
-            Debug.Log("Ammo left: " + bowAmmo);//how much ammo is left
-        }
-        else
-        {
-            if (BowCharge > 0f)
+            text.text = "Ammo: " + bowAmmo.ToString(); //for ammo counter, will count down as ammo decreases
+            if (Input.GetMouseButton(0) && CanFire)
             {
-
-                BowCharge -= cooldownTime * Time.deltaTime;  //0.1f; //how fast the charge goes down before we can fire again
+                ChargeBow();
+            }
+            else if (Input.GetMouseButtonUp(0) && CanFire)
+            {
+                FireBow();
+                bowAmmo--;
+                Inv.arrowAmount = bowAmmo;//ammo in inventory is the ammo count that is used
+                Debug.Log("Ammo left: " + bowAmmo);//how much ammo is left
             }
             else
             {
-                BowCharge = 0f;
-                CanFire = true;
+                if (BowCharge > 0f)
+                {
+
+                    BowCharge -= cooldownTime * Time.deltaTime;  //0.1f; //how fast the charge goes down before we can fire again
+                }
+                else
+                {
+                    BowCharge = 0f;
+                    CanFire = true;
+                }
+
+                BowPowerSlider.value = BowCharge;
             }
 
-            BowPowerSlider.value = BowCharge;
-        }
-        
-        
+
             if (bowAmmo == 0)
                 CanFire = false;
-        
-    }
 
-    void ChargeBow()
-    {
-        ArrowGFX.enabled = true;
-        BowCharge += Time.deltaTime;
-        BowPowerSlider.value = BowCharge;
-
-        if (BowCharge > MaxBowCharge)
-        {
-            BowPowerSlider.value = MaxBowCharge;
         }
     }
+        void ChargeBow()
+        {
+            ArrowGFX.enabled = true;
+            BowCharge += Time.deltaTime;
+            BowPowerSlider.value = BowCharge;
 
-    void FireBow()
-    {
-        if (BowCharge > MaxBowCharge) BowCharge = MaxBowCharge;
+            if (BowCharge > MaxBowCharge)
+            {
+                BowPowerSlider.value = MaxBowCharge;
+            }
+        }
 
-        float ArrowSpeed = BowCharge + BowPower;
-        float ArrowDamage = BowCharge * BowPower;
-        Debug.Log("Arrow Damage: " + ArrowDamage);
+        void FireBow()
+        {
+            if (BowCharge > MaxBowCharge) BowCharge = MaxBowCharge;
 
-        float angle = Utility.AngleTowardsMouse(Bow.position);
-        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+            float ArrowSpeed = BowCharge + BowPower;
+            float ArrowDamage = BowCharge * BowPower;
+            Debug.Log("Arrow Damage: " + ArrowDamage);
 
-        Arrow Arrow = Instantiate(ArrowPrefab, Bow.position, rot).GetComponent<Arrow>();
-        Arrow.ArrowVelocity = ArrowSpeed;
-        Arrow.ArrowDamage = (int)Mathf.Ceil(ArrowDamage);
+            float angle = Utility.AngleTowardsMouse(Bow.position);
+            Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
 
-        CanFire = false;
-        ArrowGFX.enabled = false;
-    }
+            Arrow Arrow = Instantiate(ArrowPrefab, Bow.position, rot).GetComponent<Arrow>();
+            Arrow.ArrowVelocity = ArrowSpeed;
+            Arrow.ArrowDamage = (int)Mathf.Ceil(ArrowDamage);
+
+            CanFire = false;
+            ArrowGFX.enabled = false;
+        }
 }
