@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
@@ -52,36 +50,27 @@ public class WeaponManager : MonoBehaviour
 
     }
 }*/
-    private Transform target;
-    
-    private float distance;
-    private float attackRange = 10;
     public int meleeDamage;
 
-   void UpdatePath()
+
+    void Update()
     {
-        distance = Vector2.Distance(target.position, transform.position);
+
     }
 
-
-    void OnDrawGizmosSelected()
+    private void OnTriggerStay2D(Collider2D collision)
     {
 
-        //Drawing melee attackRange
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, attackRange);
-
-    }
-void Update()
-{
-    Attack();
-}
-    void Attack()
-    {
-        if (distance <= attackRange)
+        if (Input.GetKey(KeyCode.Z))
         {
-            target.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(meleeDamage); //Logans Code. Works with Erics Health Script.
+
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(meleeDamage);
+                Debug.Log("Hit!");
+            }
         }
     }
+
 }
 

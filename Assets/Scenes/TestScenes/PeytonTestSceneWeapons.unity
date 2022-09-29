@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (Logan)
       objectReference: {fileID: 0}
+    - target: {fileID: 6926311925707614206, guid: af7225436066b7e4bbd60fc619af47b5, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af7225436066b7e4bbd60fc619af47b5, type: 3}
 --- !u!1 &99648130
