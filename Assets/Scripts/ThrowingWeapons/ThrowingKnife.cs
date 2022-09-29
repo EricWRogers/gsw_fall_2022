@@ -7,7 +7,7 @@ using TMPro;
 public class ThrowingKnife : MonoBehaviour
 {
     [SerializeField] GameObject ThrowingKnifePrefab;
-    [SerializeField] int knifeDamage;
+    public int knifeDamage;
     [SerializeField] int knifeAmmo;
     [SerializeField] SpriteRenderer KnifeGFX;
     [SerializeField] Transform Knife;
@@ -56,7 +56,7 @@ public class ThrowingKnife : MonoBehaviour
         KnifeGFX.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -68,5 +68,5 @@ public class ThrowingKnife : MonoBehaviour
             Debug.Log(collision);
         }
         Destroy(gameObject); //destroys knives when they hit something
-    }
+    }*/
 }
