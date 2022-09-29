@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7633712248549649675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3882972159368434167}
+  - component: {fileID: 5575288627944991266}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3882972159368434167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633712248549649675}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.6603622, y: -2.1858249, z: -0.037672333}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5575288627944991266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7633712248549649675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93fef85507ec83b47b8c4aabd777f1c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Title Music
+    clip: {fileID: 8300000, guid: 02b136af08fcda54a943073b19d923d7, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Walking
+    clip: {fileID: 8300000, guid: a102fb60e68cb7545b866237a5fedd52, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: uiBgMusic
+    clip: {fileID: 8300000, guid: 348ad3daf4fa5bb40a7b4d8f605e00ca, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Battle Music
+    clip: {fileID: 8300000, guid: 348ad3daf4fa5bb40a7b4d8f605e00ca, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: EnemeyHit
+    clip: {fileID: 8300000, guid: 8cf042054b42f784eab5202e30d71991, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Heal
+    clip: {fileID: 8300000, guid: 069a678a93e0dd64a8ee6498f447abfd, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Player Hurt
+    clip: {fileID: 8300000, guid: 56fa8970606844647b735464a73bae12, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: CoinPickup
+    clip: {fileID: 8300000, guid: 2afa555b3e937a6439d02a7bda39fce6, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Trade
+    clip: {fileID: 8300000, guid: b4c693a98d69d4145a0bc325fa70e10a, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: uiButton
+    clip: {fileID: 8300000, guid: e710190322019b5418585b36289d47d1, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Swipe
+    clip: {fileID: 8300000, guid: f9b7bbbdd0db2204db572fde3ab1a155, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Bow Fire
+    clip: {fileID: 8300000, guid: d9f769c6270ccc1438e04c0b9c87330e, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Bow Draw
+    clip: {fileID: 8300000, guid: bc12d33e41345244cb53613f872c4356, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Molotov
+    clip: {fileID: 8300000, guid: a7c6ead3b0681ca449c700bca392f760, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
+  - name: Bomb
+    clip: {fileID: 8300000, guid: a6854a460c4a67243add707ccf21f18c, type: 3}
+    volume: 0.714
+    pitch: 1.005
+    loop: 1
+    randomVolume: 0.5
+    randomPitch: 0.5
