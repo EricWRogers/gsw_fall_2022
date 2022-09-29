@@ -302,25 +302,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &164130855 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4486420343164284051, guid: 487898ecd86ce654dbb4f00d673bab23, type: 3}
+--- !u!4 &164130859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4486420343164284052, guid: 487898ecd86ce654dbb4f00d673bab23, type: 3}
   m_PrefabInstance: {fileID: 1210372317547602757}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &164130858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 164130855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a278567bb2e62b409b9368e4d506600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isTradingHudOpen: 0
-  tradingHud: {fileID: 242402824}
 --- !u!114 &189340906 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5189183671544126399, guid: 487898ecd86ce654dbb4f00d673bab23, type: 3}
@@ -529,7 +515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1139184493}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: -0.11, z: 0}
+  m_LocalPosition: {x: -4.692, y: 0.128, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1132,6 +1118,113 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1957925493 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4020629986018142054, guid: 291590278748b724282da183c1c618ee, type: 3}
+  m_PrefabInstance: {fileID: 4020629986429046003}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 918c3fd6ab238534ea439f6c39b1733f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2086201123
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2086201124}
+  - component: {fileID: 2086201126}
+  - component: {fileID: 2086201125}
+  - component: {fileID: 2086201127}
+  m_Layer: 0
+  m_Name: Merchant
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2086201124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086201123}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 164130859}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2086201125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086201123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a278567bb2e62b409b9368e4d506600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTradingHudOpen: 0
+  hud: {fileID: 1957925493}
+  tradingHud: {fileID: 242402824}
+--- !u!61 &2086201126
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086201123}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10}
+  m_EdgeRadius: 0
+--- !u!50 &2086201127
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086201123}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2117474543 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3360558998008880901, guid: 487898ecd86ce654dbb4f00d673bab23, type: 3}
@@ -1235,6 +1328,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4020629986018142054, guid: 291590278748b724282da183c1c618ee, type: 3}
+      propertyPath: tradeHud
+      value: 
+      objectReference: {fileID: 2086201125}
     - target: {fileID: 4020629986018142054, guid: 291590278748b724282da183c1c618ee, type: 3}
       propertyPath: weaponWheel
       value: 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class HudScript : MonoBehaviour
 {
     public bool isWeaponWheelOpen = false;
+    public TradingHud tradeHud;
     public GameObject weaponWheel;
     // Start is called before the first frame update
     void Start()
@@ -15,7 +16,7 @@ public class HudScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("WeaponWheelOpen") && isWeaponWheelOpen == false || Input.GetKeyDown(KeyCode.Tab) && isWeaponWheelOpen == false)
+        if(Input.GetButtonDown("WeaponWheelOpen") && isWeaponWheelOpen == false && tradeHud.isTradingHudOpen == false || Input.GetKeyDown(KeyCode.Tab) && isWeaponWheelOpen == false && tradeHud.isTradingHudOpen == false )
         {
             isWeaponWheelOpen = true;
             weaponWheel.SetActive(true);

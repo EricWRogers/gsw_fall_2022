@@ -29,7 +29,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4020629986018142048, guid: 291590278748b724282da183c1c618ee, type: 3}
       propertyPath: m_Name
-      value: TradingHud
+      value: TradingHud Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4020629986018142055, guid: 291590278748b724282da183c1c618ee, type: 3}
       propertyPath: m_RootOrder
