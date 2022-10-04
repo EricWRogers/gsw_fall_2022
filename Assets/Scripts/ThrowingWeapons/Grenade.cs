@@ -20,12 +20,12 @@ public class Grenade : MonoBehaviour
     //public SpriteRenderer explosionEffect;
     public SpriteRenderer GrenadeGFX;
 
-    float countDown;
+    public float countDown;
 
     public TMP_Text text;
     public Inventory Inv;
 
-    bool hasExploded = false;
+    public bool hasExploded = false;
     bool CanThrow = true;
     // Start is called before the first frame update
     void Start()
@@ -76,7 +76,7 @@ public class Grenade : MonoBehaviour
         GrenadeGFX.enabled = false;
     }
 
-    void Explode()
+    public void Explode()
     {
         //show visual effects
         //Instantiate(explosionEffect, transform.position, transform.rotation);
