@@ -63,7 +63,7 @@ public class Grenade : MonoBehaviour
     void ThrowGrenade()
     {
 
-        Debug.Log("Knife Damage: " + grenadeDamage); //prints out how much damage each knife is doing/going to do
+        Debug.Log("Grenade Damage: " + grenadeDamage); //prints out how much damage each knife is doing/going to do
 
         float angle = Utility.AngleTowardsMouse(Gren.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));

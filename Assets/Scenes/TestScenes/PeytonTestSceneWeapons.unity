@@ -501,6 +501,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4760956631263213326, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: grenadeDamage
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6434433601891109899, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: m_IsActive
       value: 0
