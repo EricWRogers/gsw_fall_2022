@@ -40,3 +40,4 @@
 (enemey whisp death/enter)https://freesound.org/people/ToastHatter/sounds/561188/
 
 (enemey projectile being shot) https://freesound.org/people/unfa/sounds/193427/
+ (shield block) https://freesound.org/people/nekoninja/sounds/370203/

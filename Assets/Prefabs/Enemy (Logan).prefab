@@ -119,6 +119,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5067931293512081522}
+  - {fileID: 8819817434487807061}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -212,6 +213,7 @@ MonoBehaviour:
   - {fileID: 7703282016890624315, guid: 1c53aadb4036eca49b1022789e6229f0, type: 3}
   - {fileID: 5616596167360615223, guid: 47bca6578f3d69f46b3d19bf48802617, type: 3}
   - {fileID: 3383340620274389917, guid: 2b450b3efc8dfc7409920d5bea1f5f2f, type: 3}
+  lootWeight: 0
 --- !u!70 &6926311925707614206
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -252,8 +254,8 @@ MonoBehaviour:
   OutOfHealth:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 762628501761996573}
-        m_TargetAssemblyTypeName: CustomAIMovement, Assembly-CSharp
+      - m_Target: {fileID: 7272514318644637423}
+        m_TargetAssemblyTypeName: LootTable, Assembly-CSharp
         m_MethodName: DropItem
         m_Mode: 1
         m_Arguments:
@@ -278,3 +280,52 @@ MonoBehaviour:
         m_CallState: 2
   MaxHealth: 10
   CurrentHealth: 10
+--- !u!1 &9216236210036341126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8819817434487807061}
+  - component: {fileID: 7272514318644637423}
+  m_Layer: 0
+  m_Name: LootTable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8819817434487807061
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9216236210036341126}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5067931295219758965}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7272514318644637423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9216236210036341126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa71836f0d6612439e5c42a26b656ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot:
+  - item: {fileID: 5616596167360615223, guid: 47bca6578f3d69f46b3d19bf48802617, type: 3}
+    lootWeight: 10
+  - item: {fileID: 5009676973270524278, guid: 31c65dba5cab00d43872cfb498180bc9, type: 3}
+    lootWeight: 10

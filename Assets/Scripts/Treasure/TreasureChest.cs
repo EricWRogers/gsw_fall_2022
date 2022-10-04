@@ -6,6 +6,7 @@ public class TreasureChest : MonoBehaviour
 
 {
     private bool isOpened;
+    public LootTable LT;
     
     public GameObject[] lootTable;
     void OnTriggerStay2D(Collider2D other)
@@ -14,33 +15,14 @@ public class TreasureChest : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                DropItem();
+                LT.DropItem();
                 isOpened = true;
             }
         }
 
     }
 
-    public void DropItem()
-    {
-        float weight = Random.Range(0f, 10f);
-
-        if (weight >= 1 && weight <= 4)
-        {
-            GameObject temp = Instantiate(lootTable[0], gameObject.transform.position, gameObject.transform.rotation);
-        }
-
-        if (weight >= 4 && weight <= 6)
-        {
-            GameObject temp = Instantiate(lootTable[1], gameObject.transform.position, gameObject.transform.rotation);
-        }
-
-        if (weight >= 6 && weight <= 10)
-        {
-            GameObject temp = Instantiate(lootTable[2], gameObject.transform.position, gameObject.transform.rotation);
-        }
-
-    }
+    
 
 }
 
