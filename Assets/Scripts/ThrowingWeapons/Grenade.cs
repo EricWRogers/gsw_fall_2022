@@ -48,12 +48,6 @@ public class Grenade : MonoBehaviour
             Debug.Log("Ammo left: " + grenadeAmmo);//how much ammo is left
 
             countDown -= Time.deltaTime;
-            if (countDown <= 0f && hasExploded == false)
-            {
-                Debug.Log("BOOM");
-                Explode();
-                hasExploded = true;
-            }
         }
 
         if (grenadeAmmo == 0)
