@@ -61,3 +61,4 @@ MonoBehaviour:
   - itemStats: {fileID: 11400000, guid: b196e735105268f47a59db243b4502db, type: 2}
     quanity: 10
   arrowAmount: 0
+  currency: 500
