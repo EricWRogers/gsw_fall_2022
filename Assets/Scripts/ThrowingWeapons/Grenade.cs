@@ -62,7 +62,6 @@ public class Grenade : MonoBehaviour
 
     void ThrowGrenade()
     {
-
         Debug.Log("Grenade Damage: " + grenadeDamage); //prints out how much damage each knife is doing/going to do
 
         float angle = Utility.AngleTowardsMouse(Gren.position);

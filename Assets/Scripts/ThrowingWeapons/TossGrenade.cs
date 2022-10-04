@@ -25,12 +25,12 @@ public class TossGrenade : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy Attacked");
-            //Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            //enemy.health -= 100;
-            //enemy.TakeDamage(knifeDamage);
+
+
             collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //Logans Code. Works with Erics Health Script.
             Debug.Log(collision);
         }
-        Destroy(gameObject); //destroys knives when they hit something
+        //Destroy(gameObject); //destroys grenades when they hit something,
+        //don't need cause they destroy when they explode
     }
 }
