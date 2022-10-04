@@ -6,7 +6,7 @@ public class TreasureChest : MonoBehaviour
 
 {
     private bool isOpened;
-    
+    public LootTable LT;
     
     public GameObject[] lootTable;
     void OnTriggerStay2D(Collider2D other)
@@ -15,7 +15,7 @@ public class TreasureChest : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
-                DropItem();
+                LT.DropItem();
                 isOpened = true;
             }
         }
