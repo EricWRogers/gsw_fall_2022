@@ -19,7 +19,8 @@ public class ThrowingKnife : MonoBehaviour
 
     private void Start()
     {
-        Inv.arrowAmount = knifeAmmo;
+        Inv.arrowAmount = knifeAmmo;//need to change to knife ammount rather
+        //than have it run on arrow ammount
     }
 
     private void Update()
@@ -55,18 +56,4 @@ public class ThrowingKnife : MonoBehaviour
         //CanThrow = false; //don't uncomment
         KnifeGFX.enabled = false;
     }
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Enemy Attacked");
-            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.health -= 100;
-            //enemy.TakeDamage(knifeDamage);
-            collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(knifeDamage); //Logans Code. Works with Erics Health Script.
-            Debug.Log(collision);
-        }
-        Destroy(gameObject); //destroys knives when they hit something
-    }*/
 }
