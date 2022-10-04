@@ -26,6 +26,7 @@ public class CustomAIMovement : MonoBehaviour
     Rigidbody2D rb;
 
     public GameObject[] lootTable;
+    public int lootWeight;
 
 
 
@@ -135,19 +136,19 @@ public class CustomAIMovement : MonoBehaviour
 
     public void DropItem()
     {
-        float weight = Random.Range(0f, 10f);
+         float rand = Random.Range(0f, 10f);
 
-        if(weight >= 1 && weight <= 4 )
+        if(rand < lootWeight )
         {
            GameObject temp = Instantiate(lootTable[0], gameObject.transform.position, gameObject.transform.rotation);
         }
 
-        if (weight >= 4 && weight <= 6)
+        if (rand < lootWeight)
         {
             GameObject temp = Instantiate(lootTable[1], gameObject.transform.position, gameObject.transform.rotation);
         }
 
-        if (weight >= 6 && weight <= 10)
+        if (rand < lootWeight)
         {
             GameObject temp = Instantiate(lootTable[2], gameObject.transform.position, gameObject.transform.rotation);
         }

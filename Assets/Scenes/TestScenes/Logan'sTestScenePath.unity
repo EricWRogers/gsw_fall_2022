@@ -21206,7 +21206,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -21257,7 +21257,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -21343,22 +21343,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7698426759353540092, guid: 31c65dba5cab00d43872cfb498180bc9, type: 3}
   m_PrefabInstance: {fileID: 1572278766}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1572885208 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 277452314448317194, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-  m_PrefabInstance: {fileID: 5126574707692852079}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1572885212 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 277452314448317185, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-  m_PrefabInstance: {fileID: 5126574707692852079}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572885208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 397f4e3589b838f47a6a954d803a8920, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1573387748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29152,54 +29136,6 @@ PrefabInstance:
     - target: {fileID: 277452314448317194, guid: aeb4410ec32d4104f976510248de9028, type: 3}
       propertyPath: m_Name
       value: EnemyArcher (Logan)
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1572885212}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1572885208}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DropItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CustomAIMovementArcher, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 277452314448317213, guid: aeb4410ec32d4104f976510248de9028, type: 3}
-      propertyPath: OutOfHealth.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb4410ec32d4104f976510248de9028, type: 3}
