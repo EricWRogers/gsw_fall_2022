@@ -9,6 +9,8 @@ public class LevelLoader : MonoBehaviour
 
     public float transitionTime = 1f;
 
+    public string level;
+
    
     void Update()
     {
@@ -30,7 +32,7 @@ public class LevelLoader : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene(LevelIndex);
+        SceneManager.LoadScene(level);
     }
 
 }
