@@ -490,6 +490,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2468542822868812746, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2831117235546933487, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: m_SizeDelta.x
       value: 460
@@ -498,6 +502,10 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 1355801615}
+    - target: {fileID: 3226988462694815490, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3226988462694815490, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: BowPowerSlider
       value: 
@@ -558,6 +566,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3435639878240301957, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4760956631263213326, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: delay
       value: 3
@@ -593,6 +605,10 @@ PrefabInstance:
     - target: {fileID: 6622823541889721629, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: m_fontSizeBase
       value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8058077858416186678, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8838900286206021959, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: m_Enabled

@@ -35,7 +35,7 @@ public class TossGrenade : MonoBehaviour
                 GN.hasExploded = true;
                 collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //Logans Code. Works with Erics Health Script.
             }
-            Debug.Log(collision);
+            //Debug.Log(collision);
         }
         //Destroy(gameObject); //destroys grenades when they hit something,
         //don't need cause they destroy when they explode
