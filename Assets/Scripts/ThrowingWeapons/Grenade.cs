@@ -45,7 +45,7 @@ public class Grenade : MonoBehaviour
             ThrowGrenade();
             grenadeAmmo--;
             Inv.arrowAmount = grenadeAmmo;//ammo in inventory is the ammo count that is used
-            Debug.Log("Ammo left: " + grenadeAmmo);//how much ammo is left
+            Debug.Log("Grenade ammo left: " + grenadeAmmo);//how much ammo is left
 
             countDown -= Time.deltaTime;
         }

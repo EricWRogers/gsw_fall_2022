@@ -32,7 +32,7 @@ public class ThrowingKnife : MonoBehaviour
             ThrowKnife();
             knifeAmmo--;
             Inv.arrowAmount = knifeAmmo;//ammo in inventory is the ammo count that is used
-            Debug.Log("Ammo left: " + knifeAmmo);//how much ammo is left
+            Debug.Log("Knife ammo left: " + knifeAmmo);//how much ammo is left
         }
 
         if (knifeAmmo == 0)
