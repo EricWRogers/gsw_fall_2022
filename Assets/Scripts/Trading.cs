@@ -239,6 +239,7 @@ public class Trading : MonoBehaviour
         {
             Debug.Log("Rish:");
             pickupSystem.PickupInv(tradingInventory.items[tradingCurrentItem]);
+            inventory.currency -= tradingInventory.items[tradingCurrentItem].itemStats.cost;
             tradingInventory.items.RemoveAt(tradingCurrentItem);
         }
     }
