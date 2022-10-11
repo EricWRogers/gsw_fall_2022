@@ -40,7 +40,7 @@ public class Grenade : MonoBehaviour
     void Update()
     {
         text.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-        if (Input.GetMouseButtonDown(1) && CanThrow)
+        if (Input.GetMouseButtonDown(0) && CanThrow)
         {
             ThrowGrenade();
             grenadeAmmo--;
