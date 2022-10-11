@@ -22,7 +22,7 @@ public class TossGrenade : MonoBehaviour
                                   //in this case 2 seconds before they disappear
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -39,5 +39,5 @@ public class TossGrenade : MonoBehaviour
         }
         //Destroy(gameObject); //destroys grenades when they hit something,
         //don't need cause they destroy when they explode
-    }
+    }*/
 }
