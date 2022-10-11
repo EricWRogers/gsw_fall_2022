@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TossGrenade : MonoBehaviour
 {
+
+    
     [SerializeField] Rigidbody2D rb;
     public Grenade GN;
     public GameObject player;
@@ -26,8 +28,13 @@ public class TossGrenade : MonoBehaviour
         {
             Debug.Log("Enemy Attacked");
 
-
-            collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //Logans Code. Works with Erics Health Script.
+            if (GN.countDown <= 0f && GN.hasExploded == false)
+            {
+                Debug.Log("BOOM");
+                GN.Explode();
+                GN.hasExploded = true;
+                collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //Logans Code. Works with Erics Health Script.
+            }
             Debug.Log(collision);
         }
         //Destroy(gameObject); //destroys grenades when they hit something,
