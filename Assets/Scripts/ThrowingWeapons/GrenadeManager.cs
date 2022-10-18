@@ -56,7 +56,7 @@ public class GrenadeManager : MonoBehaviour
 
     void ThrowGrenade()
     {
-        Debug.Log("Grenade Damage: " + grenadeDamage); //prints out how much damage each knife is doing/going to do
+        Debug.Log("Grenade Damage: " + grenadeDamage); //prints out how much damage each grenade is doing/going to do
 
         float angle = Utility.AngleTowardsMouse(Gren.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
@@ -66,7 +66,6 @@ public class GrenadeManager : MonoBehaviour
 
         Toss.GrenadeVelocity = grenadeSpeed;
 
-        //CanThrow = false; //don't uncomment
         GrenadeGFX.enabled = false;
     }
 
