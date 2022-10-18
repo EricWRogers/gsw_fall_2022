@@ -579,6 +579,10 @@ PrefabInstance:
       value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4760956631263213326, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: grenadeAmmo
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760956631263213326, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: grenadeSpeed
       value: 6
       objectReference: {fileID: 0}

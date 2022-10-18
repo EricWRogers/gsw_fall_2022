@@ -19,7 +19,13 @@ public class TossGrenade : MonoBehaviour
     {
         rb.velocity = transform.up * GrenadeVelocity;
         //Destroy(gameObject, 2f);  //how long the objects stay in the scene before getting deleted if they don't hit anything
-                                  //in this case 2 seconds before they disappear
+        //in this case 2 seconds before they disappear
+
+    }
+    void Update()
+    {
+
+        GN.countDown -= Time.deltaTime;
     }
 
     /*private void OnTriggerEnter2D(Collider2D collision)
