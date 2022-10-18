@@ -47,7 +47,7 @@ public class GrenadeManager : MonoBehaviour
             Inv.arrowAmount = grenadeAmmo;//ammo in inventory is the ammo count that is used
             Debug.Log("Grenade ammo left: " + grenadeAmmo);//how much ammo is left
 
-            //countDown -= Time.deltaTime;
+            countDown -= Time.deltaTime;
         }
 
         if (grenadeAmmo == 0)

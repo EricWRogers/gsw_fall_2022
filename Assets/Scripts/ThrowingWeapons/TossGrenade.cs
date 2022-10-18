@@ -22,11 +22,11 @@ public class TossGrenade : MonoBehaviour
         //in this case 2 seconds before they disappear
 
     }
-    void Update()
+    /*void Update()
     {
 
         GN.countDown -= Time.deltaTime;
-    }
+    }*/
 
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
