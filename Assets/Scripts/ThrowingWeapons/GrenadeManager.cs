@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Grenade : MonoBehaviour
+public class GrenadeManager : MonoBehaviour
 {
 
     public float delay = 2f; //how long before the grenade explodes
@@ -40,12 +40,12 @@ public class Grenade : MonoBehaviour
     void Update()
     {
         text.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-        if (Input.GetMouseButtonDown(1) && CanThrow)
+        if (Input.GetMouseButtonDown(0) && CanThrow)
         {
             ThrowGrenade();
             grenadeAmmo--;
             Inv.arrowAmount = grenadeAmmo;//ammo in inventory is the ammo count that is used
-            Debug.Log("Ammo left: " + grenadeAmmo);//how much ammo is left
+            Debug.Log("Grenade ammo left: " + grenadeAmmo);//how much ammo is left
 
             countDown -= Time.deltaTime;
         }
@@ -76,7 +76,7 @@ public class Grenade : MonoBehaviour
         //Instantiate(explosionEffect, transform.position, transform.rotation);
 
         //get nearby objects
-        Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        /*Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
         //adds the force to each collider in the radius, therefore pushing them back
         foreach (Collider nearbyObject in colliders)
         {
@@ -86,6 +86,7 @@ public class Grenade : MonoBehaviour
             {
                 rb.AddExplosionForce(force, transform.position, radius);
             }
-        }
+        }*/
+        Destroy(gameObject);
     }
 }

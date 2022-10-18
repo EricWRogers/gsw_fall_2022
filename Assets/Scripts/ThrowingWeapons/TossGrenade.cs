@@ -7,22 +7,28 @@ public class TossGrenade : MonoBehaviour
 
     
     [SerializeField] Rigidbody2D rb;
-    public Grenade GN;
+    public GrenadeManager GN;
     public GameObject player;
 
     [HideInInspector] public float GrenadeVelocity;
     private void Start()
     {
-        GN = player.GetComponent<Grenade>();
+        GN = player.GetComponent<GrenadeManager>();
     }
     private void FixedUpdate()
     {
         rb.velocity = transform.up * GrenadeVelocity;
-        Destroy(gameObject, 2f);  //how long the objects stay in the scene before getting deleted if they don't hit anything
-                                  //in this case 2 seconds before they disappear
-    }
+        //Destroy(gameObject, 2f);  //how long the objects stay in the scene before getting deleted if they don't hit anything
+        //in this case 2 seconds before they disappear
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    }
+    /*void Update()
+    {
+
+        GN.countDown -= Time.deltaTime;
+    }*/
+
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -35,9 +41,9 @@ public class TossGrenade : MonoBehaviour
                 GN.hasExploded = true;
                 collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //Logans Code. Works with Erics Health Script.
             }
-            Debug.Log(collision);
+            //Debug.Log(collision);
         }
         //Destroy(gameObject); //destroys grenades when they hit something,
         //don't need cause they destroy when they explode
-    }
+    }*/
 }

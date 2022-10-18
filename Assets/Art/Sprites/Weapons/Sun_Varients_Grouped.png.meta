@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sun_Varients_Grouped_0
+      name: SunBow
       rect:
         serializedVersion: 2
         x: 35
@@ -118,14 +118,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1126f69736c3b546b15b17d5c23a583
-      internalID: 582909450
+      spriteID: 88b015533382f9e408a70b5eae25a4fa
+      internalID: -684414727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sun_Varients_Grouped_1
+      name: SunSword
       rect:
         serializedVersion: 2
         x: 412
@@ -139,14 +139,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82f43f99c9fb85f43996aec31e239647
-      internalID: -8196278
+      spriteID: 4f1a8ee7ac716304bb9f5142a056b13b
+      internalID: 1836660739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sun_Varients_Grouped_2
+      name: SunShield
       rect:
         serializedVersion: 2
         x: 1453
@@ -160,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5295ea58b1a8b62488f78a0e010483dd
-      internalID: -1592498590
+      spriteID: e5c9e4eb8f6e3e04fa17001a7705cc15
+      internalID: 1551833602
       vertices: []
       indices: 
       edges: []
@@ -181,8 +181,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d0021b8f4a40314fbfe606ad3a16a43
-      internalID: 593701831
+      spriteID: 87dee1cecf6ee504f91740a4019db3d8
+      internalID: 230945055
       vertices: []
       indices: 
       edges: []
@@ -198,10 +198,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sun_Varients_Grouped_1: -8196278
-      Sun_Varients_Grouped_3: 593701831
-      Sun_Varients_Grouped_2: -1592498590
-      Sun_Varients_Grouped_0: 582909450
+      SunBow: -684414727
+      Sun_Varients_Grouped_3: 230945055
+      SunSword: 1836660739
+      SunShield: 1551833602
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

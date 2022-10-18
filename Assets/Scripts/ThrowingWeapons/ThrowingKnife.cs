@@ -27,12 +27,12 @@ public class ThrowingKnife : MonoBehaviour
     {
 
         text.text = "Ammo: " + knifeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-        if (Input.GetMouseButtonDown(1) && CanThrow)
+        if (Input.GetMouseButtonDown(0) && CanThrow)
         {
             ThrowKnife();
             knifeAmmo--;
             Inv.arrowAmount = knifeAmmo;//ammo in inventory is the ammo count that is used
-            Debug.Log("Ammo left: " + knifeAmmo);//how much ammo is left
+            Debug.Log("Knife ammo left: " + knifeAmmo);//how much ammo is left
         }
 
         if (knifeAmmo == 0)
