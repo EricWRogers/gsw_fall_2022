@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Grenade : MonoBehaviour
+public class GrenadeManager : MonoBehaviour
 {
 
     public float delay = 2f; //how long before the grenade explodes
