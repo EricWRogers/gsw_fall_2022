@@ -87,6 +87,6 @@ public class Grenade : MonoBehaviour
                 rb.AddExplosionForce(force, transform.position, radius);
             }
         }
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
