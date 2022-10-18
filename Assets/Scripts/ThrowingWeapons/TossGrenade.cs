@@ -7,13 +7,13 @@ public class TossGrenade : MonoBehaviour
 
     
     [SerializeField] Rigidbody2D rb;
-    public Grenade GN;
+    public GrenadeManager GN;
     public GameObject player;
 
     [HideInInspector] public float GrenadeVelocity;
     private void Start()
     {
-        GN = player.GetComponent<Grenade>();
+        GN = player.GetComponent<GrenadeManager>();
     }
     private void FixedUpdate()
     {
