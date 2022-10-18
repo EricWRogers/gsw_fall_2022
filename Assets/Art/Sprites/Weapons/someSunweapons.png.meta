@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 14b33e08adfc0944fa1d718aeaf937c4
+guid: d83a6c70f6f79f746ad3dea001f887c9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,8 +43,8 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-  spriteExtrude: 1
-  spriteMeshType: 1
+  spriteExtrude: 0
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sun_Varients_Grouped_0
+      name: someSunweapons_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 278
-        width: 318
-        height: 1660
+        x: 173
+        y: 286
+        width: 298
+        height: 1644
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1126f69736c3b546b15b17d5c23a583
-      internalID: 582909450
+      spriteID: bb043eb6fc656304995517b59368b670
+      internalID: 1945481068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sun_Varients_Grouped_1
+      name: someSunweapons_1
       rect:
         serializedVersion: 2
-        x: 412
-        y: 468
-        width: 1002
-        height: 1270
+        x: 588
+        y: 475
+        width: 1255
+        height: 982
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82f43f99c9fb85f43996aec31e239647
-      internalID: -8196278
+      spriteID: 5170a875c63055c4a902f12b7e236607
+      internalID: -908125056
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sun_Varients_Grouped_2
+      name: someSunweapons_2
       rect:
         serializedVersion: 2
-        x: 1453
-        y: 381
-        width: 1313
-        height: 1296
+        x: 1967
+        y: 1139
+        width: 7
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5295ea58b1a8b62488f78a0e010483dd
-      internalID: -1592498590
+      spriteID: a117349ea7c93d54296681942788f6e1
+      internalID: 1191716768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sun_Varients_Grouped_3
+      name: someSunweapons_3
       rect:
         serializedVersion: 2
-        x: 2761
+        x: 1980
+        y: 390
+        width: 1275
+        height: 1277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63a90b0370007c4aae6bef1b36aa6bf
+      internalID: -274320253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: someSunweapons_4
+      rect:
+        serializedVersion: 2
+        x: 3266
         y: 1000
-        width: 4
-        height: 8
+        width: 5
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,8 +202,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d0021b8f4a40314fbfe606ad3a16a43
-      internalID: 593701831
+      spriteID: cef675230956dc040a45ba82c9b42a28
+      internalID: 1699347120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: someSunweapons_5
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 490
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0abd0cefdabc1548ba601c2b37daf76
+      internalID: -2022724737
       vertices: []
       indices: 
       edges: []
@@ -198,10 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sun_Varients_Grouped_1: -8196278
-      Sun_Varients_Grouped_3: 593701831
-      Sun_Varients_Grouped_2: -1592498590
-      Sun_Varients_Grouped_0: 582909450
+      someSunweapons_3: -274320253
+      someSunweapons_4: 1699347120
+      someSunweapons_1: -908125056
+      someSunweapons_2: 1191716768
+      someSunweapons_5: -2022724737
+      someSunweapons_0: 1945481068
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
