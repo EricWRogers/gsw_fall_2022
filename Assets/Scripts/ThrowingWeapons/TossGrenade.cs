@@ -22,11 +22,18 @@ public class TossGrenade : MonoBehaviour
         //in this case 2 seconds before they disappear
 
     }
-    /*void Update()
+    void Update()
     {
 
         GN.countDown -= Time.deltaTime;
-    }*/
+        if (GN.countDown <= 0f && GN.hasExploded == false)
+        {
+            Debug.Log("BOOM");
+            GN.Explode();
+            GN.hasExploded = true;
+            //collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //Logans Code. Works with Erics Health Script.
+        }
+    }
 
     /*private void OnTriggerEnter2D(Collider2D collision)
     {
