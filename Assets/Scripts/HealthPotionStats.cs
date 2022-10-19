@@ -7,4 +7,9 @@ public class HealthPotionStats : ItemStats
 {
     public int healthAdded;
     public float duration;
+
+    public void Addhealth()
+    {
+
+    }
 }
