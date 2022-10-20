@@ -9,6 +9,7 @@ public class CustomAIMovement : MonoBehaviour
     private Transform playerTransform;
     public GameObject player;
     private float distance;
+    public Invincibility invuln;
     
     public int meleeDamage;
     public float speed = 200f;
@@ -128,7 +129,7 @@ public class CustomAIMovement : MonoBehaviour
 
     void Attack()
     {
-        if(distance <= attackRange)
+        if(distance <= attackRange && !invuln.invul)
         {
            target.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(meleeDamage); //Logans Code. Works with Erics Health Script.
         }
