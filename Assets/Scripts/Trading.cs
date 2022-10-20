@@ -188,6 +188,12 @@ public class Trading : MonoBehaviour
             statsText.text = "Damage: " + firePotionStats.damage + " | Durartion: " + firePotionStats.duration + " | Strength: " + firePotionStats.strength + " | Range: " + firePotionStats.range + " | Fire Spread: " + firePotionStats.fireSpread;
         }
 
+        if(inventory.items[index].itemStats is ThrowKnifeStats)
+        {
+            ThrowKnifeStats throwKnifeStats = (ThrowKnifeStats)inventory.items[index].itemStats;
+            statsText.text = "Damage: " + throwKnifeStats.damage + " | Range: " + throwKnifeStats.range + " | speed: " + throwKnifeStats.speed;
+        }
+
     }
 
     public void DisplayLeftBox(int index)
