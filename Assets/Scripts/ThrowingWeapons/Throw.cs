@@ -25,9 +25,6 @@ public class Throw : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Enemy Attacked");
-            //Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            //enemy.health -= 100;
-            //enemy.TakeDamage(knifeDamage);
             collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(TK.knifeDamage); //Logans Code. Works with Erics Health Script.
             Debug.Log(collision);
         }

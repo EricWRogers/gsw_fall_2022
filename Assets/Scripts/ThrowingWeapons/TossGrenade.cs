@@ -25,7 +25,7 @@ public class TossGrenade : MonoBehaviour
     void Update()
     {
 
-        GN.countDown -= Time.deltaTime;
+        //GN.countDown -= Time.deltaTime;
         if (GN.countDown <= 0f && GN.hasExploded == false)
         {
             Debug.Log("BOOM");
