@@ -6,8 +6,6 @@ using TMPro;
 
 public class GrenadeManager : MonoBehaviour
 {
-
-    public float delay = 2f; //how long before the grenade explodes
     public float radius = 4f; // how large the explosion is
     public float force = 250f;
     public float grenadeSpeed;
@@ -20,7 +18,6 @@ public class GrenadeManager : MonoBehaviour
     //public SpriteRenderer explosionEffect;
     public SpriteRenderer GrenadeGFX;
 
-    public float countDown;
 
     public TMP_Text text;
     public Inventory Inv;
@@ -32,12 +29,11 @@ public class GrenadeManager : MonoBehaviour
     {
         Inv.arrowAmount = grenadeAmmo; //need to change to knife ammount rather
         //than have it run on arrow ammount
-        countDown = delay;
 
     }
 
     // Update is called once per frame
-    void Update() //changing to fixed update makes it to where you can't spam fire the grenade. like a psuedo timer
+    void Update() //changing to fixed update makes it to where you can't spam fire the grenade
     {
         text.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
         if (Input.GetMouseButtonDown(0) && CanThrow)
@@ -47,7 +43,6 @@ public class GrenadeManager : MonoBehaviour
             Inv.arrowAmount = grenadeAmmo;//ammo in inventory is the ammo count that is used
             Debug.Log("Grenade ammo left: " + grenadeAmmo);//how much ammo is left
 
-            countDown -= Time.deltaTime;
         }
 
         if (grenadeAmmo == 0)
@@ -69,23 +64,5 @@ public class GrenadeManager : MonoBehaviour
         GrenadeGFX.enabled = false;
     }
 
-    public void Explode()
-    {
-        //show visual effects
-        //Instantiate(explosionEffect, transform.position, transform.rotation);
-
-        //get nearby objects
-        /*Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
-        //adds the force to each collider in the radius, therefore pushing them back
-        foreach (Collider nearbyObject in colliders)
-        {
-            //add force, pushes stuff away if they have a rigidbody
-            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if (rb != null)
-            {
-                rb.AddExplosionForce(force, transform.position, radius);
-            }
-        }*/
-        Destroy(gameObject);
-    }
+    
 }
