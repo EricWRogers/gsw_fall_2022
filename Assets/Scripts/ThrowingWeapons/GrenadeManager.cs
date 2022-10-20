@@ -37,7 +37,7 @@ public class GrenadeManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update() //changing to fixed update makes it to where you can't spam fire the grenade. like a psuedo timer
     {
         text.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
         if (Input.GetMouseButtonDown(0) && CanThrow)
