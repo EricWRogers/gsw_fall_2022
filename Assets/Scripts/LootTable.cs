@@ -10,11 +10,10 @@ public class LootTable : MonoBehaviour
     {
         foreach (Loot l in loot)
         {
-            
-            float rand = Random.Range(0f, 10f);
+            float rand = Random.Range(0, 10);
             Debug.Log("Randum num: " + rand);
 
-            if (rand < l.lootWeight)
+            if (rand == l.lootWeight)
             {
 
                 GameObject temp = Instantiate(l.item, gameObject.transform.position, gameObject.transform.rotation);
