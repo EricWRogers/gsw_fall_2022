@@ -129,9 +129,14 @@ public class CustomAIMovement : MonoBehaviour
 
     void Attack()
     {
-        if(distance <= attackRange && !invuln.invul)
+        
+        if(distance <= attackRange /*&& !invuln.invul*/)
         {
            target.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(meleeDamage); //Logans Code. Works with Erics Health Script.
+        }
+        else
+        {
+            return;
         }
     }
 
