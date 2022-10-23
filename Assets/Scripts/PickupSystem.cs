@@ -77,6 +77,16 @@ public class PickupSystem : MonoBehaviour
                         return;
                     }
                 }
+                //Display Information if item is a FirePotionStats
+                if(item.itemStats is ThrowKnifeStats && _item.itemStats is ThrowKnifeStats)
+                {
+                    ThrowKnifeStats throwKnifeStats = (ThrowKnifeStats)item.itemStats;
+                    if(throwKnifeStats.rarity  == _item.itemStats.rarity)
+                    {
+                        item.quanity++;
+                        return;
+                    }
+                }
             }
 
         inventory.items.Add(_item);
