@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Pickup : MonoBehaviour
 {
-
-
-    public Item testItem;
-
-
-
+    public Item item;
 
     void Start()
     {
@@ -22,7 +17,7 @@ public class Pickup : MonoBehaviour
         {
 
             Debug.Log("HELP");
-            collision.gameObject.GetComponent<PickupSystem>().PickupInv(testItem);
+            collision.gameObject.GetComponent<PickupSystem>().PickupInv(item);
             Destroy(gameObject);
         }
     }
