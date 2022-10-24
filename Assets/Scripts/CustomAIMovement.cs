@@ -26,8 +26,6 @@ public class CustomAIMovement : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    public GameObject[] lootTable;
-    public int lootWeight;
 
 
 
@@ -129,30 +127,16 @@ public class CustomAIMovement : MonoBehaviour
 
     void Attack()
     {
-        if(distance <= attackRange && !invuln.invul)
+        
+        if(distance <= attackRange /*&& !invuln.invul*/)
         {
            target.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(meleeDamage); //Logans Code. Works with Erics Health Script.
         }
+        else
+        {
+            return;
+        }
     }
 
-    public void DropItem()
-    {
-         float rand = Random.Range(0f, 10f);
-
-        if(rand < lootWeight )
-        {
-           GameObject temp = Instantiate(lootTable[0], gameObject.transform.position, gameObject.transform.rotation);
-        }
-
-        if (rand < lootWeight)
-        {
-            GameObject temp = Instantiate(lootTable[1], gameObject.transform.position, gameObject.transform.rotation);
-        }
-
-        if (rand < lootWeight)
-        {
-            GameObject temp = Instantiate(lootTable[2], gameObject.transform.position, gameObject.transform.rotation);
-        }
-
-    }
+  
 }//End of class

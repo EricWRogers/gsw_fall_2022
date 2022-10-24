@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 277452314448317185}
   - component: {fileID: 277452314448317215}
   - component: {fileID: 277452314448317213}
+  - component: {fileID: -4042455534534858255}
   - component: {fileID: 277452314448317214}
   m_Layer: 7
   m_Name: EnemyArcher (Logan)
@@ -346,6 +347,33 @@ MonoBehaviour:
         m_CallState: 2
   MaxHealth: 10
   CurrentHealth: 10
+--- !u!114 &-4042455534534858255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277452314448317194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa71836f0d6612439e5c42a26b656ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot:
+  - item: {fileID: 3857572543404886313, guid: 22b6fd74b8287e84f8adff5e5ef1f5fa, type: 3}
+    lootWeight: 6.19
+  - item: {fileID: 7897545120043138642, guid: ad01dedcf31994149b5518bd3b422dde, type: 3}
+    lootWeight: 3.47
+  - item: {fileID: 7130137803920379492, guid: 330d3f6e461c45148a538286a1553523, type: 3}
+    lootWeight: 10
+  - item: {fileID: 9054993383757061643, guid: 7748d4ba7baf5f34a8a6b6365c09d445, type: 3}
+    lootWeight: 5.99
+  - item: {fileID: 7631567621771879558, guid: 70f783a0c3739b14b939a6582a6eeacd, type: 3}
+    lootWeight: 10
+  - item: {fileID: 1660659884778154019, guid: b72937d15a9c21f4aa24d18bbb730ac0, type: 3}
+    lootWeight: 8.44
+  - item: {fileID: 8221766715506018442, guid: e959d16bbb9af6046a87d109e0ae048e, type: 3}
+    lootWeight: 10
 --- !u!70 &277452314448317214
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

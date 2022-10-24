@@ -15,4 +15,10 @@ public class Item
 {
     public ItemStats itemStats;
     public int quanity;
+    public int rarity;
+
+    void Awake()
+    {
+        rarity = itemStats.rarity;
+    }
 }

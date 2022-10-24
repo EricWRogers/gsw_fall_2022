@@ -8,6 +8,9 @@ TagManager:
   - Enemy
   - Shield
   - item
+  - Corruption
+  - Arrow
+  - ArrowBundle
   layers:
   - Default
   - TransparentFX

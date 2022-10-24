@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Arrow
+      name: Arrow_0
       rect:
         serializedVersion: 2
         x: 523
@@ -118,19 +118,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 052d655e6fbe40d40b1f9773b808bc66
-      internalID: 1591360013
+      spriteID: dac41b5544156354da93056b0725e08c
+      internalID: -1474044220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow2
+      name: Arrow_1
       rect:
         serializedVersion: 2
         x: 839
         y: 241
-        width: 327
+        width: 156
         height: 1215
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3559355745ac1843ac6da07ee9158b4
-      internalID: -1785659644
+      spriteID: bee3c55e3db4d1146af7483c9c91701d
+      internalID: -735463957
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Arrow: 1591360013
-      Arrow2: -1785659644
+      Arrow_0: -1474044220
+      Arrow_1: -735463957
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
