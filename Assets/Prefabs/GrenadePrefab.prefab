@@ -116,9 +116,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 7
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -139,4 +139,8 @@ MonoBehaviour:
   rb: {fileID: 28056725450163225}
   GN: {fileID: 0}
   player: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+  delay: 3
+  countDown: 0
+  force: 2
+  radius: 5
   GrenadeVelocity: 0

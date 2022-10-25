@@ -22,7 +22,7 @@ public class GrenadeManager : MonoBehaviour
     public TMP_Text text;
     public Inventory Inv;
 
-    public bool hasExploded = false;
+    
     bool CanThrow = true;
     // Start is called before the first frame update
     void Start()

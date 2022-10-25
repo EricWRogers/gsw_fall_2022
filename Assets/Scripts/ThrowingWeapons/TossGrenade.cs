@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TossGrenade : MonoBehaviour
 {
 
-    
+   
     [SerializeField] Rigidbody2D rb;
     public GrenadeManager GN;
     public GameObject player;
@@ -13,31 +12,30 @@ public class TossGrenade : MonoBehaviour
     public float delay = 2f; //how long before the grenade explodes
     public float countDown;
 
+    public float force, radius;
+
     [HideInInspector] public float GrenadeVelocity;
     private void Start()
     {
         GN = player.GetComponent<GrenadeManager>();
         countDown = delay;
+
+        rb.velocity = transform.up * GrenadeVelocity;
     }
     private void FixedUpdate()
     {
-        rb.velocity = transform.up * GrenadeVelocity;
         //Destroy(gameObject, 2f);  //how long the objects stay in the scene before getting deleted if they don't hit anything
         //in this case 2 seconds before they disappear
 
     }
     void Update()
     {
-
         countDown -= Time.deltaTime;
-        if (countDown <= 0f && GN.hasExploded == false)
+        if (countDown <= 0f)
         {
             Debug.Log("BOOM");
             Explode();
-            GN.hasExploded = true;
-            //collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); 
-            //^ could be put in the actual explode function, maybe. it should still work if that's done.
-            //^ Logans Code. Works with Erics Health Script.
+
         }
     }
 
@@ -62,21 +60,37 @@ public class TossGrenade : MonoBehaviour
 
     public void Explode()
     {
+
         //show visual effects
         //Instantiate(explosionEffect, transform.position, transform.rotation);
 
         //get nearby objects
-        /*Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
+        Vector2 origin = transform.position;
+
+
+        Debug.Log("Test1");
         //adds the force to each collider in the radius, therefore pushing them back
-        foreach (Collider nearbyObject in colliders)
+
+        foreach (Collider2D nearbyObject in Physics2D.OverlapCircleAll(origin, radius))
         {
+           
+            Debug.Log("Test");
+            nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //deals damage to every nearby object.
+            Debug.Log(nearbyObject);
             //add force, pushes stuff away if they have a rigidbody
             Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.AddExplosionForce(force, transform.position, radius);
             }
-        }*/
+        }
         Destroy(gameObject);
     }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
 }
