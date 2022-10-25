@@ -141,6 +141,6 @@ MonoBehaviour:
   player: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
   delay: 3
   countDown: 0
-  force: 3
+  force: 3900
   radius: 3.5
   GrenadeVelocity: 0

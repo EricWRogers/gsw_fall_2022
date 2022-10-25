@@ -9,6 +9,7 @@ public class TossGrenade : MonoBehaviour
     public GrenadeManager GN;
     public GameObject player;
 
+
     public float delay = 2f; //how long before the grenade explodes
     public float countDown;
 
@@ -33,30 +34,10 @@ public class TossGrenade : MonoBehaviour
         countDown -= Time.deltaTime;
         if (countDown <= 0f)
         {
-            Debug.Log("BOOM");
             Explode();
 
         }
     }
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Enemy Attacked");
-
-            if (GN.countDown <= 0f && GN.hasExploded == false)
-            {
-                Debug.Log("BOOM");
-                GN.Explode();
-                GN.hasExploded = true;
-                collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //Logans Code. Works with Erics Health Script.
-            }
-            //Debug.Log(collision);
-        }
-        //Destroy(gameObject); //destroys grenades when they hit something,
-        //don't need cause they destroy when they explode
-    }*/
 
     public void Explode()
     {
@@ -68,20 +49,20 @@ public class TossGrenade : MonoBehaviour
         Vector2 origin = transform.position;
 
 
-        Debug.Log("Test1");
         //adds the force to each collider in the radius, therefore pushing them back
 
         foreach (Collider2D nearbyObject in Physics2D.OverlapCircleAll(origin, radius))
         {
-           
-            Debug.Log("Test");
-            nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //deals damage to every nearby object.
-            Debug.Log(nearbyObject);
-            //add force, pushes stuff away if they have a rigidbody
-            Rigidbody rb = nearbyObject.GetComponent<Rigidbody>();
-            if (rb != null)
+           if(nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
             {
-                rb.AddExplosionForce(force, transform.position, radius);
+                nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(1 - new Vector2(nearbyObject.transform.position - gameObject.transform.position).magnitude * GN.grenadeDamage); //deals damage to every nearby object.
+                Debug.Log(nearbyObject);
+                //add force, pushes stuff away if they have a rigidbody
+                Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    rb.AddForce();
+                }
             }
         }
         Destroy(gameObject);

@@ -7,7 +7,7 @@ using TMPro;
 public class GrenadeManager : MonoBehaviour
 {
     public float radius = 4f; // how large the explosion is
-    public float force = 250f;
+    //public float force = 250f;
     public float grenadeSpeed;
     public int grenadeDamage;
     public int grenadeAmmo;
@@ -57,7 +57,6 @@ public class GrenadeManager : MonoBehaviour
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
 
         TossGrenade Toss = Instantiate(GrenadePrefab, Gren.position, rot).GetComponent<TossGrenade>();
-        grenadeDamage = (int)Mathf.Ceil(grenadeDamage);
 
         Toss.GrenadeVelocity = grenadeSpeed;
 
