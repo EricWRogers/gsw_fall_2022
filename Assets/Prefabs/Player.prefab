@@ -278,7 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 4
   force: 250
-  grenadeSpeed: 10
+  grenadeSpeed: 6
   grenadeDamage: 3
   grenadeAmmo: 5
   GrenadePrefab: {fileID: 2167298805875605086, guid: dd8ac35d483fdfe4ea1fdaa0c4b866f8, type: 3}
@@ -286,7 +286,6 @@ MonoBehaviour:
   GrenadeGFX: {fileID: 1072334034272205732}
   text: {fileID: 4016597303914383397}
   Inv: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
-  hasExploded: 0
 --- !u!1 &998936888797500633
 GameObject:
   m_ObjectHideFlags: 0
