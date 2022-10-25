@@ -35,7 +35,9 @@ public class TossGrenade : MonoBehaviour
             Debug.Log("BOOM");
             Explode();
             GN.hasExploded = true;
-            //collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); //Logans Code. Works with Erics Health Script.
+            //collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(GN.grenadeDamage); 
+            //^ could be put in the actual explode function, maybe. it should still work if that's done.
+            //^ Logans Code. Works with Erics Health Script.
         }
     }
 
