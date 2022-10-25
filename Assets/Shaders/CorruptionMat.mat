@@ -41,5 +41,5 @@ Material:
     - _NoiseSize: 10
     - _TimeValue: 0.5
     m_Colors:
-    - _CorruptionColor: {r: 0.22562543, g: 0, b: 0.7264151, a: 1}
+    - _CorruptionColor: {r: 0.07329601, g: 0, b: 0.3584906, a: 1}
   m_BuildTextureStacks: []
