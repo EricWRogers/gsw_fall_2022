@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Pathfinding;
+using UnityEngine;
 
 public class CustomAIMovementArcher : MonoBehaviour
 {
@@ -9,14 +7,14 @@ public class CustomAIMovementArcher : MonoBehaviour
     private Transform playerTransform;
     private Transform bowTransform;
     private bool shoot;
-    
+
 
     public Transform firingpoint;
     public Transform enemyGFX;
     public GameObject player;
     public GameObject bow;
     public GameObject arrow;
-    
+
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
     public float pathUpdateSpeed = .2f;
@@ -25,25 +23,25 @@ public class CustomAIMovementArcher : MonoBehaviour
     public bool randomizerToggle = false;
 
     private Vector2 force;
-    
+
     Path path;
     int currentWaypoint = 0;
     bool reachedEndOfPath = false;
     Seeker seeker;
     Rigidbody2D rb;
 
-   
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if(randomizerToggle == true)
+        if (randomizerToggle == true)
         {
             Randomizer();
         }
-        
+
         player = GameObject.Find("Player");
         target = player.GetComponent<Transform>();
         bowTransform = bow.GetComponent<Transform>();
@@ -56,15 +54,15 @@ public class CustomAIMovementArcher : MonoBehaviour
 
     void FixedUpdate() //Ideal when working with physics
     {
-        
+
         Ranged();
 
-        if(path == null)
+        if (path == null)
         {
             return;
         }
 
-        if(currentWaypoint >= path.vectorPath.Count)
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             reachedEndOfPath = true;
         }
@@ -77,18 +75,18 @@ public class CustomAIMovementArcher : MonoBehaviour
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         force = direction * speed * Time.deltaTime;
         rb.AddForce(force);
-        
+
         Flip();
-        
+
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
-        if(distance < nextWaypointDistance)
+        if (distance < nextWaypointDistance)
         {
             currentWaypoint++;
         }
     }//End of FixedUpdate
-    
-     void OnPathComplete(Path p)
+
+    void OnPathComplete(Path p)
     {
         if (!p.error)
         {
@@ -101,13 +99,13 @@ public class CustomAIMovementArcher : MonoBehaviour
     {
         float distance = Vector2.Distance(target.position, transform.position);
 
-        if(seeker.IsDone())
+        if (seeker.IsDone())
         {
-            if(distance <= AOA && AOAToggle == true)
+            if (distance <= AOA && AOAToggle == true)
             {
                 seeker.StartPath(rb.position, target.position, OnPathComplete);
             }
-            if(AOAToggle == false)
+            if (AOAToggle == false)
             {
                 seeker.StartPath(rb.position, target.position, OnPathComplete);
             }
@@ -116,10 +114,10 @@ public class CustomAIMovementArcher : MonoBehaviour
 
     void OnDrawGizmosSelected() //Drawing AOA
     {
-        if(AOAToggle == true)
+        if (AOAToggle == true)
         {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, AOA);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, AOA);
         }
     }
 
@@ -137,12 +135,12 @@ public class CustomAIMovementArcher : MonoBehaviour
         Vector2 Direction;
         Direction = targetPos - (Vector2)transform.position;
         RaycastHit2D ray = Physics2D.Raycast(bow.transform.position, Direction);
-        if(ray.transform.gameObject != null && ray.transform.gameObject.tag == "Player")
+        if (ray.transform.gameObject != null && ray.transform.gameObject.tag == "Player")
         {
             Debug.Log(ray.transform.name);
             bow.transform.up = Direction;
             path = null;
-        
+
             shoot = true;
         }
         else
@@ -151,31 +149,27 @@ public class CustomAIMovementArcher : MonoBehaviour
         }
     }
 
-        void Flip()
+    void Flip()
+    {
+        if (force.x <= 0.01f)
         {
-            if(force.x <= 0.01f)
-            {
-                
-                enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-                firingpoint.localScale = new Vector3(-1f, 1f, 1f);
-            }
-            else if(force.x >= -0.01f)
-            {
-                
-                enemyGFX.localScale = new Vector3(1f, 1f, 1f);
-                firingpoint.localScale = new Vector3(1f, 1f, 1f);
-            }
-        }
-        
-        public void Shoot()
-        {
-            if(shoot == true)
-            {
-                Instantiate(arrow, firingpoint.position, firingpoint.rotation);
-            }
-           
+            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            firingpoint.transform.Rotate(new Vector3(0f, 180f, 0f));
         }
 
-  
+        else if (force.x >= -0.01f)
+        {
+            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            firingpoint.transform.Rotate(new Vector3(0f, 180f, 0f));
+        }
+    }
+
+    public void Shoot()
+    {
+        if (shoot == true)
+        {
+            Instantiate(arrow, firingpoint.position, firingpoint.rotation);
+        }
+    }
 
 }//End of class
