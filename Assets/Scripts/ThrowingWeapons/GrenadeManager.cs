@@ -9,7 +9,7 @@ public class GrenadeManager : MonoBehaviour
     public float radius = 4f; // how large the explosion is
     //public float force = 250f;
     public float grenadeSpeed;
-    public int grenadeDamage;
+    public float grenadeDamage;
     public int grenadeAmmo;
 
     public GameObject GrenadePrefab;
