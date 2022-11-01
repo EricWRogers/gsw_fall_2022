@@ -56,9 +56,10 @@ public class TossGrenade : MonoBehaviour
         {
            if(nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
             {
-                nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage((int)(1f - new Vector2(nearbyObject.transform.position.x - gameObject.transform.position.x, 0f).magnitude * GN.grenadeDamage)); 
+                //int damage = (int)((1 - ((Vector2)nearbyObject.transform.position - (Vector2)gameObject.transform.position).magnitude/radius) * GN.grenadeDamage);
+                int damage = (int)Mathf.Ceil(((1 - Vector2.Distance((Vector2)nearbyObject.transform.position , (Vector2)gameObject.transform.position) / radius) * GN.grenadeDamage));
+                nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
                 //^ deals damage to every nearby object.
-                //^ CS7036: There is no argument given that corresponds to the required formal parameter 'y' of 'Vector2.Vector2(float,float)'
                 Debug.Log(nearbyObject);
                 //add force, pushes stuff away if they have a rigidbody
                 Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
