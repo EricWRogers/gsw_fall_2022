@@ -56,7 +56,7 @@ public class TossGrenade : MonoBehaviour
         {
            if(nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
             {
-                nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(1 - new Vector2((nearbyObject.transform.position - gameObject.transform.position)).magnitude * GN.grenadeDamage); 
+                nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage((int)(1f - new Vector2(nearbyObject.transform.position.x - gameObject.transform.position.x, 0f).magnitude * GN.grenadeDamage)); 
                 //^ deals damage to every nearby object.
                 //^ CS7036: There is no argument given that corresponds to the required formal parameter 'y' of 'Vector2.Vector2(float,float)'
                 Debug.Log(nearbyObject);
@@ -64,7 +64,7 @@ public class TossGrenade : MonoBehaviour
                 Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {
-                    //rb.AddForce((transform.position.x, transform.position.y));
+                    //rb.AddForce((transform.position.x, transform.position.y).magnitude);
                     //obviously gonna have to be edited to fit the force stuff
                     //Error CS1061  '(float x, float y)' does not contain a definition for 'magnitude' and no accessible extension method 'magnitude' accepting a first argument of type '(float x, float y)' could be found(are you missing a using directive or an assembly reference ?)
                 }
