@@ -277,7 +277,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 4
-  force: 250
   grenadeSpeed: 6
   grenadeDamage: 3
   grenadeAmmo: 5
@@ -828,8 +827,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0, g: 0.6698113, b: 0.17404665, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2150dbc261a2e444ca210f2ea604fb9d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -996,8 +995,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -9095717837082945937, guid: 90a13744957497e418f45b82618a953d, type: 3}
-  m_Color: {r: 0.09019608, g: 0.5921569, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 2150dbc261a2e444ca210f2ea604fb9d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
