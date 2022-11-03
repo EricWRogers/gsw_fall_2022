@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class MolotovManager : MonoBehaviour
 {
+
+    public float molotovSpeed;
+    public float molotovDamage;
+    public int molotovAmmo;
+
+
     // Start is called before the first frame update
     void Start()
     {
