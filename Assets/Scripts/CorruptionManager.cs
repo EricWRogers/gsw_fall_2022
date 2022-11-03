@@ -24,9 +24,4 @@ public class CorruptionManager : MonoBehaviour
             Debug.Log("YOU WIN");
         }
     }
-
-    private void Remove()
-    {
-        
-    }
 }
