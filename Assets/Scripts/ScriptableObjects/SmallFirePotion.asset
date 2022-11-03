@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Small Fire Potion
   description: A small fire potion that spreads to a small number of enemies after
     thrown.
-  icon: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: e7c0e22636149894ca6bf6c8b725a52d, type: 3}
   rarity: 1
   cost: 50
   damage: 55
