@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Small Health Potion
   description: Gives a small amount of health over a small amount of time.
-  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  icon: {fileID: 21300000, guid: e7c0e22636149894ca6bf6c8b725a52d, type: 3}
   rarity: 1
   cost: 10
   healthAdded: 5
