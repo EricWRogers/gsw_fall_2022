@@ -15,7 +15,7 @@ public class ChuckMolotov : MonoBehaviour
 
     public float force, radius;
 
-    [HideInInspector] public float MolotovVelocity;
+    [HideInInspector] public float MolotovVelocity;//dsnvn
     private void Start()
     {
         MN = player.GetComponent<MolotovManager>();
