@@ -38,8 +38,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _NoiseSize: 10
-    - _TimeValue: 0.5
+    - _NoiseSize: 30
+    - _TimeValue: 0.13
     m_Colors:
     - _CorruptionColor: {r: 0.07329601, g: 0, b: 0.3584906, a: 1}
   m_BuildTextureStacks: []
