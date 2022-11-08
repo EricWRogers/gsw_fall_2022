@@ -55,7 +55,6 @@ public class MolotovManager : MonoBehaviour
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
 
         ChuckMolotov Chuck = Instantiate(MolotovPrefab, Molo.position, rot).GetComponent<ChuckMolotov>();
-        //asdsadhjcvb  whbwdhcbdwhcbdcscbwcwbcw=\
         Chuck.MolotovVelocity = molotovSpeed;
 
         MolotovGFX.enabled = false;
