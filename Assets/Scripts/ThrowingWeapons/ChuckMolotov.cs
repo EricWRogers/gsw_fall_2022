@@ -51,9 +51,9 @@ public class ChuckMolotov : MonoBehaviour
             if (nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
             {
                 //int damage = (int)((1 - ((Vector2)nearbyObject.transform.position - (Vector2)gameObject.transform.position).magnitude/radius) * GN.grenadeDamage);
-                int damage = (int)Mathf.Ceil(((1 - Vector2.Distance((Vector2)nearbyObject.transform.position, (Vector2)gameObject.transform.position) / radius) * MN.MolotovDamage));
+                //int damage = (int)Mathf.Ceil(((1 - Vector2.Distance((Vector2)nearbyObject.transform.position, (Vector2)gameObject.transform.position) / radius) * MN.MolotovDamage));
                 
-                nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
+               // nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
                 //^ deals damage to every nearby object.
 
                 //add force, pushes stuff away if they have a rigidbody

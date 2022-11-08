@@ -22,6 +22,8 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed;
     public float sprintSpeed;
 
+    public Animator anim;
+
     Vector2 direction;
 
     //bow and arrow controls
@@ -37,9 +39,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        anim.SetFloat("Direction", Input.GetAxisRaw("Horizontal"));
+       // anim.SetFloat("Direction", Input.GetAxisRaw("Vertical"));
+
         //get direction of input
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-
+        
         sprinting = false;
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -64,10 +69,6 @@ public class PlayerMovement : MonoBehaviour
                     resting = false;
                 }
             }
-
-
-
-
 
 
         }
