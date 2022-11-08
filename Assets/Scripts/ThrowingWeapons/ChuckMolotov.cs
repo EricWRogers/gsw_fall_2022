@@ -74,4 +74,6 @@ public class ChuckMolotov : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, radius);
     }
 
+    //Health -= Time.DeltaTime * Damage;
+
 }
