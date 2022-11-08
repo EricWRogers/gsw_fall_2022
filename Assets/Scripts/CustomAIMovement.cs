@@ -26,7 +26,7 @@ public class CustomAIMovement : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-
+    public Animator anim;
 
 
     // Start is called before the first frame update
@@ -45,6 +45,11 @@ public class CustomAIMovement : MonoBehaviour
         InvokeRepeating("UpdatePath", 0f, pathUpdateSpeed);
     }//End of Start
 
+    private void Update()
+    {
+        anim.SetFloat("Direction", rb.velocity.normalized.x);
+        anim.SetFloat("Direction", rb.velocity.normalized.y);
+    }
     void FixedUpdate() //Ideal when working with physics
     {
         Attack();
@@ -131,11 +136,18 @@ public class CustomAIMovement : MonoBehaviour
         if(distance <= attackRange /*&& !invuln.invul*/)
         {
            target.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(meleeDamage); //Logans Code. Works with Erics Health Script.
+           anim.SetTrigger("Attack");
         }
         else
         {
+            anim.ResetTrigger("Attack"); //Redundency just in case
             return;
         }
+    }
+
+    public void Die()
+    {
+        anim.SetTrigger("Death");
     }
 
   
