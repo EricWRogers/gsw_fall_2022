@@ -1542,6 +1542,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hud
       objectReference: {fileID: 0}
+    - target: {fileID: 4020629986018142048, guid: 291590278748b724282da183c1c618ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4020629986018142054, guid: 291590278748b724282da183c1c618ee, type: 3}
       propertyPath: tradeHud
       value: 
