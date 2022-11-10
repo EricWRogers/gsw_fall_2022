@@ -48,10 +48,7 @@ public class ChuckMolotov : MonoBehaviour
         foreach (Collider2D nearbyObject in Physics2D.OverlapCircleAll(origin, radius))
         {
             if (nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
-            {
-                //int damage = (int)((1 - ((Vector2)nearbyObject.transform.position - (Vector2)gameObject.transform.position).magnitude/radius) * GN.grenadeDamage);
-                //int damage = (int)Mathf.Ceil(((1 - Vector2.Distance((Vector2)nearbyObject.transform.position, (Vector2)gameObject.transform.position) / radius) * MN.MolotovDamage));
-                
+            {   
                // nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
                 //^ deals damage to every nearby object.
 
