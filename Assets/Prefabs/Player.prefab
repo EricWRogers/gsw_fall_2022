@@ -367,9 +367,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9290a51c87d268a4c8c62ea8f9b75aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  molotovSpeed: 0
+  molotovSpeed: 5
   molotovDamage: 0
-  molotovAmmo: 0
+  molotovAmmo: 5
+  MolotovPrefab: {fileID: 3543811637603268283, guid: f93ad13e04fd60e46a877b77c39313de, type: 3}
+  Molo: {fileID: 5756188793529183435}
+  MolotovGFX: {fileID: 8112987363943501936}
+  text: {fileID: 0}
+  Inv: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
 --- !u!114 &4935176938335790153
 MonoBehaviour:
   m_ObjectHideFlags: 0
