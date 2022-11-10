@@ -655,6 +655,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4111841354069799603, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4760956631263213326, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: delay
       value: 2
@@ -705,6 +709,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8533873643231754594, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: countDown
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533873643231754594, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8533873643231754594, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
