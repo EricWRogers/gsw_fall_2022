@@ -10,7 +10,7 @@ public class ChuckMolotov : MonoBehaviour
     public GameObject player;
 
 
-    public float delay = 2f; //how long before the grenade explodes
+    public float delay = 2f; //how long before the molotov shatters
     public float countDown;
 
     public float force, radius;
@@ -30,7 +30,6 @@ public class ChuckMolotov : MonoBehaviour
         if (countDown <= 0f)
         {
             Shatter();
-
         }
     }
 
@@ -73,7 +72,5 @@ public class ChuckMolotov : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
-
     //Health -= Time.DeltaTime * Damage;
-
 }
