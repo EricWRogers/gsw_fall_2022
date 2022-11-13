@@ -1381,6 +1381,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5575288627944991266, guid: 3d1b05a40414f4e489a92c651ed2eec1, type: 3}
+      propertyPath: sounds.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 57a7aab2f2c9d6e4b8c3696769883390, type: 3}
+    - target: {fileID: 5575288627944991266, guid: 3d1b05a40414f4e489a92c651ed2eec1, type: 3}
       propertyPath: sounds.Array.data[3].loop
       value: 0
       objectReference: {fileID: 0}
