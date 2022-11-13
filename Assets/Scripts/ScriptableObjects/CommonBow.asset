@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Common Bow
   description: This is a common bow.
-  icon: {fileID: -1702399741, guid: c0a41602b1d27f74a9f4e805ead8cdbd, type: 3}
+  icon: {fileID: 21300000, guid: 57908da4963f7aa4b93b10f18a759914, type: 3}
   rarity: 1
   cost: 100
   damage: 5
