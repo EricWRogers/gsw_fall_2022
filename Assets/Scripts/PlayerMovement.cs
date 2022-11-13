@@ -4,13 +4,13 @@ using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Slider StaminaSlider;
 
     public Rigidbody2D body;
     public SpriteRenderer spriteRenderer;
-
     public float stamina = 100f;
     public float staminaDepleteTime;
     public float staminaRegenTime;
@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public float sprintSpeed;
 
     public Animator anim;
+
+    public AudioManager audio;
+
 
     Vector2 direction;
 
@@ -39,12 +42,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Play();
         anim.SetFloat("Direction", Input.GetAxisRaw("Horizontal"));
        // anim.SetFloat("Direction", Input.GetAxisRaw("Vertical"));
 
         //get direction of input
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        
         sprinting = false;
 
         if (Input.GetKey(KeyCode.LeftShift))
@@ -120,5 +123,18 @@ public class PlayerMovement : MonoBehaviour
     {
         float angle = Utility.AngleTowardsMouse(hand.position);
         hand.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+    }
+
+    private void Play()
+    {
+        if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            AudioSource sound = GameObject.Find("sound_1_Walking").GetComponent<AudioSource>(); 
+            sound.Play();
+        }
+        else
+        {
+            return;
+        }
     }
 }

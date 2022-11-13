@@ -11,6 +11,6 @@ public class PlayerHealth : Health
     // Update is called once per frame
     void Update()
     {
-        HealthSlider.value = CurrentHealth;
+        HealthSlider.value = gameObject.GetComponent<SuperPupSystems.Helper.Health>().CurrentHealth; ;
     }
 }

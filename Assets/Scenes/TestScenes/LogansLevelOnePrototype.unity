@@ -5724,6 +5724,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2821946409290891499, guid: af7225436066b7e4bbd60fc619af47b5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5067931295219758965, guid: af7225436066b7e4bbd60fc619af47b5, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -7801,6 +7805,10 @@ PrefabInstance:
     - target: {fileID: 277452314448317194, guid: aeb4410ec32d4104f976510248de9028, type: 3}
       propertyPath: m_Name
       value: EnemyArcher (Logan)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3318572604777355593, guid: aeb4410ec32d4104f976510248de9028, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aeb4410ec32d4104f976510248de9028, type: 3}
@@ -27015,6 +27023,7 @@ MonoBehaviour:
   walkSpeed: 10
   sprintSpeed: 25
   anim: {fileID: 3226988461493644785}
+  audio: {fileID: 0}
   hand: {fileID: 3451945507282901709}
 --- !u!1 &321742244401417265
 GameObject:

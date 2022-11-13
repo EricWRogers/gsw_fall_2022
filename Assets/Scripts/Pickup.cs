@@ -8,7 +8,7 @@ public class Pickup : MonoBehaviour
     private Inventory INVIN;
     void Start()
     {
-        INVIN = GameObject.Find("Inventory").GetComponent<Inventory>(); //Finds inventory gameOBJ and gets script component and sets it equals to INVIN
+        //INVIN = GameObject.Find("Inventory").GetComponent<Inventory>(); //Finds inventory gameOBJ and gets script component and sets it equals to INVIN
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

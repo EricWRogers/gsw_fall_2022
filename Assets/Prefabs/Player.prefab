@@ -226,6 +226,7 @@ MonoBehaviour:
   walkSpeed: 10
   sprintSpeed: 20
   anim: {fileID: 0}
+  audio: {fileID: 0}
   hand: {fileID: 3451945506068226083}
 --- !u!70 &321742242918250202
 CapsuleCollider2D:
@@ -367,9 +368,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9290a51c87d268a4c8c62ea8f9b75aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  molotovSpeed: 0
+  molotovSpeed: 5
   molotovDamage: 0
-  molotovAmmo: 0
+  molotovAmmo: 5
+  MolotovPrefab: {fileID: 3543811637603268283, guid: f93ad13e04fd60e46a877b77c39313de, type: 3}
+  Molo: {fileID: 5756188793529183435}
+  MolotovGFX: {fileID: 8112987363943501936}
+  text: {fileID: 4016597303914383397}
+  Inv: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
 --- !u!114 &4935176938335790153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +464,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
