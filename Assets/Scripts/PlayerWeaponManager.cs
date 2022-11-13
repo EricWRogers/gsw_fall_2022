@@ -68,23 +68,23 @@ public class PlayerWeaponManager : MonoBehaviour
     void Start()
     {
         //Bow
-        Inv.arrowAmount = bowAmmo;
+        
         BowPowerSlider.value = 0f;
         BowPowerSlider.maxValue = MaxBowCharge;
 
         //Grenade
-        Inv.arrowAmount = grenadeAmmo;
-
-        Inv.arrowAmount = knifeAmmo;
+       
     }
 
 
     void Update()
     {
         string name = Inv.items[Inv.currentItem].itemStats.name;
+        
 
         if (name == "CommonBow") 
         {
+            Inv.items[Inv.currentItem].quanity = bowAmmo;
             Debug.Log("Current Weapon = " + name);
             
             BowShoot();
@@ -92,6 +92,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
         if (name == "MediumCombustPotion")
         {
+            Inv.items[Inv.currentItem].quanity = grenadeAmmo;
             Debug.Log("Current Weapon = " + name);
            
             GrenadeThrow();
@@ -99,6 +100,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
         if (name == "ThrowingKnife")
         {
+            Inv.items[Inv.currentItem].quanity = knifeAmmo;
             Debug.Log("Current Weapon = " + name);
           
             KnifeThrow();
@@ -121,7 +123,7 @@ public class PlayerWeaponManager : MonoBehaviour
                 FireBow();
                 bowAmmo--;
                 Inv.arrowAmount = bowAmmo;//ammo in inventory is the ammo count that is used
-                Debug.Log("Ammo left: " + bowAmmo);//how much ammo is left
+                //Debug.Log("Ammo left: " + bowAmmo);//how much ammo is left
             }
             else
             {
@@ -161,7 +163,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
         float ArrowSpeed = BowCharge + BowPower;
         float ArrowDamage = BowCharge * BowPower;
-        Debug.Log("Arrow Damage: " + ArrowDamage);
+        //Debug.Log("Arrow Damage: " + ArrowDamage);
 
         float angle = Utility.AngleTowardsMouse(hand.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
