@@ -285,7 +285,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5067931295219758970}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 604dfbbf654f92618bc36972daaa4968, type: 3}
   m_Name: 
@@ -363,7 +363,43 @@ MonoBehaviour:
       m_Calls: []
   OutOfHealth:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5067931295219758970}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 762628501761996573}
+        m_TargetAssemblyTypeName: CustomAIMovement, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5067931295219758970}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   MaxHealth: 10
   CurrentHealth: 10
   HealthSlider: {fileID: 2821946409689495712}
@@ -423,6 +459,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5067931295219758965}
     m_Modifications:
+    - target: {fileID: 434728212396154490, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434728212396154493, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434728212766765728, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
       propertyPath: m_MaxValue
       value: 10
@@ -433,6 +477,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434728212766765729, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434728212766765729, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434728212766765729, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
@@ -447,6 +495,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthSliderUI
       objectReference: {fileID: 0}
+    - target: {fileID: 434728213140760739, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434728213140760739, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434728213140760739, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 434728213165345514, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
       propertyPath: m_Color.b
       value: 0.15065858
@@ -459,8 +519,16 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8679245
       objectReference: {fileID: 0}
+    - target: {fileID: 434728213165345514, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 434728213165345515, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434728213165345515, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 434728213204224520, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
@@ -469,6 +537,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 434728213204224522, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
       propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434728213204224522, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_DynamicPixelsPerUnit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434728213204224522, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 434728213204224523, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_IgnoreReversedGraphics
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 434728213204224524, guid: 0494fc1031675cc46941d38f0b117216, type: 3}

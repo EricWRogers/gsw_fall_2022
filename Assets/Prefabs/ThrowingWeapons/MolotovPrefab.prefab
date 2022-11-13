@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4437513698780370140}
   - component: {fileID: -8803185611060549413}
   - component: {fileID: -6737412849095064386}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: MolotovPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
