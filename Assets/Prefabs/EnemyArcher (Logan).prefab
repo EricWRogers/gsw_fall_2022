@@ -302,7 +302,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277452314448317194}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 604dfbbf654f92618bc36972daaa4968, type: 3}
   m_Name: 
@@ -411,7 +411,31 @@ MonoBehaviour:
       m_Calls: []
   OutOfHealth:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 277452314448317194}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1052376412}
+        m_TargetAssemblyTypeName: LootTable, Assembly-CSharp
+        m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   MaxHealth: 10
   CurrentHealth: 10
   HealthSlider: {fileID: 3318572605184336130}
@@ -585,6 +609,10 @@ PrefabInstance:
     - target: {fileID: 434728213204224522, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 434728213204224522, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 434728213204224524, guid: 0494fc1031675cc46941d38f0b117216, type: 3}
       propertyPath: m_Pivot.x
