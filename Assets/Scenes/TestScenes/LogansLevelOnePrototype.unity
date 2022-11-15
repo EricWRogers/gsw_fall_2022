@@ -26043,7 +26043,11 @@ MonoBehaviour:
   walkSpeed: 10
   sprintSpeed: 25
   anim: {fileID: 3226988461493644785}
+<<<<<<< Updated upstream
   audio: {fileID: 0}
+=======
+  audio: {fileID: 495366757}
+>>>>>>> Stashed changes
   hand: {fileID: 3451945507282901709}
 --- !u!1 &321742244401417265
 GameObject:
