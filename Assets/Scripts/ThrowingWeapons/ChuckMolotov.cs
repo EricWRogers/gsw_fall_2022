@@ -12,7 +12,7 @@ public class ChuckMolotov : MonoBehaviour
 
     public float delay = 6f; //how long before the molotov shatters
     public float countDown;
-    public float burnTimer;
+    public float burnTimer = 0.0f;
 
     public float force, radius;
 
@@ -32,6 +32,8 @@ public class ChuckMolotov : MonoBehaviour
         {
             Shatter();
         }
+
+       
     }
 
     public void Shatter()
@@ -51,22 +53,34 @@ public class ChuckMolotov : MonoBehaviour
             if (nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
             {
                 burnTimer += Time.deltaTime;
-                int damage = (int)burnTimer * MN.molotovDamage;
+                int damage = 1;
+                damage += (int)burnTimer * MN.molotovDamage;
                 nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
 
-                Destroy(gameObject, 5f);
 
-
-                /*add force, pushes stuff away if they have a rigidbody
-                Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
-                if (rb != null)
-                {
-                    //rb.AddForce((transform.position.x, transform.position.y).magnitude);
-                    //obviously gonna have to be edited to fit the force stuff
-                }*/
+                    /*add force, pushes stuff away if they have a rigidbody
+                    Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
+                    if (rb != null)
+                    {
+                        //rb.AddForce((transform.position.x, transform.position.y).magnitude);
+                        //obviously gonna have to be edited to fit the force stuff
+                    }*/
             }
         }
         //Destroy(gameObject);
+        /*
+            timeTilDamage += Time.deltaTime;
+            if (timeTilDamage >= damageInterval)
+            {
+                player.takeDamage(damage);
+                timeTilDamage = 0.0f;
+            }
+        */
+
+        if (burnTimer >= 5f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnDrawGizmosSelected()

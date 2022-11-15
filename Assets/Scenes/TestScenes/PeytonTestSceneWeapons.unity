@@ -595,6 +595,10 @@ PrefabInstance:
       propertyPath: BowPowerSlider
       value: 
       objectReference: {fileID: 1182223331}
+    - target: {fileID: 3228653160484519891, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 1355801615}
     - target: {fileID: 3334446947202588489, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.25
@@ -741,41 +745,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
---- !u!1 &1171622112 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-  m_PrefabInstance: {fileID: 1171622111}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &1171622113 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8112987363943501936, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-  m_PrefabInstance: {fileID: 1171622111}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1171622114 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5756188793529183435, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-  m_PrefabInstance: {fileID: 1171622111}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1171622115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171622112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9290a51c87d268a4c8c62ea8f9b75aff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  molotovSpeed: 3
-  molotovDamage: 1
-  molotovAmmo: 5
-  MolotovPrefab: {fileID: 3543811637603268283, guid: f93ad13e04fd60e46a877b77c39313de, type: 3}
-  Molo: {fileID: 1171622114}
-  MolotovGFX: {fileID: 1171622113}
-  text: {fileID: 1355801615}
-  Inv: {fileID: 4663305082028920829, guid: e34048f1d72c80d4f8e0a6fa4b812d47, type: 3}
 --- !u!114 &1182223331 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5006181269678561779, guid: 8a78fd9e86edd8b44915cacf9f8e07ce, type: 3}
