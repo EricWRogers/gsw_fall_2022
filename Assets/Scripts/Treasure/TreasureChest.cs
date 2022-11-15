@@ -5,10 +5,10 @@ using UnityEngine;
 public class TreasureChest : MonoBehaviour
 
 {
-    private bool isOpened;
+    public bool isOpened;
     public LootTable LT;
     
-    public GameObject[] lootTable;
+    
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player") && isOpened == false)
@@ -17,6 +17,7 @@ public class TreasureChest : MonoBehaviour
             {
                 LT.DropItem();
                 isOpened = true;
+                Debug.Log("Chest Opened");
             }
         }
 

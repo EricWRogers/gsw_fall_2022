@@ -13,7 +13,7 @@ public class Arrow : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 4f);
+        Destroy(gameObject, 10f);
     }
 
     private void FixedUpdate()

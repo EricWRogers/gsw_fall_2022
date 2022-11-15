@@ -11,6 +11,7 @@ TagManager:
   - Corruption
   - Arrow
   - ArrowBundle
+  - Obstacle
   layers:
   - Default
   - TransparentFX

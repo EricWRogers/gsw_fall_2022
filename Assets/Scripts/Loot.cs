@@ -7,6 +7,6 @@ public class Loot
 {
     public GameObject item;
     [Tooltip("Higher number means it is more likely to spawn.")]
-    [Range(0f, 10)]
-    public float lootWeight;
+    [Range(0, 10)]
+    public int lootWeight;
 }

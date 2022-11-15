@@ -8,17 +8,16 @@ public class LootTable : MonoBehaviour
     
     public void DropItem()
     {
-        foreach (Loot l in loot)
+        int rand = Random.Range(0, 10);
+        Debug.Log("Randum num: " + rand);
+       
+        foreach (Loot reward in loot)
         {
-            float rand = Random.Range(0, 10);
-            Debug.Log("Randum num: " + rand);
-
-            if (rand == l.lootWeight)
+            if (rand == reward.lootWeight)
             {
+                GameObject temp = Instantiate(reward.item, gameObject.transform.position, gameObject.transform.rotation);
 
-                GameObject temp = Instantiate(l.item, gameObject.transform.position, gameObject.transform.rotation);
-
-                Debug.Log("Item Dropped");
+                Debug.Log("Item Dropped = " + reward.item.name);
                 break;
             }
 
