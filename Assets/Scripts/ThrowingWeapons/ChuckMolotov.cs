@@ -10,8 +10,9 @@ public class ChuckMolotov : MonoBehaviour
     public GameObject player;
 
 
-    public float delay = 2f; //how long before the molotov shatters
+    public float delay = 6f; //how long before the molotov shatters
     public float countDown;
+    public float burnTimer;
 
     public float force, radius;
 
@@ -48,20 +49,25 @@ public class ChuckMolotov : MonoBehaviour
         foreach (Collider2D nearbyObject in Physics2D.OverlapCircleAll(origin, radius))
         {
             if (nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
-            {   
-               // nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
-                //^ deals damage to every nearby object.
+            {
+                burnTimer += Time.deltaTime;
+                int damage = (int)burnTimer * MN.molotovDamage;
+                nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
 
-                //add force, pushes stuff away if they have a rigidbody
+                if (burnTimer == 5f)
+                {
+                    Destroy(gameObject);
+                }
+                /*add force, pushes stuff away if they have a rigidbody
                 Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {
                     //rb.AddForce((transform.position.x, transform.position.y).magnitude);
                     //obviously gonna have to be edited to fit the force stuff
-                }
+                }*/
             }
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     void OnDrawGizmosSelected()
@@ -69,5 +75,5 @@ public class ChuckMolotov : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
-    //Health -= Time.DeltaTime * Damage;
+    //Health -= Time.DeltaTime * MN.molotovDamage;
 }

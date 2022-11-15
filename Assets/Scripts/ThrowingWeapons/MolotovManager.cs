@@ -8,7 +8,7 @@ public class MolotovManager : MonoBehaviour
 {
 
     public float molotovSpeed;
-    public float molotovDamage;
+    public int molotovDamage;
     public int molotovAmmo;
 
     public GameObject MolotovPrefab;
@@ -49,7 +49,7 @@ public class MolotovManager : MonoBehaviour
 
     void ThrowMolotov()
     {
-        Debug.Log("Grenade Damage: " + molotovDamage); //prints out how much damage each grenade is doing/going to do
+        Debug.Log("Molotov Damage: " + molotovDamage); //prints out how much damage each grenade is doing/going to do
 
         float angle = Utility.AngleTowardsMouse(Molo.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));

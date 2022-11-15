@@ -60,14 +60,13 @@ public class TossGrenade : MonoBehaviour
                 int damage = (int)Mathf.Ceil(((1 - Vector2.Distance((Vector2)nearbyObject.transform.position , (Vector2)gameObject.transform.position) / radius) * PWM.grenadeDamage));
                 nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
                 //^ deals damage to every nearby object.
-                Debug.Log(nearbyObject);
+
                 //add force, pushes stuff away if they have a rigidbody
                 Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
                 if (rb != null)
                 {
                     //rb.AddForce((transform.position.x, transform.position.y).magnitude);
                     //obviously gonna have to be edited to fit the force stuff
-                    //Error CS1061  '(float x, float y)' does not contain a definition for 'magnitude' and no accessible extension method 'magnitude' accepting a first argument of type '(float x, float y)' could be found(are you missing a using directive or an assembly reference ?)
                 }
             }
         }
