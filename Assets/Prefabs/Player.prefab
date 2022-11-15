@@ -407,7 +407,6 @@ GameObject:
   - component: {fileID: 219273612}
   - component: {fileID: 219273613}
   - component: {fileID: 219273614}
-  - component: {fileID: -704191752995827191}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -705,26 +704,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
---- !u!114 &-704191752995827191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321742242918250207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9290a51c87d268a4c8c62ea8f9b75aff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  molotovSpeed: 4
-  molotovDamage: 2
-  molotovAmmo: 5
-  MolotovPrefab: {fileID: 3543811637603268283, guid: f93ad13e04fd60e46a877b77c39313de, type: 3}
-  Molo: {fileID: 5756188793529183435}
-  MolotovGFX: {fileID: 8112987363943501936}
-  text: {fileID: 0}
-  Inv: {fileID: 0}
 --- !u!1 &323533513035893939
 GameObject:
   m_ObjectHideFlags: 0
