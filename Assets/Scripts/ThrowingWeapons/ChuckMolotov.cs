@@ -54,10 +54,9 @@ public class ChuckMolotov : MonoBehaviour
                 int damage = (int)burnTimer * MN.molotovDamage;
                 nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
 
-                if (burnTimer == 5f)
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject, 5f);
+
+
                 /*add force, pushes stuff away if they have a rigidbody
                 Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
                 if (rb != null)

@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Play();
+
         anim.SetFloat("Direction", Input.GetAxisRaw("Horizontal"));
        // anim.SetFloat("Direction", Input.GetAxisRaw("Vertical"));
 
