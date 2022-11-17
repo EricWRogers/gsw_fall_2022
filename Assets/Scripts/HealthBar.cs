@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using SuperPupSystems.Helper;
 
-public class PlayerHealth : Health
+public class HealthBar : Health
 {
     public Slider HealthSlider;
 
