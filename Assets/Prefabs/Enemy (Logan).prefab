@@ -230,8 +230,8 @@ MonoBehaviour:
   speed: 800
   nextWaypointDistance: 3
   pathUpdateSpeed: 0.2
-  AOA: 100
-  AOAToggle: 0
+  AOA: 10
+  AOAToggle: 1
   attackRange: 2
   randomizerToggle: 1
   anim: {fileID: 148385082}
