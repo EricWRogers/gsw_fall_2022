@@ -115,8 +115,8 @@ public class PlayerMovement : MonoBehaviour
 
         //bow and arrow control
         RotateHand();
-        StaminaSlider.value = stamina;
-
+        if(StaminaSlider != null)
+            StaminaSlider.value = stamina;
     }
 
     //bow and arrow control

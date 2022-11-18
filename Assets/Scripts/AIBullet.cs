@@ -25,6 +25,7 @@ public class AIBullet : MonoBehaviour
    {
         if(hitInfo.CompareTag("Player"))
         {
+            Debug.Log("Hi");
         hitInfo.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(arrowDamage); //Logans Code. Works with Erics Health Script.
         Destroy(gameObject);
         }

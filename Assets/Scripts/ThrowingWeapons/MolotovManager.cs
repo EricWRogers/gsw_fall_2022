@@ -25,6 +25,7 @@ public class MolotovManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.LogWarning("THIS IS BAD FIX!");
         Inv.arrowAmount = molotovAmmo; //need to change to knife ammount rather
                                        //than have it run on arrow ammount
 
@@ -33,7 +34,8 @@ public class MolotovManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Ammo: " + molotovAmmo.ToString(); //for ammo counter, will count down as ammo decreases
+        if (text != null)
+            text.text = "Ammo: " + molotovAmmo.ToString(); //for ammo counter, will count down as ammo decreases
         if (Input.GetMouseButtonDown(0) && CanThrow)
         {
             ThrowMolotov();

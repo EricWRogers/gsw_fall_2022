@@ -43,7 +43,7 @@ public class MainMenu : MonoBehaviour
     }
     private void PlayMusic()
     {
-        
+            Debug.Log("Eric Look " + name);
             AudioSource sound = GameObject.Find("sound_0_Title Music").GetComponent<AudioSource>();
             sound.Play();
         
