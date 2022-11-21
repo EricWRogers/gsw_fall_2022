@@ -59,6 +59,7 @@ public class TossGrenade : MonoBehaviour
                 //int damage = (int)((1 - ((Vector2)nearbyObject.transform.position - (Vector2)gameObject.transform.position).magnitude/radius) * GN.grenadeDamage);
                 int damage = (int)Mathf.Ceil(((1 - Vector2.Distance((Vector2)nearbyObject.transform.position , (Vector2)gameObject.transform.position) / radius) * PWM.grenadeDamage));
                 nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
+                Debug.Log("TossGrenade : Hi");
                 //^ deals damage to every nearby object.
 
                 //add force, pushes stuff away if they have a rigidbody

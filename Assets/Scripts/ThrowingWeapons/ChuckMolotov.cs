@@ -55,6 +55,7 @@ public class ChuckMolotov : MonoBehaviour
                 burnTimer += Time.deltaTime;
                 int damage = 1;
                 damage += (int)burnTimer * MN.molotovDamage;
+                Debug.Log("ChuckMolotov : Hi");
                 nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
 
 

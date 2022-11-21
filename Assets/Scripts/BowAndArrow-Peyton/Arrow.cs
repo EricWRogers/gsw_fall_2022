@@ -29,6 +29,7 @@ public class Arrow : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
             //enemy.TakeDamage(ArrowDamage);
+            Debug.Log("Arrow : Hi");
             collision.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(ArrowDamage); //Logans Code. Works with Erics Health Script.
         }
         Destroy(gameObject); //destroys arrows when they hit something

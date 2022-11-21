@@ -29,13 +29,18 @@ public class Sound
         source = _source;
             source.clip = clip;
         source.loop = loop;
+       
     }
+
+
     public void Play()
     {
         source.volume = volume * (1 + Random.Range(-randomVolume /  2f, randomVolume  /  2f));
         source.pitch = pitch * (1 + Random.Range(-randomPitch  /  2f, randomPitch  /  2f));
+        Debug.LogError("Not Playing?");
         source.Play();
     }
+    
 }
 
 public class AudioManager : MonoBehaviour
@@ -65,6 +70,7 @@ public class AudioManager : MonoBehaviour
             _go.transform.SetParent(this.transform);
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
+        
        // PlaySound("uiBgMusic");
     }
 

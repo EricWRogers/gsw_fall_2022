@@ -10,15 +10,15 @@ public class MainMenu : MonoBehaviour
     public AudioManager audio;
 
     public string sceneName; //We can now input the scene we want to go to
+    void Start()
+    {
+        PlayMusic();
+    }
     void Update()
     {
         Play();
-        PlayMusic();
     }
-    void Awake()
-    {
-
-    }
+    
     public void PlayGame()
     {
         SceneManager.LoadScene(sceneName); //Name of the Scene
@@ -30,20 +30,21 @@ public class MainMenu : MonoBehaviour
     }
     private void Play()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-
+            Debug.Log("No Sound Called");
             AudioSource sound = GameObject.Find("sound_9_uiButton").GetComponent<AudioSource>();
             sound.Play();
         }
         else
         {
+            
             return;
         }
     }
-    private void PlayMusic()
+   private void PlayMusic()
     {
-        
+            Debug.Log("Eric Look " + name);
             AudioSource sound = GameObject.Find("sound_0_Title Music").GetComponent<AudioSource>();
             sound.Play();
         
