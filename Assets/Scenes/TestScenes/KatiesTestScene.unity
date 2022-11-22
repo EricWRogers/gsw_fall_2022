@@ -746,7 +746,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4875391500545003594, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: level
-      value: Level-1
+      value: LevelOne
       objectReference: {fileID: 0}
     - target: {fileID: 4875391500545003594, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: transition
@@ -802,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875391500545003604, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4875391500714550727, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: m_SortingOrder
@@ -1556,6 +1556,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -438
       objectReference: {fileID: 0}
+    - target: {fileID: 1283708030446580600, guid: 6773198e00167f84a8a14c81f1e94c1b, type: 3}
+      propertyPath: m_text
+      value: 'Flask that combusts
+
+
+        Flask that is fire
+
+
+        Enemy that
+        attacks up close
+
+
+        Enemy that attacks from a distance
+
+
+        A
+        poisonous haze from crystals
+
+
+        Where enemies spawn from
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 1283708030446580607, guid: 6773198e00167f84a8a14c81f1e94c1b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 452
@@ -1611,7 +1634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1589266764735651856, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
       propertyPath: level
-      value: Level-1
+      value: LevelOne
       objectReference: {fileID: 0}
     - target: {fileID: 1589266764735651856, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
       propertyPath: transition
@@ -1639,7 +1662,7 @@ PrefabInstance:
       objectReference: {fileID: 669463472}
     - target: {fileID: 1589266764735651870, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
       propertyPath: sceneName
-      value: Level-1
+      value: LevelOne
       objectReference: {fileID: 0}
     - target: {fileID: 1589266764735651871, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
       propertyPath: m_Pivot.x

@@ -14,10 +14,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/TestScenes/Logan'sTestScenePath.unity
     guid: 0ad5508c6424d534ab042f3f49d23ca6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TestScenes/LogansLevelOnePrototype.unity
     guid: 3558e3046d5da1644afb57638187e879
   - enabled: 1
     path: Assets/Scenes/TestScenes/DuelTest.unity
     guid: 6a56cf369ae336046afb7ce0c9562cd6
+  - enabled: 1
+    path: Assets/LevelOne.unity
+    guid: dd82502f23254df428bac451be44d33d
   m_configObjects: {}
