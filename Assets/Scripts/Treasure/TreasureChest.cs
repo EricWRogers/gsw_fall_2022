@@ -7,8 +7,10 @@ public class TreasureChest : MonoBehaviour
 {
     public bool isOpened;
     public LootTable LT;
-    
-    
+    public Sprite newSprite;
+    public SpriteRenderer spriteRenderer;
+
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player") && isOpened == false)
@@ -17,6 +19,7 @@ public class TreasureChest : MonoBehaviour
             {
                 LT.DropItem();
                 isOpened = true;
+                spriteRenderer.sprite = newSprite;
                 Debug.Log("Chest Opened");
             }
         }
