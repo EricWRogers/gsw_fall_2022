@@ -11,6 +11,7 @@ public class HudScript : MonoBehaviour
     void Start()
     {
         weaponWheel.SetActive(false);
+        isWeaponWheelOpen = false;
     }
 
     // Update is called once per frame
