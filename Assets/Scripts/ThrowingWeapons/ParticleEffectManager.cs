@@ -13,8 +13,8 @@ public class ParticleEffectManager : MonoBehaviour
     {
         if (deathPFX == null)
         {
-            damagePFX = transform.Find("EnemyHitEffect").GetComponent<ParticleSystem>();
-            deathPFX = transform.Find("EnemyDeathEffect").GetComponent<ParticleSystem>();
+            damagePFX = this.gameObject.GetComponent<ParticleSystem>();
+            deathPFX = this.gameObject.GetComponent<ParticleSystem>();
         }
     }
     public void playDeathPFX()
