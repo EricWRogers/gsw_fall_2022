@@ -10,11 +10,13 @@ public class ChuckMolotov : MonoBehaviour
     public GameObject player;
 
 
-    public float delay = 6f; //how long before the molotov shatters
+    public float delay = 2f; //how long before the molotov shatters
     public float countDown;
     public float burnTimer = 0.0f;
+    public float tickTimer = 1.0f;
+    public float tickRate = 1.0f;
 
-    public float force, radius;
+    public float /*force*/ radius;
 
     [HideInInspector] public float MolotovVelocity;
     private void Start()
@@ -47,36 +49,27 @@ public class ChuckMolotov : MonoBehaviour
 
 
         //adds the force to each collider in the radius, therefore pushing them back
+        burnTimer += Time.deltaTime;
+        int damage = MN.molotovDamage;
 
-        foreach (Collider2D nearbyObject in Physics2D.OverlapCircleAll(origin, radius))
+        if(tickTimer >= tickRate)
         {
-            if (nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
+            tickTimer = 0.0f;
+            foreach (Collider2D nearbyObject in Physics2D.OverlapCircleAll(origin, radius))
             {
-                burnTimer += Time.deltaTime;
-                int damage = 1;
-                damage += (int)burnTimer * MN.molotovDamage;
-                Debug.Log("ChuckMolotov : Hi");
-                nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
+                if (nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
+                {
+                    Debug.Log("ChuckMolotov : Hi");
 
-
-                    /*add force, pushes stuff away if they have a rigidbody
-                    Rigidbody2D rb = nearbyObject.GetComponent<Rigidbody2D>();
-                    if (rb != null)
-                    {
-                        //rb.AddForce((transform.position.x, transform.position.y).magnitude);
-                        //obviously gonna have to be edited to fit the force stuff
-                    }*/
+                    nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
+                }
             }
         }
+        else
+        {
+            tickTimer += Time.deltaTime;
+        }
         //Destroy(gameObject);
-        /*
-            timeTilDamage += Time.deltaTime;
-            if (timeTilDamage >= damageInterval)
-            {
-                player.takeDamage(damage);
-                timeTilDamage = 0.0f;
-            }
-        */
 
         if (burnTimer >= 5f)
         {
@@ -89,5 +82,4 @@ public class ChuckMolotov : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
-    //Health -= Time.DeltaTime * MN.molotovDamage;
 }

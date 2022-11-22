@@ -126,7 +126,8 @@ MonoBehaviour:
   delay: 6
   countDown: 0
   burnTimer: 0
-  force: 50
+  tickTimer: 1
+  tickRate: 0.2
   radius: 2.5
   MolotovVelocity: 0
 --- !u!70 &8109288047062249622
