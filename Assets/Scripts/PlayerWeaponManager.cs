@@ -9,18 +9,19 @@ public class PlayerWeaponManager : MonoBehaviour
     public TMP_Text ammoText;
 
     [SerializeField] Transform hand;
+
     #region BowDeclarations
 
     [SerializeField] GameObject ArrowPrefab;
 
     [SerializeField] SpriteRenderer ArrowGFX;
     [SerializeField] Slider BowPowerSlider;
-    
+
     [SerializeField] float cooldownTime;
     [SerializeField] int bowAmmo;
-    
 
-   
+
+
 
     [Range(0, 10)]
 
@@ -31,7 +32,7 @@ public class PlayerWeaponManager : MonoBehaviour
     [SerializeField] float MaxBowCharge;
 
     float BowCharge;
-    
+
 
     #endregion
 
@@ -43,15 +44,15 @@ public class PlayerWeaponManager : MonoBehaviour
     public int grenadeAmmo;
 
     public GameObject GrenadePrefab;
- 
+
 
     //public SpriteRenderer explosionEffect;
     public SpriteRenderer GrenadeGFX;
 
 
-    
-  
-    
+
+
+
     #endregion
 
     #region ThrowingKnifeDeclarations
@@ -59,34 +60,44 @@ public class PlayerWeaponManager : MonoBehaviour
     public int knifeDamage;
     [SerializeField] int knifeAmmo;
     [SerializeField] SpriteRenderer KnifeGFX;
-   
+
     [SerializeField] float KnifeSpeed;
 
 
     #endregion
 
+    #region MolotovDeclarations
+    public float molotovSpeed;
+    public int molotovDamage;
+    public int molotovAmmo;
+
+    public GameObject MolotovPrefab;
+
+    public SpriteRenderer MolotovGFX;
+    #endregion
+
     void Start()
     {
-        //Bow
-        
+
+
         BowPowerSlider.value = 0f;
         BowPowerSlider.maxValue = MaxBowCharge;
 
-        //Grenade
-       
+        Inv.arrowAmount = molotovAmmo;
+
     }
 
 
     void Update()
     {
         string name = Inv.items[Inv.currentItem].itemStats.name;
-        
 
-        if (name == "CommonBow") 
+
+        if (name == "CommonBow")
         {
             Inv.items[Inv.currentItem].quanity = bowAmmo;
             Debug.Log("Current Weapon = " + name);
-            
+
             BowShoot();
         }
 
@@ -94,7 +105,7 @@ public class PlayerWeaponManager : MonoBehaviour
         {
             Inv.items[Inv.currentItem].quanity = grenadeAmmo;
             Debug.Log("Current Weapon = " + name);
-           
+
             GrenadeThrow();
         }
 
@@ -102,8 +113,28 @@ public class PlayerWeaponManager : MonoBehaviour
         {
             Inv.items[Inv.currentItem].quanity = knifeAmmo;
             Debug.Log("Current Weapon = " + name);
-          
+
             KnifeThrow();
+        }
+
+        if (name == "FirePotion")
+        {
+            Inv.items[Inv.currentItem].quanity = knifeAmmo;
+            Debug.Log("Current Weapon = " + name);
+
+            
+            ammoText.text = "Ammo: " + molotovAmmo.ToString(); //for ammo counter, will count down as ammo decreases
+            if (Input.GetMouseButtonDown(0) && canThrow)
+            {
+                ThrowMolotov();
+                molotovAmmo--;
+                Inv.arrowAmount = molotovAmmo;//ammo in inventory is the ammo count that is used
+                Debug.Log("Molotov ammo left: " + molotovAmmo);//how much ammo is left
+
+            }
+
+            if (molotovAmmo == 0)
+                canThrow = false;
         }
 
     }
@@ -246,5 +277,19 @@ public class PlayerWeaponManager : MonoBehaviour
     }
     #endregion
 
+    #region MolotovFunctions
+    void ThrowMolotov()
+    {
+        Debug.Log("Molotov Damage: " + molotovDamage); //prints out how much damage each grenade is doing/going to do
+
+        float angle = Utility.AngleTowardsMouse(hand.position);
+        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+
+        ChuckMolotov Chuck = Instantiate(MolotovPrefab, hand.position, rot).GetComponent<ChuckMolotov>();
+        Chuck.MolotovVelocity = molotovSpeed;
+
+        MolotovGFX.enabled = false;
+    }
+    #endregion
 
 }
