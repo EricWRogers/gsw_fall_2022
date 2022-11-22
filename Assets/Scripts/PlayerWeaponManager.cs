@@ -96,7 +96,7 @@ public class PlayerWeaponManager : MonoBehaviour
         if (name == "CommonBow")
         {
             Inv.items[Inv.currentItem].quanity = bowAmmo;
-            Debug.Log("Current Weapon = " + name);
+            //Debug.Log("Current Weapon = " + name);
 
             BowShoot();
         }
@@ -104,7 +104,7 @@ public class PlayerWeaponManager : MonoBehaviour
         if (name == "MediumCombustPotion")
         {
             Inv.items[Inv.currentItem].quanity = grenadeAmmo;
-            Debug.Log("Current Weapon = " + name);
+            //Debug.Log("Current Weapon = " + name);
 
             GrenadeThrow();
         }
@@ -112,7 +112,7 @@ public class PlayerWeaponManager : MonoBehaviour
         if (name == "ThrowingKnife")
         {
             Inv.items[Inv.currentItem].quanity = knifeAmmo;
-            Debug.Log("Current Weapon = " + name);
+            //Debug.Log("Current Weapon = " + name);
 
             KnifeThrow();
         }
@@ -120,7 +120,7 @@ public class PlayerWeaponManager : MonoBehaviour
         if (name == "FirePotion")
         {
             Inv.items[Inv.currentItem].quanity = knifeAmmo;
-            Debug.Log("Current Weapon = " + name);
+            //Debug.Log("Current Weapon = " + name);
 
             
             ammoText.text = "Ammo: " + molotovAmmo.ToString(); //for ammo counter, will count down as ammo decreases
