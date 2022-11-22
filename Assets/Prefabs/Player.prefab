@@ -518,8 +518,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.2, y: 2.2}
+  m_Offset: {x: -0.021334648, y: -0.061341524}
+  m_Size: {x: 0.66659737, y: 1.9706359}
   m_Direction: 0
 --- !u!70 &321742242918250202
 CapsuleCollider2D:
@@ -534,8 +534,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
+  m_Offset: {x: -0.018669128, y: -0.058674455}
+  m_Size: {x: 0.57860947, y: 1.8826511}
   m_Direction: 0
 --- !u!95 &219273610
 Animator:
@@ -547,7 +547,7 @@ Animator:
   m_GameObject: {fileID: 321742242918250207}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab7a0af58244dce4485322ba72c2c43d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -657,9 +657,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 11500000, guid: c93491d68ca00f84db2f6fa29e698bb5, type: 3}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
