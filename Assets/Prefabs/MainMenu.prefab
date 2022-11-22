@@ -471,6 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93491d68ca00f84db2f6fa29e698bb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
   sceneName: LogansLevelOnePrototype
 --- !u!114 &1589266764735651857
 MonoBehaviour:
@@ -484,6 +485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ddec66bd0064c44a5372f56e7389f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audio: {fileID: 0}
   pauseMenuUI: {fileID: 0}
 --- !u!114 &1589266764735651856
 MonoBehaviour:
