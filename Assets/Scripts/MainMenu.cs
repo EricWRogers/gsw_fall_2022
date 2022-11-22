@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public bool isLoading = false;
     public AudioManager audio;
 
     public string sceneName; //We can now input the scene we want to go to
@@ -21,7 +22,15 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame()
     {
-        SceneManager.LoadScene(sceneName); //Name of the Scene
+        if(isLoading == false)
+        {
+            isLoading = true;
+            SceneManager.LoadScene(sceneName); //Name of the scene
+            
+        }
+
+        isLoading = false;
+       
     }
     public void QuitGame()
     {
@@ -47,6 +56,5 @@ public class MainMenu : MonoBehaviour
             Debug.Log("Eric Look " + name);
             AudioSource sound = GameObject.Find("sound_0_Title Music").GetComponent<AudioSource>();
             sound.Play();
-        
     }
 }
