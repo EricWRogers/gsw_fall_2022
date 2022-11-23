@@ -99,7 +99,8 @@ public class PlayerAttack : MonoBehaviour
             Arrow Arrow = Instantiate(ArrowPrefab, Bow.position, rot).GetComponent<Arrow>();
             Arrow.ArrowVelocity = ArrowSpeed;
             Arrow.ArrowDamage = (int)Mathf.Ceil(ArrowDamage);
-
+        CameraShake.Instance.ShakeCamera(5f, .1f);
+       
             CanFire = false;
             ArrowGFX.enabled = false;
         }

@@ -406,7 +406,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3882972159368434167, guid: 3d1b05a40414f4e489a92c651ed2eec1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3882972159368434167, guid: 3d1b05a40414f4e489a92c651ed2eec1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -571,15 +571,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 02396e07ff979064eb9ca4ad995a1dcf, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -733,7 +733,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4875391500545003594, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: level
-      value: LogansLevelOnePrototype
+      value: LevelOne
       objectReference: {fileID: 0}
     - target: {fileID: 4875391500545003594, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: transition
@@ -741,7 +741,7 @@ PrefabInstance:
       objectReference: {fileID: 961603136}
     - target: {fileID: 4875391500545003595, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4875391500545003595, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: m_LocalPosition.x
@@ -789,7 +789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4875391500545003604, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4875391500714550727, guid: 4ed953437a1f5754694386587f1a4911, type: 3}
       propertyPath: m_SortingOrder
@@ -1038,10 +1038,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1496,7 +1496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1283708028351881438, guid: 6773198e00167f84a8a14c81f1e94c1b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1283708028351881439, guid: 6773198e00167f84a8a14c81f1e94c1b, type: 3}
       propertyPath: m_RootOrder
@@ -1554,6 +1554,29 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -438
       objectReference: {fileID: 0}
+    - target: {fileID: 1283708030446580600, guid: 6773198e00167f84a8a14c81f1e94c1b, type: 3}
+      propertyPath: m_text
+      value: 'Flask that combusts
+
+
+        Flask that is fire
+
+
+        Enemy that
+        attacks up close
+
+
+        Enemy that attacks from a distance
+
+
+        A
+        poisonous haze from crystals
+
+
+        Where enemies spawn from
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 1283708030446580607, guid: 6773198e00167f84a8a14c81f1e94c1b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 452
@@ -1608,6 +1631,10 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 1589266764735651856, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
+      propertyPath: level
+      value: LevelOne
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589266764735651856, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
       propertyPath: transition
       value: 
       objectReference: {fileID: 961603136}
@@ -1625,12 +1652,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1589266764735651868, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1589266764735651870, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
       propertyPath: audio
       value: 
-      objectReference: {fileID: 966078367}
+      objectReference: {fileID: 669463472}
+    - target: {fileID: 1589266764735651870, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
+      propertyPath: sceneName
+      value: LevelOne
+      objectReference: {fileID: 0}
     - target: {fileID: 1589266764735651871, guid: 4d287e229f23fe84790b79498a3e61b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

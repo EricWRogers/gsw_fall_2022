@@ -1318,7 +1318,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1678370518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1725,6 +1725,14 @@ PrefabInstance:
       propertyPath: tradingInventory
       value: 
       objectReference: {fileID: 1190768930}
+    - target: {fileID: 2086201124, guid: 487898ecd86ce654dbb4f00d673bab23, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2086201124, guid: 487898ecd86ce654dbb4f00d673bab23, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.85
+      objectReference: {fileID: 0}
     - target: {fileID: 2086201125, guid: 487898ecd86ce654dbb4f00d673bab23, type: 3}
       propertyPath: hud
       value: 

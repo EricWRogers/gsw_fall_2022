@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TradingHud : MonoBehaviour
@@ -17,14 +15,14 @@ public class TradingHud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("TradingHudOpen") && isTradingHudOpen == false &&  hud.isWeaponWheelOpen == false && isMerchant == true || Input.GetKeyDown(KeyCode.Q) && isTradingHudOpen == false &&  hud.isWeaponWheelOpen == false && isMerchant == true)
-        {
+        if ((Input.GetButtonDown("TradingHudOpen") || Input.GetKeyDown(KeyCode.Q)) && isTradingHudOpen == false && hud.isWeaponWheelOpen == false && isMerchant == true)
+        { 
             isTradingHudOpen = true;
             tradingHud.SetActive(true);
             Time.timeScale = 0;
         }
 
-        else if(Input.GetButtonDown("TradingHudOpen") && isTradingHudOpen == true || Input.GetKeyDown(KeyCode.Q) && isTradingHudOpen == true)
+        else if ((Input.GetButtonDown("TradingHudOpen") || Input.GetKeyDown(KeyCode.Q)) && isTradingHudOpen == true)
         {
             isTradingHudOpen = false;
             tradingHud.SetActive(false);
@@ -34,13 +32,22 @@ public class TradingHud : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col)
     {
-        Debug.Log("Merchant");
-        isMerchant = true;
+        if (col.CompareTag("Player"))
+        {
+            Debug.Log("Merchant");
+            isMerchant = true;
+        }
+
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        Debug.Log("Left Merchant");
-        isMerchant = false;
+        if (col.CompareTag("Player"))
+        {
+            Debug.Log("Left Merchant");
+            isMerchant = false;
+        }
     }
+
+
 }

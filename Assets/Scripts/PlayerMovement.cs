@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Play();
 
-        anim.SetFloat("Direction", Input.GetAxisRaw("Horizontal"));
+        anim.SetFloat("Direction", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
        // anim.SetFloat("Direction", Input.GetAxisRaw("Vertical"));
 
         //get direction of input
@@ -73,12 +73,21 @@ public class PlayerMovement : MonoBehaviour
                     resting = false;
                 }
             }
-
+          
+        }
+       
+        if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            spriteRenderer.flipX = true;
 
         }
-        
-        
-            if (stamina < 100 && !sprinting)
+        if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
+
+
+        if (stamina < 100 && !sprinting)
             {
 
                 stamina += Time.deltaTime * staminaRegenTime;
