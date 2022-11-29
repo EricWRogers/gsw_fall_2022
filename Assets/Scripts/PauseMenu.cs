@@ -11,10 +11,7 @@ public class PauseMenu : MonoBehaviour
 	public GameObject pauseMenuUI;
 
 
-	void Start()
-	{
-		//PlayMusic();
-	}
+	
 
 	void Update()
 	{
@@ -29,6 +26,8 @@ public class PauseMenu : MonoBehaviour
 			}
 			else
 			{
+				//PlayMusic();
+
 
 				Pause();
 			}
