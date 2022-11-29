@@ -123,7 +123,7 @@ MonoBehaviour:
   rb: {fileID: -8803185611060549413}
   MN: {fileID: 0}
   player: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
-  delay: 6
+  delay: 2
   countDown: 0
   burnTimer: 0
   tickTimer: 1
