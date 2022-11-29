@@ -92,6 +92,19 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         string name = Inv.items[Inv.currentItem].itemStats.name;
 
+        if (name == "CommonSword")
+        {
+            Transform temp = gameObject.transform.Find("Hand/MoonSword");
+            temp.gameObject.SetActive(true);
+           
+
+            CommonSword();
+        }
+        if (name != "CommonSword")
+        {
+            Transform temp = gameObject.transform.Find("Hand/MoonSword");
+            temp.gameObject.SetActive(false);
+        }
 
         if (name == "CommonBow")
         {
@@ -99,8 +112,6 @@ public class PlayerWeaponManager : MonoBehaviour
             //Debug.Log("Current Weapon = " + name);
 
             BowShoot();
-
-            
         }
 
         if (name == "MediumCombustPotion")
@@ -108,14 +119,16 @@ public class PlayerWeaponManager : MonoBehaviour
             Transform temp = gameObject.transform.Find("Hand/GrenPos");
             temp.gameObject.SetActive(true);
 
-            if(grenadeAmmo <= 0 || name != "MediumCombustPotion")
-            {
-                temp.gameObject.SetActive(false);
-            }
+            
             Inv.items[Inv.currentItem].quanity = grenadeAmmo;
             //Debug.Log("Current Weapon = " + name);
 
             GrenadeThrow();
+        }
+        if (grenadeAmmo <= 0 || name != "MediumCombustPotion")
+        {
+            Transform temp = gameObject.transform.Find("Hand/GrenPos");
+            temp.gameObject.SetActive(false);
         }
 
         if (name == "ThrowingKnife")
@@ -123,14 +136,16 @@ public class PlayerWeaponManager : MonoBehaviour
             Transform temp = gameObject.transform.Find("Hand/KnifePos/Knife");
             temp.gameObject.SetActive(true);
 
-            if (knifeAmmo <= 0 || name != "ThrowingKnife")
-            {
-                temp.gameObject.SetActive(false);
-            }
+            
             Inv.items[Inv.currentItem].quanity = knifeAmmo;
             //Debug.Log("Current Weapon = " + name);
 
             KnifeThrow();
+        }
+        if (grenadeAmmo <= 0 || name != "ThrowingKnife")
+        {
+            Transform temp = gameObject.transform.Find("Hand/KnifePos/Knife");
+            temp.gameObject.SetActive(false);
         }
 
         if (name == "FirePotion")
@@ -138,14 +153,11 @@ public class PlayerWeaponManager : MonoBehaviour
             Transform temp = gameObject.transform.Find("Hand/MolotovPos/Molotov");
             temp.gameObject.SetActive(true);
 
-            if (knifeAmmo <= 0 || name != "FirePotion")
-            {
-                temp.gameObject.SetActive(false);
-            }
+            
             Inv.items[Inv.currentItem].quanity = knifeAmmo;
             //Debug.Log("Current Weapon = " + name);
 
-            
+
             ammoText.text = "Ammo: " + molotovAmmo.ToString(); //for ammo counter, will count down as ammo decreases
             if (Input.GetMouseButtonDown(0) && canThrow)
             {
@@ -159,6 +171,11 @@ public class PlayerWeaponManager : MonoBehaviour
             if (molotovAmmo == 0)
                 canThrow = false;
         }
+        if (grenadeAmmo <= 0 || name != "FirePotion")
+        {
+            Transform temp = gameObject.transform.Find("Hand/MolotovPos/Molotov");
+            temp.gameObject.SetActive(false);
+        }
 
     }
 
@@ -171,7 +188,7 @@ public class PlayerWeaponManager : MonoBehaviour
             if (Input.GetMouseButton(0) && canFire)
             {
                 Transform temp = gameObject.transform.Find("Hand/BowPos2");
-                
+
                 temp.gameObject.SetActive(true);
                 ChargeBow();
             }
@@ -243,7 +260,7 @@ public class PlayerWeaponManager : MonoBehaviour
         ammoText.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
         if (Input.GetMouseButtonDown(0) && canThrow)
         {
-            
+
             ThrowGrenade();
             grenadeAmmo--;
             Inv.arrowAmount = grenadeAmmo;//ammo in inventory is the ammo count that is used
@@ -322,4 +339,9 @@ public class PlayerWeaponManager : MonoBehaviour
     }
     #endregion
 
+    void CommonSword()
+    {
+        float angle = Utility.AngleTowardsMouse(hand.position);
+        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+    }
 }
