@@ -103,6 +103,13 @@ public class PlayerWeaponManager : MonoBehaviour
 
         if (name == "MediumCombustPotion")
         {
+            Transform temp = gameObject.transform.Find("Player/Hand/GrenPos");
+            temp.gameObject.SetActive(true);
+
+            if(grenadeAmmo <= 0 || name != "MediumCombustPotion")
+            {
+                temp.gameObject.SetActive(false);
+            }
             Inv.items[Inv.currentItem].quanity = grenadeAmmo;
             //Debug.Log("Current Weapon = " + name);
 
@@ -111,6 +118,13 @@ public class PlayerWeaponManager : MonoBehaviour
 
         if (name == "ThrowingKnife")
         {
+            Transform temp = gameObject.transform.Find("Player/Hand/KnifePos/Knife");
+            temp.gameObject.SetActive(true);
+
+            if (knifeAmmo <= 0 || name != "ThrowingKnife")
+            {
+                temp.gameObject.SetActive(false);
+            }
             Inv.items[Inv.currentItem].quanity = knifeAmmo;
             //Debug.Log("Current Weapon = " + name);
 
@@ -119,6 +133,13 @@ public class PlayerWeaponManager : MonoBehaviour
 
         if (name == "FirePotion")
         {
+            Transform temp = gameObject.transform.Find("Player/Hand/MolotovPos/Molotov");
+            temp.gameObject.SetActive(true);
+
+            if (knifeAmmo <= 0 || name != "FirePotion")
+            {
+                temp.gameObject.SetActive(false);
+            }
             Inv.items[Inv.currentItem].quanity = knifeAmmo;
             //Debug.Log("Current Weapon = " + name);
 
@@ -147,10 +168,16 @@ public class PlayerWeaponManager : MonoBehaviour
             ammoText.text = "Ammo: " + bowAmmo.ToString(); //for ammo counter, will count down as ammo decreases
             if (Input.GetMouseButton(0) && canFire)
             {
+                Transform temp = gameObject.transform.Find("Player/Hand/BowPos2");
+                
+                temp.gameObject.SetActive(true);
                 ChargeBow();
             }
             else if (Input.GetMouseButtonUp(0) && canFire)
             {
+                Transform temp = gameObject.transform.Find("Player/Hand/BowPos2");
+                temp.gameObject.SetActive(true);
+
                 FireBow();
                 bowAmmo--;
                 Inv.arrowAmount = bowAmmo;//ammo in inventory is the ammo count that is used
@@ -214,6 +241,7 @@ public class PlayerWeaponManager : MonoBehaviour
         ammoText.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
         if (Input.GetMouseButtonDown(0) && canThrow)
         {
+            
             ThrowGrenade();
             grenadeAmmo--;
             Inv.arrowAmount = grenadeAmmo;//ammo in inventory is the ammo count that is used
