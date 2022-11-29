@@ -99,11 +99,13 @@ public class PlayerWeaponManager : MonoBehaviour
             //Debug.Log("Current Weapon = " + name);
 
             BowShoot();
+
+            
         }
 
         if (name == "MediumCombustPotion")
         {
-            Transform temp = gameObject.transform.Find("Player/Hand/GrenPos");
+            Transform temp = gameObject.transform.Find("Hand/GrenPos");
             temp.gameObject.SetActive(true);
 
             if(grenadeAmmo <= 0 || name != "MediumCombustPotion")
@@ -118,7 +120,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
         if (name == "ThrowingKnife")
         {
-            Transform temp = gameObject.transform.Find("Player/Hand/KnifePos/Knife");
+            Transform temp = gameObject.transform.Find("Hand/KnifePos/Knife");
             temp.gameObject.SetActive(true);
 
             if (knifeAmmo <= 0 || name != "ThrowingKnife")
@@ -133,7 +135,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
         if (name == "FirePotion")
         {
-            Transform temp = gameObject.transform.Find("Player/Hand/MolotovPos/Molotov");
+            Transform temp = gameObject.transform.Find("Hand/MolotovPos/Molotov");
             temp.gameObject.SetActive(true);
 
             if (knifeAmmo <= 0 || name != "FirePotion")
@@ -168,15 +170,15 @@ public class PlayerWeaponManager : MonoBehaviour
             ammoText.text = "Ammo: " + bowAmmo.ToString(); //for ammo counter, will count down as ammo decreases
             if (Input.GetMouseButton(0) && canFire)
             {
-                Transform temp = gameObject.transform.Find("Player/Hand/BowPos2");
+                Transform temp = gameObject.transform.Find("Hand/BowPos2");
                 
                 temp.gameObject.SetActive(true);
                 ChargeBow();
             }
             else if (Input.GetMouseButtonUp(0) && canFire)
             {
-                Transform temp = gameObject.transform.Find("Player/Hand/BowPos2");
-                temp.gameObject.SetActive(true);
+                Transform temp = gameObject.transform.Find("Hand/BowPos2");
+                temp.gameObject.SetActive(false);
 
                 FireBow();
                 bowAmmo--;
