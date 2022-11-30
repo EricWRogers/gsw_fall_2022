@@ -262,9 +262,11 @@ public class PlayerWeaponManager : MonoBehaviour
     #region GrenadeFunctions
     void GrenadeThrow()
     {
+        
         ammoText.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
         if (Input.GetMouseButtonDown(0) && canThrow)
         {
+            PlayThrow();
 
             ThrowGrenade();
             grenadeAmmo--;
@@ -378,6 +380,15 @@ public class PlayerWeaponManager : MonoBehaviour
         else
         {
             return;
+        }
+    }
+    private void PlayThrow()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            AudioSource sound = GameObject.Find("sound_18_Throw").GetComponent<AudioSource>();
+            sound.Play();
+            Debug.Log("Why no Play Fire?");
         }
     }
 
