@@ -2,13 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class PlayerBlock : MonoBehaviour
+
 {
     [SerializeField] Transform Shield;
-    [SerializeField] Transform Bow;   
+    [SerializeField] Transform Bow;
+    public AudioManager audio;
+
     
     private void Update()
     {
+        Play();
+
         if (Input.GetMouseButton(1) && !Input.GetMouseButton(0))
         {
             StartBlock();
@@ -25,6 +32,7 @@ public class PlayerBlock : MonoBehaviour
 
     void StartBlock()
     {
+        
         float angle = Utility.AngleTowardsMouse(Shield.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
 
@@ -33,4 +41,17 @@ public class PlayerBlock : MonoBehaviour
 
         gameObject.GetComponent<PlayerMovement>().walkSpeed = 5;
     }
-}
+    private void Play()
+    {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            AudioSource sound = GameObject.Find("sound_16_Block").GetComponent<AudioSource>();
+            sound.Play();
+
+        }
+        else
+        {
+            return;
+        }
+    }
+    }

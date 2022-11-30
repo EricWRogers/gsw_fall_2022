@@ -7,6 +7,7 @@ public class PlayerWeaponManager : MonoBehaviour
     public bool canFire;
     public bool canThrow;
     public TMP_Text ammoText;
+    public AudioManager audio;
 
     [SerializeField] Transform hand;
 
@@ -79,10 +80,9 @@ public class PlayerWeaponManager : MonoBehaviour
     void Start()
     {
 
-
         BowPowerSlider.value = 0f;
         BowPowerSlider.maxValue = MaxBowCharge;
-
+        
         Inv.arrowAmount = molotovAmmo;
 
     }
@@ -112,7 +112,9 @@ public class PlayerWeaponManager : MonoBehaviour
             //Debug.Log("Current Weapon = " + name);
 
             BowShoot();
+
         }
+      
 
         if (name == "MediumCombustPotion")
         {
@@ -187,8 +189,9 @@ public class PlayerWeaponManager : MonoBehaviour
             ammoText.text = "Ammo: " + bowAmmo.ToString(); //for ammo counter, will count down as ammo decreases
             if (Input.GetMouseButton(0) && canFire)
             {
-                Transform temp = gameObject.transform.Find("Hand/BowPos2");
 
+                Transform temp = gameObject.transform.Find("Hand/BowPos2");
+                Play();
                 temp.gameObject.SetActive(true);
                 ChargeBow();
             }
@@ -343,5 +346,23 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         float angle = Utility.AngleTowardsMouse(hand.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+    }
+
+    private void Play()
+    {
+
+
+        if (Input.GetMouseButtonUp(0) && canFire)
+        {
+            AudioSource sound = GameObject.Find("sound_12_Bow Draw").GetComponent<AudioSource>();
+            sound.Play();
+
+        }
+        else if (Input.GetMouseButtonUp(0) && canFire)
+        {
+            AudioSource sound = GameObject.Find("sound_11_Bow Fire").GetComponent<AudioSource>();
+            sound.Play();
+        }
+
     }
 }
