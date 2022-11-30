@@ -184,14 +184,15 @@ public class PlayerWeaponManager : MonoBehaviour
     #region BowFunctions
     void BowShoot()
     {
+        PlayDraw();
+        Play();
         if (Time.timeScale != 0)
         {
             ammoText.text = "Ammo: " + bowAmmo.ToString(); //for ammo counter, will count down as ammo decreases
             if (Input.GetMouseButton(0) && canFire)
             {
-
+                
                 Transform temp = gameObject.transform.Find("Hand/BowPos2");
-                Play();
                 temp.gameObject.SetActive(true);
                 ChargeBow();
             }
@@ -228,6 +229,7 @@ public class PlayerWeaponManager : MonoBehaviour
     }
     void ChargeBow()
     {
+        
         ArrowGFX.enabled = true;
         BowCharge += Time.deltaTime;
         BowPowerSlider.value = BowCharge;
@@ -352,17 +354,30 @@ public class PlayerWeaponManager : MonoBehaviour
     {
 
 
-        if (Input.GetMouseButtonUp(0) && canFire)
+        if (Input.GetMouseButtonUp(0))
+        { 
+            AudioSource sound = GameObject.Find("sound_11_Bow Fire").GetComponent<AudioSource>();
+            sound.Play();
+            Debug.Log("Why no Play Fire?");
+        }
+        else
+        {
+            return;
+        }
+    }
+    private void PlayDraw()
+    {
+
+        
+        if (Input.GetMouseButtonDown(0))
         {
             AudioSource sound = GameObject.Find("sound_12_Bow Draw").GetComponent<AudioSource>();
             sound.Play();
-
+            Debug.Log("Why no Play Fire?");
         }
-        else if (Input.GetMouseButtonUp(0) && canFire)
+        else
         {
-            AudioSource sound = GameObject.Find("sound_11_Bow Fire").GetComponent<AudioSource>();
-            sound.Play();
+            return;
         }
-
     }
 }
