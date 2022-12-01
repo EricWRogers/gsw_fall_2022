@@ -814,8 +814,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ec5510716a210499e407415ce82b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPFX: {fileID: 4300663322509361555}
-  damagePFX: {fileID: 7294696938829848135}
+  deathPFX: {fileID: 7101173131761302361}
+  damagePFX: {fileID: 169066034101864460}
 --- !u!1 &323533513035893939
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,14 +2071,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+--- !u!1 &169066034101864460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5464321196416056842, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+  m_PrefabInstance: {fileID: 5300050136825460230}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1146851472682862352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
-  m_PrefabInstance: {fileID: 5300050136825460230}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &7294696938829848135 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3221894195290105921, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
   m_PrefabInstance: {fileID: 5300050136825460230}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5750378352565209419
@@ -2138,9 +2138,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
---- !u!198 &4300663322509361555 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8386393156501244120, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+--- !u!1 &7101173131761302361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3260920538525135378, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
   m_PrefabInstance: {fileID: 5750378352565209419}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &9223278233784912932 stripped

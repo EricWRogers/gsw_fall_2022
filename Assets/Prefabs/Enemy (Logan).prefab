@@ -293,8 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ec5510716a210499e407415ce82b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathPFX: {fileID: 5054833202843293838}
-  damagePFX: {fileID: 6769068655566907950}
+  deathPFX: {fileID: 6813132290262482212}
+  damagePFX: {fileID: 6122040214603418992}
 --- !u!114 &2466719394209039165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,9 +575,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2310210135230163160, guid: 9e9d3f8bea40f8446a1cbf608211f330, type: 3}
   m_PrefabInstance: {fileID: 681824438521726877}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &5054833202843293838 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5715124770204786451, guid: 9e9d3f8bea40f8446a1cbf608211f330, type: 3}
+--- !u!1 &6813132290262482212 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6339740127863126713, guid: 9e9d3f8bea40f8446a1cbf608211f330, type: 3}
   m_PrefabInstance: {fileID: 681824438521726877}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2387442506531244544
@@ -863,8 +863,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7704987035789276680, guid: 0065a555954d8bc4eb749659ded7cf08, type: 3}
   m_PrefabInstance: {fileID: 4816743438219264336}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &6769068655566907950 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 2245064991601011582, guid: 0065a555954d8bc4eb749659ded7cf08, type: 3}
+--- !u!1 &6122040214603418992 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1598031851985243168, guid: 0065a555954d8bc4eb749659ded7cf08, type: 3}
   m_PrefabInstance: {fileID: 4816743438219264336}
   m_PrefabAsset: {fileID: 0}
