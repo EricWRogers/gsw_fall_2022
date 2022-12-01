@@ -808,6 +808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyHitEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 1598031851985243168, guid: 0065a555954d8bc4eb749659ded7cf08, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7704987035789276680, guid: 0065a555954d8bc4eb749659ded7cf08, type: 3}
       propertyPath: m_RootOrder
       value: 4
