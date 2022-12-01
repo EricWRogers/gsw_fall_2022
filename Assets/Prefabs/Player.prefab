@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 219273612}
   - component: {fileID: 219273613}
   - component: {fileID: 219273614}
+  - component: {fileID: -1129940325044128239}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -599,6 +600,7 @@ MonoBehaviour:
   canFire: 1
   canThrow: 1
   ammoText: {fileID: 0}
+  audio: {fileID: 0}
   hand: {fileID: 3451945506068226083}
   ArrowPrefab: {fileID: 5616596167360615223, guid: 47bca6578f3d69f46b3d19bf48802617, type: 3}
   ArrowGFX: {fileID: 8838900286206021959}
@@ -706,6 +708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shield: {fileID: 917031985}
   Bow: {fileID: 1507081382}
+  audio: {fileID: 0}
 --- !u!114 &219273613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +736,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+--- !u!114 &-1129940325044128239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321742242918250207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897186bed5cf74c4c886c7cf4dbebe32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  Healed:
+    m_PersistentCalls:
+      m_Calls: []
+  Hurt:
+    m_PersistentCalls:
+      m_Calls: []
+  OutOfHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  MaxHealth: 100
+  CurrentHealth: 0
+  HealthSlider: {fileID: 0}
 --- !u!1 &323533513035893939
 GameObject:
   m_ObjectHideFlags: 0
