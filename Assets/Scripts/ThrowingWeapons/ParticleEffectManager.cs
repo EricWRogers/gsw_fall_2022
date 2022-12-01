@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ParticleEffectManager : MonoBehaviour
 {
-    public ParticleSystem deathPFX;
-    public ParticleSystem damagePFX;
+    public GameObject deathPFX;
+    public GameObject damagePFX;
 
 
 
@@ -19,12 +19,14 @@ public class ParticleEffectManager : MonoBehaviour
     }*/
     public void playDeathPFX()
     {
-        deathPFX.Play();
+        Instantiate(deathPFX, transform.position, transform.rotation);
+       //deathPFX.Play();
     }
 
     public void playDamagePFX()
     {
-        damagePFX.Play();
+        Instantiate(damagePFX, transform.position, transform.rotation);
+        //damagePFX.Play();
     }
 
     // Start is called before the first frame update
