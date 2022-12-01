@@ -293,6 +293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89ec5510716a210499e407415ce82b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathPFX: {fileID: 5054833202843293838}
+  damagePFX: {fileID: 6769068655566907950}
 --- !u!114 &2466719394209039165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +315,19 @@ MonoBehaviour:
       m_Calls: []
   Hurt:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1503316727050602692}
+        m_TargetAssemblyTypeName: ParticleEffectManager, Assembly-CSharp
+        m_MethodName: playDamagePFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OutOfHealth:
     m_PersistentCalls:
       m_Calls:
@@ -344,6 +358,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7272514318644637423}
         m_TargetAssemblyTypeName: LootTable, Assembly-CSharp
         m_MethodName: DropItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1503316727050602692}
+        m_TargetAssemblyTypeName: ParticleEffectManager, Assembly-CSharp
+        m_MethodName: playDeathPFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -547,6 +573,11 @@ PrefabInstance:
 --- !u!4 &2988648896120631109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2310210135230163160, guid: 9e9d3f8bea40f8446a1cbf608211f330, type: 3}
+  m_PrefabInstance: {fileID: 681824438521726877}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5054833202843293838 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5715124770204786451, guid: 9e9d3f8bea40f8446a1cbf608211f330, type: 3}
   m_PrefabInstance: {fileID: 681824438521726877}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2387442506531244544
@@ -826,5 +857,10 @@ PrefabInstance:
 --- !u!4 &2897255203738056536 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7704987035789276680, guid: 0065a555954d8bc4eb749659ded7cf08, type: 3}
+  m_PrefabInstance: {fileID: 4816743438219264336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &6769068655566907950 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2245064991601011582, guid: 0065a555954d8bc4eb749659ded7cf08, type: 3}
   m_PrefabInstance: {fileID: 4816743438219264336}
   m_PrefabAsset: {fileID: 0}
