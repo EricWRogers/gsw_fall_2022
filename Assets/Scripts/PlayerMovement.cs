@@ -36,16 +36,16 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Play();
-
+        
         anim.SetFloat("Direction", Mathf.Abs(Input.GetAxisRaw("Horizontal")));
-       // anim.SetFloat("Direction", Input.GetAxisRaw("Vertical"));
+        // anim.SetFloat("Direction", Input.GetAxisRaw("Vertical"));
 
         //get direction of input
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
@@ -56,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("debug");
             if (resting == false)
             {
-                
+
                 stamina -= Time.deltaTime * staminaDepleteTime;
                 sprinting = true;
                 if (stamina <= 0)
@@ -73,9 +73,9 @@ public class PlayerMovement : MonoBehaviour
                     resting = false;
                 }
             }
-          
+
         }
-       
+
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
             spriteRenderer.flipX = true;
@@ -88,11 +88,11 @@ public class PlayerMovement : MonoBehaviour
 
 
         if (stamina < 100 && !sprinting)
-            {
+        {
 
-                stamina += Time.deltaTime * staminaRegenTime;
-            }
-        
+            stamina += Time.deltaTime * staminaRegenTime;
+        }
+
 
         //stamina = Mathf.Clamp01(stamina);
 
@@ -124,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
 
         //bow and arrow control
         RotateHand();
-        if(StaminaSlider != null)
+        if (StaminaSlider != null)
             StaminaSlider.value = stamina;
     }
 
@@ -137,14 +137,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Play()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            AudioSource sound = GameObject.Find("sound_1_Walking").GetComponent<AudioSource>(); 
+            AudioSource sound = GameObject.Find("sound_1_Walking").GetComponent<AudioSource>();
             sound.Play();
+            
         }
         else
         {
             return;
         }
+
     }
 }

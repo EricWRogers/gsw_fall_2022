@@ -37,6 +37,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+
         if (Time.timeScale != 0)
         {
             text.text = "Ammo: " + bowAmmo.ToString(); //for ammo counter, will count down as ammo decreases
@@ -46,7 +47,9 @@ public class PlayerAttack : MonoBehaviour
             }
             else if (Input.GetMouseButtonUp(0) && CanFire)
             {
+
                 FireBow();
+
                 bowAmmo--;
                 Inv.arrowAmount = bowAmmo;//ammo in inventory is the ammo count that is used
                 Debug.Log("Ammo left: " + bowAmmo);//how much ammo is left
@@ -55,6 +58,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 if (BowCharge > 0f)
                 {
+                    
 
                     BowCharge -= cooldownTime * Time.deltaTime;  //0.1f; //how fast the charge goes down before we can fire again
                 }
@@ -89,7 +93,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (BowCharge > MaxBowCharge) BowCharge = MaxBowCharge;
 
-            float ArrowSpeed = BowCharge + BowPower;
+        float ArrowSpeed = BowCharge + BowPower;
             float ArrowDamage = BowCharge * BowPower;
             Debug.Log("Arrow Damage: " + ArrowDamage);
 
@@ -104,4 +108,6 @@ public class PlayerAttack : MonoBehaviour
             CanFire = false;
             ArrowGFX.enabled = false;
         }
+
+   
 }

@@ -37,10 +37,17 @@ public class Sound
     {
         source.volume = volume * (1 + Random.Range(-randomVolume /  2f, randomVolume  /  2f));
         source.pitch = pitch * (1 + Random.Range(-randomPitch  /  2f, randomPitch  /  2f));
-        Debug.LogError("Not Playing?");
         source.Play();
+
+        //Debug.LogError("Not Playing?");
     }
-    
+
+    public void Stop()
+    {
+       
+        source.Stop();
+    }
+
 }
 
 public class AudioManager : MonoBehaviour
@@ -70,8 +77,8 @@ public class AudioManager : MonoBehaviour
             _go.transform.SetParent(this.transform);
             sounds[i].SetSource(_go.AddComponent<AudioSource>());
         }
-        
-       // PlaySound("uiBgMusic");
+
+        PlaySound("Lvl1BGM");
     }
 
     public void PlaySound(string _name)
@@ -88,4 +95,18 @@ public class AudioManager : MonoBehaviour
         Debug.LogWarning("AudioManager: Sound not found in list: " + _name);
 
     }
-}
+
+    public void StopSound(string _name)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == _name)
+            {
+                sounds[i].Stop();
+                return;
+            }
+        }
+        //no sound with name
+        Debug.LogWarning("AudioManager: Sound not found in list: " + _name);
+    }
+    }
