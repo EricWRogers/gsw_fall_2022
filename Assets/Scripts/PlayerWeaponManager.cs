@@ -114,8 +114,6 @@ public class PlayerWeaponManager : MonoBehaviour
             BowShoot();
 
         }
-      
-
         if (name == "MediumCombustPotion")
         {
             Transform temp = gameObject.transform.Find("Hand/GrenPos");
@@ -132,10 +130,9 @@ public class PlayerWeaponManager : MonoBehaviour
             Transform temp = gameObject.transform.Find("Hand/GrenPos");
             temp.gameObject.SetActive(false);
         }
-
         if (name == "ThrowingKnife")
         {
-            Transform temp = gameObject.transform.Find("Hand/KnifePos/Knife");
+            Transform temp = gameObject.transform.Find("Hand/KnifePos");
             temp.gameObject.SetActive(true);
 
             
@@ -144,25 +141,26 @@ public class PlayerWeaponManager : MonoBehaviour
 
             KnifeThrow();
         }
-        if (grenadeAmmo <= 0 || name != "ThrowingKnife")
+        if (knifeAmmo <= 0 || name != "ThrowingKnife")
         {
-            Transform temp = gameObject.transform.Find("Hand/KnifePos/Knife");
+            Transform temp = gameObject.transform.Find("Hand/KnifePos");
             temp.gameObject.SetActive(false);
         }
 
-        if (name == "FirePotion")
+        if (name == "SmallFirePotion")
         {
-            Transform temp = gameObject.transform.Find("Hand/MolotovPos/Molotov");
+            Transform temp = gameObject.transform.Find("Hand/MolotovPos");
             temp.gameObject.SetActive(true);
 
             
-            Inv.items[Inv.currentItem].quanity = knifeAmmo;
+            Inv.items[Inv.currentItem].quanity = molotovAmmo;
             //Debug.Log("Current Weapon = " + name);
 
 
             ammoText.text = "Ammo: " + molotovAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-            if (Input.GetMouseButtonDown(0) && canThrow)
+            if (Input.GetMouseButtonDown(0) || Input.GetAxis("RightTrigger") > 0)
             {
+                Debug.Log("Pressed");
                 ThrowMolotov();
                 molotovAmmo--;
                 Inv.arrowAmount = molotovAmmo;//ammo in inventory is the ammo count that is used
@@ -173,9 +171,21 @@ public class PlayerWeaponManager : MonoBehaviour
             if (molotovAmmo == 0)
                 canThrow = false;
         }
-        if (grenadeAmmo <= 0 || name != "FirePotion")
+        if (molotovAmmo <= 0 || name != "SmallFirePotion")
         {
-            Transform temp = gameObject.transform.Find("Hand/MolotovPos/Molotov");
+            Transform temp = gameObject.transform.Find("Hand/MolotovPos");
+            temp.gameObject.SetActive(false);
+        }
+
+        if(name == "SmallHealthPotion")
+        {
+            Transform temp = gameObject.transform.Find("Hand/potion");
+            temp.gameObject.SetActive(true);
+            Healing(10);
+        }
+        if(name != "SmallHealthPotion")
+        {
+            Transform temp = gameObject.transform.Find("Hand/potion");
             temp.gameObject.SetActive(false);
         }
 
@@ -382,14 +392,13 @@ public class PlayerWeaponManager : MonoBehaviour
             return;
         }
     }
-    private void PlayThrow()
+
+    public void Healing(int _amount)
     {
-        if (Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
-            AudioSource sound = GameObject.Find("sound_18_Throw").GetComponent<AudioSource>();
-            sound.Play();
-            Debug.Log("Why no Play Fire?");
+            gameObject.GetComponent<SuperPupSystems.Helper.Health>().Heal(_amount);
+            Inv.items[Inv.currentItem].quanity -= 1;
         }
     }
-
 }

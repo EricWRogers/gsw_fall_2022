@@ -51,7 +51,7 @@ public class PoisonManager : MonoBehaviour
 
     void ThrowPoison()
     {
-        Debug.Log("Molotov Damage: " + poisonDamage); //prints out how much damage each grenade is doing/going to do
+        Debug.Log("Poison Damage: " + poisonDamage); //prints out how much damage each grenade is doing/going to do
 
         float angle = Utility.AngleTowardsMouse(Pois.position);
         Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));

@@ -7,6 +7,6 @@ public class CorruptionGetter : MonoBehaviour
     public void Remove()
     {
         CorruptionManager CM = FindObjectOfType<CorruptionManager>();
-        CM.corruptedObjs.Remove(gameObject);
+        CM.cleanseableObjs.Remove(gameObject);
     }
 }

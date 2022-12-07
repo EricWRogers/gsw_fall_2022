@@ -8,7 +8,7 @@ public class ChuckMolotov : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     public MolotovManager MN;
     public GameObject player;
-
+    public ParticleSystem molBurn;
 
     public float delay = 2f; //how long before the molotov shatters
     public float countDown;
@@ -52,14 +52,14 @@ public class ChuckMolotov : MonoBehaviour
         burnTimer += Time.deltaTime;
         int damage = MN.molotovDamage;
 
-        if(tickTimer >= tickRate)
+        Instantiate(molBurn.gameObject, transform.position, transform.rotation);
+        if (tickTimer >= tickRate)
         {
             tickTimer = 0.0f;
             foreach (Collider2D nearbyObject in Physics2D.OverlapCircleAll(origin, radius))
             {
                 if (nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
                 {
-                    Debug.Log("ChuckMolotov : Hi");
 
                     nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
                 }

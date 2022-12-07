@@ -8,7 +8,7 @@ public class LootTable : MonoBehaviour
     
     public void DropItem()
     {
-        int rand = Random.Range(0, 10);
+        int rand = Random.Range(1, 8);
         Debug.Log("Randum num: " + rand);
        
         foreach (Loot reward in loot)

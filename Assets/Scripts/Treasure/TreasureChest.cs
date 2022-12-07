@@ -9,21 +9,25 @@ public class TreasureChest : MonoBehaviour
     public LootTable LT;
     public Sprite newSprite;
     public SpriteRenderer spriteRenderer;
-
+    public Transform lights; 
 
     public GameObject message;
+
+
 
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player") && isOpened == false)
         {
-            if (Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.JoystickButton2))
             {
                 LT.DropItem();
                 isOpened = true;
                 spriteRenderer.sprite = newSprite;
                 Destroy(message);  
                 Debug.Log("Chest Opened");
+                lights.GetComponent<ParticleSystem>().Play(true);
+                
             }
         }
 

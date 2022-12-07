@@ -408,6 +408,8 @@ GameObject:
   - component: {fileID: 219273612}
   - component: {fileID: 219273613}
   - component: {fileID: 219273614}
+  - component: {fileID: -1129940325044128239}
+  - component: {fileID: 5090529186820682161}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -430,6 +432,8 @@ Transform:
   - {fileID: 3451945506068226083}
   - {fileID: 6248236667419410087}
   - {fileID: 8684126482543671372}
+  - {fileID: 9223278233784912932}
+  - {fileID: 1146851472682862352}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -599,6 +603,7 @@ MonoBehaviour:
   canFire: 1
   canThrow: 1
   ammoText: {fileID: 0}
+  audio: {fileID: 0}
   hand: {fileID: 3451945506068226083}
   ArrowPrefab: {fileID: 5616596167360615223, guid: 47bca6578f3d69f46b3d19bf48802617, type: 3}
   ArrowGFX: {fileID: 8838900286206021959}
@@ -662,7 +667,19 @@ MonoBehaviour:
       m_Calls: []
   Hurt:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5090529186820682161}
+        m_TargetAssemblyTypeName: ParticleEffectManager, Assembly-CSharp
+        m_MethodName: playDamagePFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OutOfHealth:
     m_PersistentCalls:
       m_Calls:
@@ -678,10 +695,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5090529186820682161}
+        m_TargetAssemblyTypeName: ParticleEffectManager, Assembly-CSharp
+        m_MethodName: playDeathPFX
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -706,6 +723,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shield: {fileID: 917031985}
   Bow: {fileID: 1507081382}
+  audio: {fileID: 0}
 --- !u!114 &219273613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +751,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 0}
+--- !u!114 &-1129940325044128239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321742242918250207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 897186bed5cf74c4c886c7cf4dbebe32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  Healed:
+    m_PersistentCalls:
+      m_Calls: []
+  Hurt:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5090529186820682161}
+        m_TargetAssemblyTypeName: ParticleEffectManager, Assembly-CSharp
+        m_MethodName: playDamagePFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OutOfHealth:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5090529186820682161}
+        m_TargetAssemblyTypeName: ParticleEffectManager, Assembly-CSharp
+        m_MethodName: playDeathPFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  MaxHealth: 100
+  CurrentHealth: 0
+  HealthSlider: {fileID: 0}
+--- !u!114 &5090529186820682161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321742242918250207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ec5510716a210499e407415ce82b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathPFX: {fileID: 7101173131761302361}
+  damagePFX: {fileID: 169066034101864460}
 --- !u!1 &323533513035893939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,3 +2006,145 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &5300050136825460230
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 321742242918250203}
+    m_Modifications:
+    - target: {fileID: 4553404371809544151, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464321196416056842, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_Name
+      value: PlayerHitEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464321196416056842, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+--- !u!1 &169066034101864460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5464321196416056842, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+  m_PrefabInstance: {fileID: 5300050136825460230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1146851472682862352 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5073270699118342422, guid: a633865b82c8f97459600e8eca22c74b, type: 3}
+  m_PrefabInstance: {fileID: 5300050136825460230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5750378352565209419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 321742242918250203}
+    m_Modifications:
+    - target: {fileID: 3260920538525135378, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_Name
+      value: PlayerDeathEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+--- !u!1 &7101173131761302361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3260920538525135378, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+  m_PrefabInstance: {fileID: 5750378352565209419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9223278233784912932 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3473075803639072111, guid: 4d50e7e28cfd0d3429aadee976958405, type: 3}
+  m_PrefabInstance: {fileID: 5750378352565209419}
+  m_PrefabAsset: {fileID: 0}

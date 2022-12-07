@@ -49,6 +49,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Corruption
+    uniqueID: 1072030445
+    locked: 0
   - name: Player
     uniqueID: 4211584719
+    locked: 0
+  - name: Enviorment
+    uniqueID: 847929901
     locked: 0

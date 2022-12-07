@@ -10,6 +10,8 @@ public class TossGrenade : MonoBehaviour
     public PlayerWeaponManager PWM;
     public GameObject player;
 
+    public ParticleSystem grenExplode;
+
 
     public float delay = 2f; //how long before the grenade explodes
     public float countDown;
@@ -71,6 +73,7 @@ public class TossGrenade : MonoBehaviour
                 }
             }
         }
+        Instantiate(grenExplode.gameObject, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
