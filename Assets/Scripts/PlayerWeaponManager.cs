@@ -158,8 +158,9 @@ public class PlayerWeaponManager : MonoBehaviour
 
 
             ammoText.text = "Ammo: " + molotovAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-            if (Input.GetMouseButtonDown(0) && canThrow)
+            if (Input.GetMouseButtonDown(0) || Input.GetAxis("RightTrigger") > 0)
             {
+                Debug.Log("Pressed");
                 ThrowMolotov();
                 molotovAmmo--;
                 Inv.arrowAmount = molotovAmmo;//ammo in inventory is the ammo count that is used
