@@ -46,19 +46,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loot:
   - item: {fileID: 3857572543404886313, guid: 22b6fd74b8287e84f8adff5e5ef1f5fa, type: 3}
-    lootWeight: 0
+    lootWeight: 6
   - item: {fileID: 7897545120043138642, guid: ad01dedcf31994149b5518bd3b422dde, type: 3}
-    lootWeight: 0
+    lootWeight: 3
   - item: {fileID: 7130137803920379492, guid: 330d3f6e461c45148a538286a1553523, type: 3}
-    lootWeight: 0
+    lootWeight: 10
   - item: {fileID: 9054993383757061643, guid: 7748d4ba7baf5f34a8a6b6365c09d445, type: 3}
-    lootWeight: 0
+    lootWeight: 5
   - item: {fileID: 7631567621771879558, guid: 70f783a0c3739b14b939a6582a6eeacd, type: 3}
-    lootWeight: 0
+    lootWeight: 10
   - item: {fileID: 1660659884778154019, guid: b72937d15a9c21f4aa24d18bbb730ac0, type: 3}
-    lootWeight: 0
+    lootWeight: 8
   - item: {fileID: 8221766715506018442, guid: e959d16bbb9af6046a87d109e0ae048e, type: 3}
-    lootWeight: 0
+    lootWeight: 10
 --- !u!1 &1672049450847004066
 GameObject:
   m_ObjectHideFlags: 0
