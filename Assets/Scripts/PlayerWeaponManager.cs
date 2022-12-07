@@ -114,8 +114,6 @@ public class PlayerWeaponManager : MonoBehaviour
             BowShoot();
 
         }
-      
-
         if (name == "MediumCombustPotion")
         {
             Transform temp = gameObject.transform.Find("Hand/GrenPos");
@@ -132,10 +130,9 @@ public class PlayerWeaponManager : MonoBehaviour
             Transform temp = gameObject.transform.Find("Hand/GrenPos");
             temp.gameObject.SetActive(false);
         }
-
         if (name == "ThrowingKnife")
         {
-            Transform temp = gameObject.transform.Find("Hand/KnifePos/Knife");
+            Transform temp = gameObject.transform.Find("Hand/KnifePos");
             temp.gameObject.SetActive(true);
 
             
@@ -144,19 +141,19 @@ public class PlayerWeaponManager : MonoBehaviour
 
             KnifeThrow();
         }
-        if (grenadeAmmo <= 0 || name != "ThrowingKnife")
+        if (knifeAmmo <= 0 || name != "ThrowingKnife")
         {
-            Transform temp = gameObject.transform.Find("Hand/KnifePos/Knife");
+            Transform temp = gameObject.transform.Find("Hand/KnifePos");
             temp.gameObject.SetActive(false);
         }
 
-        if (name == "FirePotion")
+        if (name == "SmallFirePotion")
         {
-            Transform temp = gameObject.transform.Find("Hand/MolotovPos/Molotov");
+            Transform temp = gameObject.transform.Find("Hand/MolotovPos");
             temp.gameObject.SetActive(true);
 
             
-            Inv.items[Inv.currentItem].quanity = knifeAmmo;
+            Inv.items[Inv.currentItem].quanity = molotovAmmo;
             //Debug.Log("Current Weapon = " + name);
 
 
@@ -173,9 +170,9 @@ public class PlayerWeaponManager : MonoBehaviour
             if (molotovAmmo == 0)
                 canThrow = false;
         }
-        if (grenadeAmmo <= 0 || name != "FirePotion")
+        if (molotovAmmo <= 0 || name != "SmallFirePotion")
         {
-            Transform temp = gameObject.transform.Find("Hand/MolotovPos/Molotov");
+            Transform temp = gameObject.transform.Find("Hand/MolotovPos");
             temp.gameObject.SetActive(false);
         }
 
