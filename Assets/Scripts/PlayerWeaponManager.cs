@@ -179,6 +179,18 @@ public class PlayerWeaponManager : MonoBehaviour
             temp.gameObject.SetActive(false);
         }
 
+        if(name == "SmallHealthPotion")
+        {
+            Transform temp = gameObject.transform.Find("Hand/potion");
+            temp.gameObject.SetActive(true);
+            Healing(10);
+        }
+        if(name != "SmallHealthPotion")
+        {
+            Transform temp = gameObject.transform.Find("Hand/potion");
+            temp.gameObject.SetActive(false);
+        }
+
     }
 
     #region BowFunctions
@@ -378,6 +390,15 @@ public class PlayerWeaponManager : MonoBehaviour
         else
         {
             return;
+        }
+    }
+
+    public void Healing(int _amount)
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            gameObject.GetComponent<SuperPupSystems.Helper.Health>().Heal(_amount);
+            Inv.items[Inv.currentItem].quanity -= 1;
         }
     }
 }
