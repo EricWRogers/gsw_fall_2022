@@ -139,6 +139,7 @@ MonoBehaviour:
   rb: {fileID: 28056725450163225}
   PWM: {fileID: 0}
   player: {fileID: 321742242918250207, guid: 62a7e551a79e21b439379275e5f241b9, type: 3}
+  grenExplode: {fileID: 189672893474073804, guid: cb61da5d0bd3c704abe124c906ac3bad, type: 3}
   delay: 3
   countDown: 0
   force: 3900
