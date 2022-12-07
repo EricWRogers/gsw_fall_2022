@@ -158,8 +158,9 @@ public class PlayerWeaponManager : MonoBehaviour
 
 
             ammoText.text = "Ammo: " + molotovAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-            if (Input.GetMouseButtonDown(0) && canThrow)
+            if (Input.GetMouseButtonDown(0) || Input.GetAxis("RightTrigger") > 0)
             {
+                Debug.Log("Pressed");
                 ThrowMolotov();
                 molotovAmmo--;
                 Inv.arrowAmount = molotovAmmo;//ammo in inventory is the ammo count that is used
@@ -271,9 +272,11 @@ public class PlayerWeaponManager : MonoBehaviour
     #region GrenadeFunctions
     void GrenadeThrow()
     {
+        
         ammoText.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
         if (Input.GetMouseButtonDown(0) && canThrow)
         {
+            PlayThrow();
 
             ThrowGrenade();
             grenadeAmmo--;
@@ -389,7 +392,19 @@ public class PlayerWeaponManager : MonoBehaviour
             return;
         }
     }
-
+    private void PlayThrow()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            AudioSource sound = GameObject.Find("sound_18_Throw").GetComponent<AudioSource>();
+            sound.Play();
+            Debug.Log("Why no Play Fire?");
+        }
+        else
+        {
+            return;
+        }
+    }
     public void Healing(int _amount)
     {
         if(Input.GetMouseButtonDown(0))

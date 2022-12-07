@@ -18,7 +18,10 @@ public class PlayerBlock : MonoBehaviour
 
         if (Input.GetMouseButton(1) && !Input.GetMouseButton(0))
         {
+
             StartBlock();
+            Play();
+
         }
         else
         {

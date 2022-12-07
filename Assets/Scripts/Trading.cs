@@ -23,6 +23,7 @@ public class Trading : MonoBehaviour
     public Inventory inventory;
     public Inventory tradingInventory;
     public PickupSystem pickupSystem;
+    public AudioManager audio;
 
     public int tradingCurrentItem;
 
@@ -243,11 +244,21 @@ public class Trading : MonoBehaviour
 
         else if(_currency >= tradingInventory.items[tradingCurrentItem].itemStats.cost)
         {
+            Play();
             Debug.Log("Rish:");
             pickupSystem.PickupInv(tradingInventory.items[tradingCurrentItem]);
             inventory.currency -= tradingInventory.items[tradingCurrentItem].itemStats.cost;
             tradingInventory.items.RemoveAt(tradingCurrentItem);
         }
+    }
+    void Play()
+    {
+
+        Debug.Log("No Sound Called");
+        AudioSource sound = GameObject.Find("sound_8_Trade").GetComponent<AudioSource>();
+        sound.Play();
+
+
     }
 
 }

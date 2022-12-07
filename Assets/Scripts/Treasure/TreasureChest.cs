@@ -19,7 +19,7 @@ public class TreasureChest : MonoBehaviour
     {
         if (other.CompareTag("Player") && isOpened == false)
         {
-            if (Input.GetKey(KeyCode.X))
+            if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.JoystickButton2))
             {
                 LT.DropItem();
                 isOpened = true;

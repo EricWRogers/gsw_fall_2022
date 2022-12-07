@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
         if (isLoading == false)
         {
             isLoading = true;
-            SceneManager.LoadScene("LevelOne"); //Name of the scene
+            SceneManager.LoadScene(sceneName); //Name of the scene
 
         }
 

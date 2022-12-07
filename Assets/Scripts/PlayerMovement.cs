@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         direction = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
         sprinting = false;
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Joystick1Button8))
         {
             Debug.Log("debug");
             if (resting == false)
@@ -141,12 +141,28 @@ public class PlayerMovement : MonoBehaviour
         {
             AudioSource sound = GameObject.Find("sound_1_Walking").GetComponent<AudioSource>();
             sound.Play();
-            
+        
+
+        }
+
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            AudioSource sound = GameObject.Find("sound_1_Walking").GetComponent<AudioSource>();
+            sound.Stop();
+
+
+        }
+
+        /* if  (body.velocity.x == 0 && body.velocity.y == 0)
+        {
+            AudioSource sound = GameObject.Find("sound_1_Walking").GetComponent<AudioSource>();
+            sound.Stop();
         }
         else
         {
             return;
-        }
+        }*/
+
 
     }
 }

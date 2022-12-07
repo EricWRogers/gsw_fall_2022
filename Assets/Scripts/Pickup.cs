@@ -6,6 +6,8 @@ public class Pickup : MonoBehaviour
 {
     public Item item;
     private Inventory INVIN;
+    public AudioManager audio;
+
     void Start()
     {
         //INVIN = GameObject.Find("Inventory").GetComponent<Inventory>(); //Finds inventory gameOBJ and gets script component and sets it equals to INVIN
@@ -13,6 +15,7 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Play();
         if (collision.gameObject.GetComponent<PickupSystem>())
         {
 
@@ -33,8 +36,15 @@ public class Pickup : MonoBehaviour
 
 
     }
+    void Play()
+    {
 
-    
+        Debug.Log("No Sound Called");
+        AudioSource sound = GameObject.Find("sound_7_CoinPickup").GetComponent<AudioSource>();
+        sound.Play();
 
-}
+
+    }
+
+    }
 

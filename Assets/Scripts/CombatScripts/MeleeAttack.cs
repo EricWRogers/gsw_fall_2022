@@ -10,7 +10,7 @@ public class MeleeAttack : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Z))
         {
-           // Play();
+            Play();
             //Debug.Log("Attack Button Pressed");
             if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Corruption")) //Checking to see if what we are hitting is corruption or enemies. If so, execute the following.
             {
@@ -22,14 +22,16 @@ public class MeleeAttack : MonoBehaviour
                 //Debug.Log("Hit!");
             }
         }
-        /* void Play()
+         void Play()
         {
-            Debug.Log("No Sound Called");
-            AudioSource sound = GameObject.Find("sound_10_swipe").GetComponent<AudioSource>();
-            sound.Play();
+            if (Input.GetKey(KeyCode.Z))
+            {
+                Debug.Log("No Sound Called");
+                AudioSource sound = GameObject.Find("sound_10_swipe").GetComponent<AudioSource>();
+                sound.Play();
+            }
 
-
-        }
+        }/*
          void PlayAtk()
         {
             Debug.Log("No Sound Called");
