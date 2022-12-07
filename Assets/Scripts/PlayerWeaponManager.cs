@@ -392,7 +392,19 @@ public class PlayerWeaponManager : MonoBehaviour
             return;
         }
     }
-
+    private void PlayThrow()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            AudioSource sound = GameObject.Find("sound_18_Throw").GetComponent<AudioSource>();
+            sound.Play();
+            Debug.Log("Why no Play Fire?");
+        }
+        else
+        {
+            return;
+        }
+    }
     public void Healing(int _amount)
     {
         if(Input.GetMouseButtonDown(0))

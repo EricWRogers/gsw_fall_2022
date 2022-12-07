@@ -44,3 +44,5 @@
  (shield block) https://freesound.org/people/nekoninja/sounds/370203/
 
 (corruption fade) https://creativecommons.org/publicdomain/zero/1.0/
+
+(treasure chest) https://creativecommons.org/licenses/by/4.0/
