@@ -1606,11 +1606,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 950227505, guid: 47b344e9d712abd4d853193220269943, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.057915993
+      value: -0.17042594
       objectReference: {fileID: 0}
     - target: {fileID: 950227505, guid: 47b344e9d712abd4d853193220269943, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.9983215
+      value: 0.9853705
       objectReference: {fileID: 0}
     - target: {fileID: 950227506, guid: 47b344e9d712abd4d853193220269943, type: 3}
       propertyPath: m_FalloffIntensity
@@ -1618,11 +1618,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 950227506, guid: 47b344e9d712abd4d853193220269943, type: 3}
       propertyPath: m_PointLightInnerAngle
-      value: 89.67
+      value: 143.48
       objectReference: {fileID: 0}
     - target: {fileID: 950227506, guid: 47b344e9d712abd4d853193220269943, type: 3}
       propertyPath: m_PointLightOuterAngle
-      value: 217.99
+      value: 352.44
       objectReference: {fileID: 0}
     - target: {fileID: 950227506, guid: 47b344e9d712abd4d853193220269943, type: 3}
       propertyPath: m_PointLightInnerRadius
@@ -1630,7 +1630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 950227506, guid: 47b344e9d712abd4d853193220269943, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 2.9232907
+      value: 2.9215481
       objectReference: {fileID: 0}
     - target: {fileID: 559457586965182998, guid: 47b344e9d712abd4d853193220269943, type: 3}
       propertyPath: m_Name
