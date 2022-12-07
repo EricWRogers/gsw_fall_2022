@@ -9,6 +9,8 @@ public class YeetPoison : MonoBehaviour
     public PoisonManager PN;
     public GameObject player;
 
+    public ParticleSystem poisBubble;
+
 
     public float delay = 2f; //how long before the molotov shatters
     public float countDown;
@@ -51,7 +53,7 @@ public class YeetPoison : MonoBehaviour
         //adds the force to each collider in the radius, therefore pushing them back
         burnTimer += Time.deltaTime;
         int damage = PN.poisonDamage;
-
+        Instantiate(poisBubble.gameObject, transform.position, transform.rotation);
         if (tickTimer >= tickRate)
         {
             tickTimer = 0.0f;
@@ -59,7 +61,6 @@ public class YeetPoison : MonoBehaviour
             {
                 if (nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>() != null)
                 {
-                    Debug.Log("ChuckMolotov : Hi");
 
                     nearbyObject.gameObject.GetComponent<SuperPupSystems.Helper.Health>().Damage(damage);
                 }
