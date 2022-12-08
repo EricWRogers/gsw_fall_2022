@@ -11,12 +11,23 @@ public class PlayerBlock : MonoBehaviour
     [SerializeField] Transform Bow;
     public AudioManager audio;
 
+    public Transform target;
+    public GameObject hand;
+
+    Quaternion rot;
     
     private void Update()
     {
         Play();
 
-        if (Input.GetMouseButton(1) || Input.GetButton(KeyCode.Joystick1Button4.ToString()) && !Input.GetMouseButton(0))
+
+        Vector2 targetPos = target.position;
+        Vector2 Direction;
+        Direction = targetPos - (Vector2)transform.position;
+        hand.transform.right = Direction;
+        rot = hand.transform.rotation;//Quaternion.Euler(new Vector3(0f,0f, angle -90f));
+
+        if (Input.GetMouseButton(1) || Input.GetButton("Block") && !Input.GetMouseButton(0))
         {
 
             StartBlock();
