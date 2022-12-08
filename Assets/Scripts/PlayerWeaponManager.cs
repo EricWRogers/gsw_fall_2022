@@ -77,6 +77,7 @@ public class PlayerWeaponManager : MonoBehaviour
     public SpriteRenderer MolotovGFX;
     #endregion
 
+    public Transform target;
 
     float angle;
     Quaternion rot; 
@@ -93,10 +94,14 @@ public class PlayerWeaponManager : MonoBehaviour
 
     void Update()
     {
-       
-        angle = Utility.AngleTowardsMouse(hand.position);
-        rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+      
 
+        Vector2 targetPos = target.position;
+        Vector2 Direction;
+        Direction = targetPos - (Vector2)transform.position;
+        hand.transform.right = Direction;
+
+        rot = hand.transform.rotation;//Quaternion.Euler(new Vector3(0f,0f, angle -90f));
 
         Debug.Log("Right Trigger = " + Input.GetAxis("RightTrigger"));
         string name = Inv.items[Inv.currentItem].itemStats.name;
@@ -105,9 +110,6 @@ public class PlayerWeaponManager : MonoBehaviour
         {
             Transform temp = gameObject.transform.Find("Hand/MoonSword");
             temp.gameObject.SetActive(true);
-
-
-         
         }
         if (name != "CommonSword")
         {
@@ -282,16 +284,19 @@ public class PlayerWeaponManager : MonoBehaviour
     void FireBow()
     {
         if (bowCharge > MaxBowCharge) bowCharge = MaxBowCharge;
+        if (bowCharge == 0.0f) bowCharge = 0.4f;
 
         float ArrowSpeed = bowCharge + BowPower;
         float ArrowDamage = bowCharge * BowPower;
+        Debug.Log("Power : " + ArrowDamage);
         //Debug.Log("Arrow Damage: " + ArrowDamage);
 
       
 
-        Arrow Arrow = Instantiate(ArrowPrefab, hand.position, rot).GetComponent<Arrow>();
-        Arrow.ArrowVelocity = ArrowSpeed;
-        Arrow.ArrowDamage = (int)Mathf.Ceil(ArrowDamage);
+        Arrow arrow = Instantiate(ArrowPrefab, hand.position, rot).GetComponent<Arrow>();
+        arrow.transform.Rotate(new Vector3(0.0f, 0.0f, -90.0f)); 
+        arrow.ArrowVelocity = ArrowSpeed;
+        arrow.ArrowDamage = (int)Mathf.Ceil(ArrowDamage);
 
         canFire = false;
         ArrowGFX.enabled = false;

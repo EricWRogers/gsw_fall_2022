@@ -6,7 +6,7 @@ public class Arrow : MonoBehaviour
 {
     [HideInInspector] public float ArrowVelocity;
 
-    [HideInInspector] public int ArrowDamage;
+    public int ArrowDamage;
 
     [SerializeField] Rigidbody2D rb;
     

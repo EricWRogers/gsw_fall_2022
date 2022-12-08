@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public List<CorruptionManager> corruptionManagers;
-    private List<GameObject> enemies;
+    private List<GameObject> enemies = new List<GameObject>();
     public bool isLoading = false;
     public string sceneName;
     public void ReloadGame()
