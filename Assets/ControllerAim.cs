@@ -5,13 +5,14 @@ using UnityEngine;
 public class ControllerAim : MonoBehaviour
 {
     // Start is called before the first frame update
-
-    public float speed;
+    public Transform target;
+    
     // Update is called once per frame
     void Update()
     {
-        // timeCounter += Time.deltaTime;
-        speed = Input.GetAxis("RightStick") * 100;
-        transform.RotateAround(GameObject.Find("Hand").transform.position, new Vector3(0, 0, 1), speed * Time.deltaTime);
+        Vector2 targetPos = target.position;
+        Vector2 Direction;
+        Direction = targetPos - (Vector2)transform.position;
+        gameObject.transform.up = Direction;
     }
 }
