@@ -231,7 +231,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
             }
             
-            if (pressed == true && Input.GetAxis("RightTrigger") == 0)
+            if ((Input.GetMouseButtonUp(0) || pressed == true && Input.GetAxis("RightTrigger") == 0))
             {
                 pressed = false;
                
