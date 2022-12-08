@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioManager audio;
 
 
-    Vector2 direction;
+    public Vector2 direction;
 
     //bow and arrow controls
     [SerializeField] Transform hand;
