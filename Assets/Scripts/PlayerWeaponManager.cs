@@ -32,9 +32,9 @@ public class PlayerWeaponManager : MonoBehaviour
 
     [SerializeField] float MaxBowCharge;
 
-    float BowCharge;
+    float bowCharge;
 
-
+    bool pressed = true;
     #endregion
 
     #region GrenadeDeclarations
@@ -77,12 +77,15 @@ public class PlayerWeaponManager : MonoBehaviour
     public SpriteRenderer MolotovGFX;
     #endregion
 
+
+    float angle;
+    Quaternion rot; 
     void Start()
     {
 
         BowPowerSlider.value = 0f;
         BowPowerSlider.maxValue = MaxBowCharge;
-        
+
         Inv.arrowAmount = molotovAmmo;
 
     }
@@ -90,15 +93,21 @@ public class PlayerWeaponManager : MonoBehaviour
 
     void Update()
     {
+       
+        angle = Utility.AngleTowardsMouse(hand.position);
+        rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+
+
+        Debug.Log("Right Trigger = " + Input.GetAxis("RightTrigger"));
         string name = Inv.items[Inv.currentItem].itemStats.name;
 
         if (name == "CommonSword")
         {
             Transform temp = gameObject.transform.Find("Hand/MoonSword");
             temp.gameObject.SetActive(true);
-           
 
-            CommonSword();
+
+         
         }
         if (name != "CommonSword")
         {
@@ -119,7 +128,7 @@ public class PlayerWeaponManager : MonoBehaviour
             Transform temp = gameObject.transform.Find("Hand/GrenPos");
             temp.gameObject.SetActive(true);
 
-            
+
             Inv.items[Inv.currentItem].quanity = grenadeAmmo;
             //Debug.Log("Current Weapon = " + name);
 
@@ -135,7 +144,7 @@ public class PlayerWeaponManager : MonoBehaviour
             Transform temp = gameObject.transform.Find("Hand/KnifePos");
             temp.gameObject.SetActive(true);
 
-            
+
             Inv.items[Inv.currentItem].quanity = knifeAmmo;
             //Debug.Log("Current Weapon = " + name);
 
@@ -152,7 +161,7 @@ public class PlayerWeaponManager : MonoBehaviour
             Transform temp = gameObject.transform.Find("Hand/MolotovPos");
             temp.gameObject.SetActive(true);
 
-            
+
             Inv.items[Inv.currentItem].quanity = molotovAmmo;
             //Debug.Log("Current Weapon = " + name);
 
@@ -177,13 +186,13 @@ public class PlayerWeaponManager : MonoBehaviour
             temp.gameObject.SetActive(false);
         }
 
-        if(name == "SmallHealthPotion")
+        if (name == "SmallHealthPotion")
         {
             Transform temp = gameObject.transform.Find("Hand/potion");
             temp.gameObject.SetActive(true);
             Healing(10);
         }
-        if(name != "SmallHealthPotion")
+        if (name != "SmallHealthPotion")
         {
             Transform temp = gameObject.transform.Find("Hand/potion");
             temp.gameObject.SetActive(false);
@@ -194,43 +203,64 @@ public class PlayerWeaponManager : MonoBehaviour
     #region BowFunctions
     void BowShoot()
     {
-        PlayDraw();
-        Play();
+        
         if (Time.timeScale != 0)
         {
+            Transform temp = gameObject.transform.Find("Hand/BowPos2");
             ammoText.text = "Ammo: " + bowAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-            if (Input.GetMouseButton(0) && canFire)
+            if ((Input.GetMouseButton(0) || Input.GetAxis("LeftTrigger") > 0) && canFire)
             {
-                
-                Transform temp = gameObject.transform.Find("Hand/BowPos2");
-                temp.gameObject.SetActive(true);
+                Debug.Log("Checkpoint1");
+                PlayDraw();
                 ChargeBow();
+                temp.gameObject.SetActive(true);
+               
+                Debug.Log("Checkpoint2");
             }
-            else if (Input.GetMouseButtonUp(0) && canFire)
+            if (Input.GetAxis("LeftTrigger") == 0 && Input.GetAxis("RightTrigger") == 0)
             {
-                Transform temp = gameObject.transform.Find("Hand/BowPos2");
+
+                temp.gameObject.SetActive(false);
+            }
+            else if ((Input.GetMouseButtonUp(0) || Input.GetAxis("RightTrigger") > 0))
+            {
+                temp.gameObject.SetActive(true);
+                pressed = true;
+
+            }
+            
+            if (pressed == true && Input.GetAxis("RightTrigger") == 0)
+            {
+                pressed = false;
+               
+
                 temp.gameObject.SetActive(false);
 
+                Play();
                 FireBow();
                 bowAmmo--;
                 Inv.arrowAmount = bowAmmo;//ammo in inventory is the ammo count that is used
-                //Debug.Log("Ammo left: " + bowAmmo);//how much ammo is left
+                                          //Debug.Log("Ammo left: " + bowAmmo);//how much ammo is left
+                bowCharge = 0f;
+                BowPowerSlider.value = bowCharge;
             }
-            else
+
+            if (Input.GetAxis("LeftTrigger") == 0)
             {
-                if (BowCharge > 0f)
+                if (bowCharge > 0f)
                 {
 
-                    BowCharge -= cooldownTime * Time.deltaTime;  //0.1f; //how fast the charge goes down before we can fire again
+                    bowCharge -= cooldownTime * Time.deltaTime;  //0.1f; //how fast the charge goes down before we can fire again
                 }
                 else
                 {
-                    BowCharge = 0f;
+                    // BowCharge = 0f;
                     canFire = true;
                 }
 
-                BowPowerSlider.value = BowCharge;
+                BowPowerSlider.value = bowCharge;
             }
+
 
 
             if (bowAmmo == 0)
@@ -239,26 +269,25 @@ public class PlayerWeaponManager : MonoBehaviour
     }
     void ChargeBow()
     {
-        
+        Debug.Log("Charging. .");
         ArrowGFX.enabled = true;
-        BowCharge += Time.deltaTime;
-        BowPowerSlider.value = BowCharge;
-
-        if (BowCharge > MaxBowCharge)
+        bowCharge += Time.deltaTime;
+        BowPowerSlider.value = bowCharge;
+        Debug.Log("Charge is at: " + bowCharge);
+        if (bowCharge > MaxBowCharge)
         {
             BowPowerSlider.value = MaxBowCharge;
         }
     }
     void FireBow()
     {
-        if (BowCharge > MaxBowCharge) BowCharge = MaxBowCharge;
+        if (bowCharge > MaxBowCharge) bowCharge = MaxBowCharge;
 
-        float ArrowSpeed = BowCharge + BowPower;
-        float ArrowDamage = BowCharge * BowPower;
+        float ArrowSpeed = bowCharge + BowPower;
+        float ArrowDamage = bowCharge * BowPower;
         //Debug.Log("Arrow Damage: " + ArrowDamage);
 
-        float angle = Utility.AngleTowardsMouse(hand.position);
-        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+      
 
         Arrow Arrow = Instantiate(ArrowPrefab, hand.position, rot).GetComponent<Arrow>();
         Arrow.ArrowVelocity = ArrowSpeed;
@@ -272,9 +301,9 @@ public class PlayerWeaponManager : MonoBehaviour
     #region GrenadeFunctions
     void GrenadeThrow()
     {
-        
+
         ammoText.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-        if (Input.GetMouseButtonDown(0) && canThrow)
+        if ((Input.GetMouseButton(0) || Input.GetAxis("RightTrigger") > 0) && canThrow)
         {
             PlayThrow();
 
@@ -293,8 +322,7 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         Debug.Log("Grenade Damage: " + grenadeDamage); //prints out how much damage each grenade is doing/going to do
 
-        float angle = Utility.AngleTowardsMouse(hand.position);
-        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+       
 
         TossGrenade Toss = Instantiate(GrenadePrefab, hand.position, rot).GetComponent<TossGrenade>();
 
@@ -309,8 +337,7 @@ public class PlayerWeaponManager : MonoBehaviour
     {
         Debug.Log("Knife Damage: " + knifeDamage); //prints out how much damage each knife is doing/going to do
 
-        float angle = Utility.AngleTowardsMouse(hand.position);
-        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
+        
 
         Throw Throw = Instantiate(ThrowingKnifePrefab, hand.position, rot).GetComponent<Throw>();
         knifeDamage = (int)Mathf.Ceil(knifeDamage);
@@ -327,7 +354,7 @@ public class PlayerWeaponManager : MonoBehaviour
         {
 
             ammoText.text = "Ammo: " + knifeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-            if (Input.GetMouseButtonDown(0) && canThrow)
+            if ((Input.GetMouseButton(0) || Input.GetAxis("RightTrigger") > 0) && canThrow)
             {
                 ThrowKnife();
                 knifeAmmo--;
@@ -356,45 +383,26 @@ public class PlayerWeaponManager : MonoBehaviour
     }
     #endregion
 
-    void CommonSword()
-    {
-        float angle = Utility.AngleTowardsMouse(hand.position);
-        Quaternion rot = Quaternion.Euler(new Vector3(0f, 0f, angle - 90f));
-    }
+   
 
     private void Play()
     {
 
-
-        if (Input.GetMouseButtonUp(0))
-        { 
-            AudioSource sound = GameObject.Find("sound_11_Bow Fire").GetComponent<AudioSource>();
-            sound.Play();
-            Debug.Log("Why no Play Fire?");
-        }
-        else
-        {
-            return;
-        }
+        AudioSource sound = GameObject.Find("sound_11_Bow Fire").GetComponent<AudioSource>();
+        sound.Play();
     }
     private void PlayDraw()
     {
 
-        
-        if (Input.GetMouseButtonDown(0))
-        {
-            AudioSource sound = GameObject.Find("sound_12_Bow Draw").GetComponent<AudioSource>();
-            sound.Play();
-            Debug.Log("Why no Play Fire?");
-        }
-        else
-        {
-            return;
-        }
+
+        AudioSource sound = GameObject.Find("sound_12_Bow Draw").GetComponent<AudioSource>();
+        sound.Play();
+        Debug.Log("Why no Play Fire?");
+
     }
     private void PlayThrow()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetAxis("RightTrigger") > 0)
         {
             AudioSource sound = GameObject.Find("sound_18_Throw").GetComponent<AudioSource>();
             sound.Play();
@@ -407,7 +415,7 @@ public class PlayerWeaponManager : MonoBehaviour
     }
     public void Healing(int _amount)
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetAxis("RightTrigger") > 0)
         {
             gameObject.GetComponent<SuperPupSystems.Helper.Health>().Heal(_amount);
             Inv.items[Inv.currentItem].quanity -= 1;

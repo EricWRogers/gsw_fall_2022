@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8024081923392865279}
   - component: {fileID: 8024081923392865216}
   - component: {fileID: 8024081923392865217}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tree_Stump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.025152206, y: 0.09826136}
+  m_Offset: {x: -0.057626724, y: 0.1177457}
   m_SpriteTilingProperty:
     border: {x: 0.96, y: 1.4449999, z: 1.01, w: 0.815}
     pivot: {x: 0.5, y: 0.5}
@@ -109,5 +109,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6810188, y: 0.6226988}
+  m_Size: {x: 1.4861755, y: 0.5837301}
   m_EdgeRadius: 0
