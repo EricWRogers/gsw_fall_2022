@@ -58,3 +58,6 @@ TagManager:
   - name: Enviorment
     uniqueID: 847929901
     locked: 0
+  - name: Lights
+    uniqueID: 1225604531
+    locked: 0
