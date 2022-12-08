@@ -52,6 +52,7 @@ public class Trading : MonoBehaviour
         tradingInventory.currentItem = Mathf.Clamp(tradingInventory.currentItem, 0, tradingInventory.items.Count - 1);
 
         UpdateWeaponWheel(tradingInventory.currentItem);
+        Debug.Log("Current Item: " + tradingInventory.currentItem);
 
         if(Input.GetButtonDown("TradingBuy") || Input.GetKeyDown(KeyCode.E))
         {
