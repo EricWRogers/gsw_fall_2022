@@ -16,7 +16,7 @@ public class PlayerBlock : MonoBehaviour
     {
         Play();
 
-        if (Input.GetMouseButton(1) && !Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1) || Input.GetButton(KeyCode.Joystick1Button4.ToString()) && !Input.GetMouseButton(0))
         {
 
             StartBlock();
