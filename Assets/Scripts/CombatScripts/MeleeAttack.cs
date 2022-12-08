@@ -14,7 +14,7 @@ public class MeleeAttack : MonoBehaviour
             //Debug.Log("Attack Button Pressed");
             if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Corruption")) //Checking to see if what we are hitting is corruption or enemies. If so, execute the following.
             {
-               // PlayAtk();
+               PlayAtk();
 
                 //Debug.Log(collision.gameObject.name);
                 Debug.Log("Melee : Hi");
@@ -30,14 +30,18 @@ public class MeleeAttack : MonoBehaviour
                 AudioSource sound = GameObject.Find("sound_10_swipe").GetComponent<AudioSource>();
                 sound.Play();
             }
-
-        }/*
+            else
+            {
+                return;
+            }
+        }
+        
          void PlayAtk()
         {
             Debug.Log("No Sound Called");
             AudioSource sound = GameObject.Find("sound_4_EnemeyHit").GetComponent<AudioSource>();
             sound.Play();
-        } */
+        } 
     }
 }
 

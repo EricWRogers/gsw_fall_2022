@@ -9,7 +9,8 @@ public class TreasureChest : MonoBehaviour
     public LootTable LT;
     public Sprite newSprite;
     public SpriteRenderer spriteRenderer;
-    public Transform lights; 
+    public Transform lights;
+    public AudioManager audio;
 
     public GameObject message;
 
@@ -21,6 +22,7 @@ public class TreasureChest : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.JoystickButton2))
             {
+                Play();
                 LT.DropItem();
                 isOpened = true;
                 spriteRenderer.sprite = newSprite;
@@ -33,7 +35,14 @@ public class TreasureChest : MonoBehaviour
 
     }
 
-    
+    private void Play()
+    {
+            AudioSource sound = GameObject.Find("sound_19_TreasureChest").GetComponent<AudioSource>();
+            sound.Play();
+            Debug.Log("Why no Play Fire?");
+   
+    }
+
 
 }
 
