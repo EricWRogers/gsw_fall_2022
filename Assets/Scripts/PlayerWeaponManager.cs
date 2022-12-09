@@ -81,6 +81,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
     float angle;
     Quaternion rot; 
+    float lastRightTrigger = 0.0f;
     void Start()
     {
 
@@ -169,7 +170,7 @@ public class PlayerWeaponManager : MonoBehaviour
 
 
             ammoText.text = "Ammo: " + molotovAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-            if (Input.GetMouseButtonDown(0) || Input.GetAxis("RightTrigger") > 0)
+            if (Input.GetMouseButtonDown(0) || (Input.GetAxis("RightTrigger") > 0 && lastRightTrigger == 0.0f))
             {
                 Debug.Log("Pressed");
                 ThrowMolotov();
@@ -199,6 +200,9 @@ public class PlayerWeaponManager : MonoBehaviour
             Transform temp = gameObject.transform.Find("Hand/potion");
             temp.gameObject.SetActive(false);
         }
+
+
+        lastRightTrigger = Input.GetAxis("RightTrigger");
 
     }
 
@@ -308,7 +312,7 @@ public class PlayerWeaponManager : MonoBehaviour
     {
 
         ammoText.text = "Ammo: " + grenadeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-        if ((Input.GetMouseButton(0) || Input.GetAxis("RightTrigger") > 0) && canThrow)
+        if ((Input.GetMouseButton(0) || (Input.GetAxis("RightTrigger") > 0 && lastRightTrigger == 0.0f)) && canThrow)
         {
             PlayThrow();
 
@@ -359,7 +363,7 @@ public class PlayerWeaponManager : MonoBehaviour
         {
 
             ammoText.text = "Ammo: " + knifeAmmo.ToString(); //for ammo counter, will count down as ammo decreases
-            if ((Input.GetMouseButton(0) || Input.GetAxis("RightTrigger") > 0) && canThrow)
+            if ((Input.GetMouseButton(0) || (Input.GetAxis("RightTrigger") > 0 && lastRightTrigger == 0.0f)) && canThrow)
             {
                 ThrowKnife();
                 knifeAmmo--;
@@ -407,7 +411,7 @@ public class PlayerWeaponManager : MonoBehaviour
     }
     private void PlayThrow()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetAxis("RightTrigger") > 0)
+        if (Input.GetMouseButtonDown(0) || (Input.GetAxis("RightTrigger") > 0 && lastRightTrigger == 0.0f))
         {
             AudioSource sound = GameObject.Find("sound_18_Throw").GetComponent<AudioSource>();
             sound.Play();
@@ -420,7 +424,7 @@ public class PlayerWeaponManager : MonoBehaviour
     }
     public void Healing(int _amount)
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetAxis("RightTrigger") > 0)
+        if (Input.GetMouseButtonDown(0) || (Input.GetAxis("RightTrigger") > 0 && lastRightTrigger == 0.0f))
         {
             gameObject.GetComponent<SuperPupSystems.Helper.Health>().Heal(_amount);
             Inv.items[Inv.currentItem].quanity -= 1;
