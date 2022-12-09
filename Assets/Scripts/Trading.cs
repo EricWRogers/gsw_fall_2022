@@ -64,6 +64,7 @@ public class Trading : MonoBehaviour
 
     public void UpdateWeaponWheel(int index)
     {
+        tradingCurrentItem = index;
         if (tradingInventory.items.Count == 0)
         {
             Debug.LogError("tradingInventory empty");
@@ -190,7 +191,7 @@ public class Trading : MonoBehaviour
             statsText.text = "Damage: " + firePotionStats.damage + " | Durartion: " + firePotionStats.duration + " | Strength: " + firePotionStats.strength + " | Range: " + firePotionStats.range + " | Fire Spread: " + firePotionStats.fireSpread;
         }
 
-        if(inventory.items[index].itemStats is ThrowKnifeStats)
+        if(tradingInventory.items[index].itemStats is ThrowKnifeStats)
         {
             ThrowKnifeStats throwKnifeStats = (ThrowKnifeStats)inventory.items[index].itemStats;
             statsText.text = "Damage: " + throwKnifeStats.damage + " | Range: " + throwKnifeStats.range + " | speed: " + throwKnifeStats.speed;
